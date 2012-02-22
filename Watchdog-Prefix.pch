@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'Watchdog' target in the 'Watchdog' project
+//
+
+#ifdef __OBJC__
+  
+  #import <Cocoa/Cocoa.h>
+  
+  #import <KPFoundation/KPFoundation.h>
+  
+#endif

@@ -1,0 +1,3 @@
+[submodule "KPFoundation"]
+	path = KPFoundation
+	url = ../KPFoundation
