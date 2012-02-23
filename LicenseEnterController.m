@@ -16,7 +16,7 @@
 
 - (id) init
 {
-  self = [self initWithNibName: @"LicenseEnter" bundle: nil];
+  self = [self initWithNibName: @"LicenseEnter" bundle: [NSBundle bundleWithIdentifier: @"com.konstantinpavlikhin.Watchdog"]];
   
   return self;
 }
