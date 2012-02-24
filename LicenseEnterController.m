@@ -1,34 +1,46 @@
-//
+////////////////////////////////////////////////////////////////////////////////
+//  
 //  LicenseEnterController.m
-//  Singlemizer
-//
-//  Created by Константин Павлихин on 27.01.10.
-//  Copyright 2010 Minimalistic Dev. All rights reserved.
-//
+//  
+//  Watchdog
+//  
+//  Created by Konstantin Pavlikhin on 27/01/10.
+//  
+////////////////////////////////////////////////////////////////////////////////
 
 #import "LicenseEnterController.h"
 
 #import "LicenseController.h"
 
+NSString* const watchdogBundleIdentifier = @"com.konstantinpavlikhin.Watchdog";
+
 @implementation LicenseEnterController
+
+@synthesize greeting;
 
 @synthesize customerName;
 
 - (id) init
 {
-  self = [self initWithNibName: @"LicenseEnter" bundle: [NSBundle bundleWithIdentifier: @"com.konstantinpavlikhin.Watchdog"]];
+  self = [self initWithNibName: @"LicenseEnter" bundle: [NSBundle bundleWithIdentifier: watchdogBundleIdentifier]];
+  
+  self.greeting = [NSString stringWithFormat: @"Register %@", [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleName"]];
   
   return self;
 }
 
 - (IBAction) lostKey: (id) sender
 {
-  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: @"http://minimalisticdev.com/support/"]];
+  NSString* str = [[NSBundle bundleWithIdentifier: watchdogBundleIdentifier] objectForInfoDictionaryKey: @"WDHelpOnlineURL"];
+  
+  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: str]];
 }
 
 - (IBAction) buyOnline: (id) sender
 {
-  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: @"http://minimalisticdev.com/singlemizer/order/"]];
+  NSString* str = [[NSBundle bundleWithIdentifier: watchdogBundleIdentifier] objectForInfoDictionaryKey: @"WDBuyOnlineURL"];
+  
+  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: str]];
 }
 
 - (IBAction) cancel: (id) sender

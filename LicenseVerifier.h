@@ -1,10 +1,12 @@
-//
+////////////////////////////////////////////////////////////////////////////////
+//  
 //  LicenseVerifier.h
-//  Singlemizer
-//
-//  Created by Константин Павлихин on 27.01.10.
-//  Copyright 2010 Minimalistic Development. All rights reserved.
-//
+//  
+//  Watchdog
+//  
+//  Created by Konstantin Pavlikhin on 27/01/10.
+//  
+////////////////////////////////////////////////////////////////////////////////
 
 #include "openssl-1.0.0e/dsa.h"
 

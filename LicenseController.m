@@ -1,10 +1,12 @@
-//
+////////////////////////////////////////////////////////////////////////////////
+//  
 //  LicenseController.m
-//  Singlemizer
-//
-//  Created by Константин Павлихин on 27.01.10.
-//  Copyright 2010 Minimalistic Dev. All rights reserved.
-//
+//  
+//  Watchdog
+//  
+//  Created by Konstantin Pavlikhin on 27/01/10.
+//  
+////////////////////////////////////////////////////////////////////////////////
 
 #import "LicenseController.h"
 

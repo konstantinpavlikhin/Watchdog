@@ -1,15 +1,19 @@
-//
+////////////////////////////////////////////////////////////////////////////////
+//  
 //  LicenseStatusController.h
-//  Singlemizer
-//
-//  Created by Константин Павлихин on 27.01.10.
-//  Copyright 2010 Minimalistic Dev. All rights reserved.
-//
+//  
+//  Watchdog
+//  
+//  Created by Konstantin Pavlikhin on 27/01/10.
+//  
+////////////////////////////////////////////////////////////////////////////////
 
 @interface LicenseStatusController : ViewController
 {
   IBOutlet NSTextField* licensedTo;
 }
+
+@property(readwrite, retain) NSString* message;
 
 @property(readwrite, assign) IBOutlet NSButton* dismissButton;
 
