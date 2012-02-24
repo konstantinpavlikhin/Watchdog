@@ -12,8 +12,6 @@
 
 #import "LicenseController.h"
 
-NSString* const watchdogBundleIdentifier = @"com.konstantinpavlikhin.Watchdog";
-
 @implementation LicenseEnterController
 
 @synthesize greeting;
@@ -22,7 +20,7 @@ NSString* const watchdogBundleIdentifier = @"com.konstantinpavlikhin.Watchdog";
 
 - (id) init
 {
-  self = [self initWithNibName: @"LicenseEnter" bundle: [NSBundle bundleWithIdentifier: watchdogBundleIdentifier]];
+  self = [self initWithNibName: @"LicenseEnter" bundle: [NSBundle bundleWithIdentifier: @"com.konstantinpavlikhin.Watchdog"]];
   
   self.greeting = [NSString stringWithFormat: @"Register %@", [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleName"]];
   
@@ -31,16 +29,12 @@ NSString* const watchdogBundleIdentifier = @"com.konstantinpavlikhin.Watchdog";
 
 - (IBAction) lostKey: (id) sender
 {
-  NSString* str = [[NSBundle bundleWithIdentifier: watchdogBundleIdentifier] objectForInfoDictionaryKey: @"WDHelpOnlineURL"];
-  
-  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: str]];
+  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: @"WDHelpOnlineURL"]]];
 }
 
 - (IBAction) buyOnline: (id) sender
 {
-  NSString* str = [[NSBundle bundleWithIdentifier: watchdogBundleIdentifier] objectForInfoDictionaryKey: @"WDBuyOnlineURL"];
-  
-  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: str]];
+  [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: @"WDBuyOnlineURL"]]];
 }
 
 - (IBAction) cancel: (id) sender
