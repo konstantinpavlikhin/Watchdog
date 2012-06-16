@@ -12,8 +12,6 @@
 
 #import "RegistrationWindowController.h"
 
-#import "LicenseVerifier.h"
-
 
 NSString* const CustomerName = @"CustomerName";
 
@@ -317,13 +315,109 @@ NSString* const PiratedMsgBody = @"Your are using pirated license key. Shame on 
 
 #pragma mark Private methods
 
+/*!
+ * Проверяет соответствие серийника и имени покупателя, возвращает ошибку с описанием возможной проблемы.
+ *
+ * @param licenseKeyInBase32 Серийный номер в виде строки в формате base32 (в том виде, в котором он выдается покупателю).
+ *
+ * @param customerName Имя покупателя в виде строки
+ *
+ * @param error Указатель на ошибку, который будет установлен, если будет проблема.
+ *
+ * @return YES, если серийник подходит под имя, NO в любом другом случае.
+ */
+- (BOOL) isLicenseKeyInBase32: (NSString*) licenseKeyInBase32 conformsToCustomerName: (NSString*) customerName error: (NSError**) error
+{
+  // Проверка на элементарные вырожденные случаи.
+  if(!licenseKeyInBase32 || !customerName || ![licenseKeyInBase32 length] || ![customerName length]) return NO;
+  
+  void (^logAndReleaseError)(void) = ^
+  {
+    CFShow(*error), CFRelease(*error);
+  };
+  
+  // Переводим серийник из base32 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  // Создаем трансформацию перевода из base32.
+  SecTransformRef base32DecodeTransform = SecDecodeTransformCreate(kSecBase32Encoding, (CFErrorRef*)error);
+  
+  // Если трансформация не создана — выход с ошибкой.
+  if(base32DecodeTransform == NULL)
+  {
+    logAndReleaseError();
+    
+    return NO;
+  }
+  
+  // Задаем входной параметр в виде NSData.
+  if(!SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, [licenseKeyInBase32 dataUsingEncoding: NSUTF8StringEncoding], (CFErrorRef*)error))
+  {
+    logAndReleaseError();
+    
+    // Трансформация была создана — освобождаем ее.
+    CFRelease(base32DecodeTransform);
+    
+    return NO;
+  }
+  
+  // Запускаем трансформацию.
+  
+  CFTypeRef signature = SecTransformExecute(base32DecodeTransform, (CFErrorRef*)error);
+  
+  if(signature == NULL)
+  {
+    logAndReleaseError();
+    
+    // Трансформация была создана — освобождаем ее.
+    CFRelease(base32DecodeTransform);
+    
+    return NO;
+  }
+  
+  
+  return [self verifyDSASignature: signature data: [customerName dataUsingEncoding: NSUTF8StringEncoding] error: NULL];
+}
+
+- (BOOL) verifyDSASignature: (NSData*) signature data: (NSData*) sourceData error: (NSError**) error
+{
+  // Получаем публичный ключ от делегата в виде строки формата PEM и переводим его в дату.
+  CFDataRef publicKeyData = (CFDataRef)[[delegate publicKeyStringInPEMForm] dataUsingEncoding: NSUTF8StringEncoding];
+  
+  // Приводим публичный ключ к виду SecKeyRef.
+  SecItemImportExportKeyParameters params;
+  
+  params.keyUsage = NULL;
+  
+  params.keyAttributes = NULL;
+  
+  SecExternalItemType itemType = kSecItemTypePublicKey;
+  
+  SecExternalFormat externalFormat = kSecFormatPEMSequence;
+  
+  int flags = 0;
+  
+  NSMutableArray* temparray = [NSMutableArray array];
+  
+  SecItemImport(publicKeyData, NULL, &externalFormat, &itemType, flags, &params, NULL, (CFArrayRef*)&temparray);
+  
+  SecKeyRef publicKey = (SecKeyRef)CFArrayGetValueAtIndex((CFArrayRef)temparray, 0);
+  
+  // Создаем трансформацию проверки подписи.
+  SecTransformRef verifier = SecVerifyTransformCreate(publicKey, (CFDataRef)signature, (CFErrorRef*)error);
+  
+  // Задаем дату, чью подпись мы собираемся проверять.
+  SecTransformSetAttribute(verifier, kSecTransformInputAttributeName, sourceData, (CFErrorRef*)error);
+  
+  CFTypeRef result = SecTransformExecute(verifier, (CFErrorRef*)error);
+  
+  return (result == kCFBooleanTrue)? YES : NO;
+}
+
 // Синхронный метод-скелет.
 - (void) checkLicenseWithName: (NSString*) n key: (NSString*) k corrupted: (vBv) c blacklisted: (vBv) b pirated: (vBv) p valid: (vBv) v
 {
-  LicenseVerifier* licenseVerifier = [[[LicenseVerifier alloc] initWithPublicKeyInHexForm: [delegate publicKeyInHexForm]] autorelease];
-  
   // Если лицензия не расшифровалась...
-  if(![licenseVerifier isLicenseKeyInBase32: k conformsToCustomerName: n])
+  if(![self isLicenseKeyInBase32: k conformsToCustomerName: n error: NULL])
   {
     c(); return;
   }

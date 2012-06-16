@@ -81,6 +81,8 @@ typedef void (^LicenseValidationHandler)(BOOL isValid);
 
 #pragma mark Private methods
 
+- (BOOL) isLicenseKeyInBase32: (NSString*) licenseKeyInBase32 conformsToCustomerName: (NSString*) customerName error: (NSError**) error;
+
 typedef void (^vBv)(void);
 
 - (void) checkLicenseWithName: (NSString*) n key: (NSString*) k corrupted: (vBv) c blacklisted: (vBv) b pirated: (vBv) p valid: (vBv) v;

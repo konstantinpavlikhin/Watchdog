@@ -12,7 +12,7 @@
 
 @protocol LicenseControllerDelegate <NSObject>
 
-- (NSString*) publicKeyInHexForm;
+- (NSString*) publicKeyStringInPEMForm;
 
 - (void) applicationDidBecomeRegistered;
 
