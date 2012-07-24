@@ -8,6 +8,4 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "LicenseControllerDelegate.h"
-
-#import "LicenseController.h"
+#import "RegistrationController.h"

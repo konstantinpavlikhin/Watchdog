@@ -8,8 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-#import "Watchdog/Watchdog.h"
-
-@interface Test : SenTestCase <LicenseControllerDelegate>
+@interface Test : SenTestCase
 
 @end

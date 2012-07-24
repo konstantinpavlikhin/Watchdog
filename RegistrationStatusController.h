@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  LicenseStatusController.h
+//  RegistrationStatusController.h
 //  
 //  Watchdog
 //  
@@ -8,10 +8,7 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface LicenseStatusController : ViewController
-{
-  IBOutlet NSTextField* licensedTo;
-}
+@interface RegistrationStatusController : ViewController
 
 @property(readwrite, retain) NSString* message;
 
@@ -20,7 +17,5 @@
 - (IBAction) deauthorizeAccount: (id) sender;
 
 - (IBAction) dismiss: (id) sender;
-
-- (void) viewDidAppear;
 
 @end

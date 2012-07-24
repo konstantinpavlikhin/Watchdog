@@ -8,26 +8,22 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-@class LicenseEnterController;
+@class SerialEntryController;
 
-@class LicenseStatusController;
+@class RegistrationStatusController;
 
 @interface RegistrationWindowController : NSWindowController <NSWindowDelegate>
-{
-  LicenseEnterController* licenseEnterController;
-  
-  LicenseStatusController* licenseStatusController;
-}
 
-// Лениво конструирует licenseEnterController.
-- (LicenseEnterController*) licenseEnterController;
+// Lazy SerialEntryController constructor.
+- (SerialEntryController*) serialEntryController;
 
-// Лениво конструирует licenseStatusController.
-- (LicenseStatusController*) licenseStatusController;
+// Fade-in/fade-out subview switcher.
+- (void) switchToSerialEntrySubview;
 
-// Переключает виды с fade-анимацией.
-- (void) switchToLicenseStatusSubview;
+// Lazy RegistrationStatusController constructor.
+- (RegistrationStatusController*) registrationStatusController;
 
-- (void) switchToLicenseEnterSubview;
+// Fade-in/fade-out subview switcher.
+- (void) switchToRegistrationStatusSubview;
 
 @end

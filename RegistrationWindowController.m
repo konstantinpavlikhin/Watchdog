@@ -10,67 +10,60 @@
 
 #import "RegistrationWindowController.h"
 
+#import "RegistrationController.h"
+
+#import "SerialEntryController.h"
+
+#import "RegistrationStatusController.h"
+
 #import <QuartzCore/CoreAnimation.h>
 
-#import "LicenseController.h"
-
-#import "LicenseEnterController.h"
-
-#import "LicenseStatusController.h"
+NSString* const ApplicationStateKeyPath = @"applicationState";
 
 @implementation RegistrationWindowController
+{
+  SerialEntryController* serialEntryController;
+  
+  RegistrationStatusController* registrationStatusController;
+}
 
 - (id) init
 {
-  /*
-  // Настраиваем HUD-панель регистрации.
-  NSPanel* registrationPanel = [[[NSPanel alloc] initWithContentRect: NSZeroRect styleMask: 0 backing: 0 defer: NO] autorelease];
+  self = [super initWithWindowNibName: @"RegistrationWindow"];
   
-  [registrationPanel setDelegate: self];
+  if(!self) return nil;
   
-  [registrationPanel setContentSize: NSMakeSize(480.0, 270.0)];
-  
-  [registrationPanel setStyleMask: NSHUDWindowMask | NSTitledWindowMask | NSUtilityWindowMask | NSClosableWindowMask];
-  
-  [registrationPanel setBackingType: NSBackingStoreBuffered];
-  
-  [registrationPanel setHidesOnDeactivate: NO];
-  
-  enableBlurForWindow(registrationPanel);
-  
-  // Настраиваем анимацию смены подвидов.
-  CATransition* fadeTransition = [CATransition animation];
-  
-  [fadeTransition setType: kCATransitionFade];
-  
-  [fadeTransition setDuration: 0.3];
-  
-  NSDictionary* animations = [NSDictionary dictionaryWithObject: fadeTransition forKey: @"subviews"];
-  
-  [[registrationPanel contentView] setAnimations: animations];
-  
-  [[registrationPanel contentView] setWantsLayer: YES];
-  */
-  
-  // Возвращаем контроллер с окошком.
-  //self = [super initWithWindow: registrationPanel];
-  self = [super initWithWindowNibName: @"LicenseWindow"];
+  // Starting to observe RegistrationController's applicationState property.
+  [[RegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: 0 context: NULL];
   
   return self;
 }
 
 - (void) dealloc
 {
-  [licenseEnterController release];
+  // Terminating the observation.
+  [[RegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
   
-  [licenseStatusController release];
+  [serialEntryController release], serialEntryController = nil;
+  
+  [registrationStatusController release], registrationStatusController = nil;
   
   [super dealloc];
 }
 
+- (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
+{
+  RegistrationController* SRC = [RegistrationController sharedRegistrationController];
+  
+  if(object == SRC && [keyPath isEqualToString: ApplicationStateKeyPath])
+  {
+    SRC.applicationState == RegisteredApplicationState? [self switchToRegistrationStatusSubview] : [self switchToSerialEntrySubview];
+  }
+}
+
 - (void) windowDidLoad
 {
-  // Настраиваем анимацию смены подвидов.
+  // Adjusting subview change animation.
   CATransition* fadeTransition = [CATransition animation];
   
   [fadeTransition setType: kCATransitionFade];
@@ -86,89 +79,74 @@
 
 - (IBAction) showWindow: (id) sender
 {
-  [[[self window] contentView] setSubviews: [NSArray array]];
-  
-  ApplicationStatus appStatus = [[LicenseController sharedLicenseController] applicationStatus];
-  
-  if(appStatus == RegisteredApplicationStatus)
-  {
-    [self switchToLicenseStatusSubview];
-  }
-  else if(appStatus == UnregisteredApplicationStatus)
-  {
-    [self switchToLicenseEnterSubview];
-  }
-  
-  // Если окно закрыто, то показываем его по визуальному центру экрана.
+  // If the window is closed — showing it at the visual center of the screen.
   if(![[self window] isVisible]) [[self window] center];
   
   [super showWindow: sender];
 }
 
-- (LicenseEnterController*) licenseEnterController
+- (SerialEntryController*) serialEntryController
 {
-  if(!licenseEnterController)
+  if(!serialEntryController)
   {
-    licenseEnterController = [[LicenseEnterController alloc] init];
+    serialEntryController = [SerialEntryController new];
     
-    licenseEnterController.windowController = self;
+    serialEntryController.windowController = self;
   }
   
-  return licenseEnterController;
+  return serialEntryController;
 }
 
-- (LicenseStatusController*) licenseStatusController
+- (RegistrationStatusController*) registrationStatusController
 {
-  if(!licenseStatusController)
+  if(!registrationStatusController)
   {
-    licenseStatusController = [LicenseStatusController new];
+    registrationStatusController = [RegistrationStatusController new];
     
-    licenseEnterController.windowController = self;
+    registrationStatusController.windowController = self;
   }
   
-  return licenseStatusController;
+  return registrationStatusController;
 }
 
-- (void) switchToLicenseStatusSubview
+- (void) switchToRegistrationStatusSubview
 {
-  NSArray* contentViewSubviews = [[[self window] contentView] subviews];
+  NSView* contentView = self.window.contentView;
   
-  if([contentViewSubviews containsObject: [licenseEnterController view]])
+  if([[contentView subviews] containsObject: [serialEntryController view]])
   {
-    [[[[self window] contentView] animator] replaceSubview: [licenseEnterController view] with: [[self licenseStatusController] view]];
+    [[contentView animator] replaceSubview: [serialEntryController view] with: [[self registrationStatusController] view]];
   }
   else
   {
-    [[[self window] contentView] addSubview: [[self licenseStatusController] view]];
+    [contentView addSubview: [[self registrationStatusController] view]];
   }
   
-  [licenseEnterController setWindowController: nil];
+  [serialEntryController setWindowController: nil];
   
-  [licenseStatusController setWindowController: self];
+  [registrationStatusController setWindowController: self];
   
-  [licenseStatusController viewDidAppear];
-  
-  [self.window makeFirstResponder: licenseStatusController.dismissButton];
+  [self.window makeFirstResponder: registrationStatusController.dismissButton];
 }
 
-- (void) switchToLicenseEnterSubview
+- (void) switchToSerialEntrySubview
 {
-  NSArray* contentViewSubviews = [[[self window] contentView] subviews];
+  NSView* contentView = self.window.contentView;
   
-  if([contentViewSubviews containsObject: [licenseStatusController view]])
+  if([[contentView subviews] containsObject: [registrationStatusController view]])
   {
-    [[[[self window] contentView] animator] replaceSubview: [licenseStatusController view] with: [[self licenseEnterController] view]];
+    [[contentView animator] replaceSubview: [registrationStatusController view] with: [[self serialEntryController] view]];
   }
   else
   {
-    [[[self window] contentView] addSubview: [[self licenseEnterController] view]];
+    [[[self window] contentView] addSubview: [[self serialEntryController] view]];
   }
   
-  [licenseStatusController setWindowController: nil];
+  [registrationStatusController setWindowController: nil];
   
-  [licenseEnterController setWindowController: self];
+  [serialEntryController setWindowController: self];
   
-  [self.window makeFirstResponder: licenseEnterController.customerName];
+  [self.window makeFirstResponder: serialEntryController.customerName];
 }
 
 @end
