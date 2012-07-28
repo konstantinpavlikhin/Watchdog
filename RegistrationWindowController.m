@@ -18,8 +18,6 @@
 
 #import <QuartzCore/CoreAnimation.h>
 
-NSString* const ApplicationStateKeyPath = @"applicationState";
-
 @implementation RegistrationWindowController
 {
   SerialEntryController* serialEntryController;
@@ -33,8 +31,8 @@ NSString* const ApplicationStateKeyPath = @"applicationState";
   
   if(!self) return nil;
   
-  // Starting to observe RegistrationController's applicationState property.
-  [[RegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: 0 context: NULL];
+  // Immediately starting to observe RegistrationController's applicationState property.
+  [[RegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
   
   return self;
 }

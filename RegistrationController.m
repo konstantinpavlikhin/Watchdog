@@ -12,6 +12,8 @@
 
 #import "RegistrationWindowController.h"
 
+NSString* const ApplicationStateKeyPath = @"applicationState";
+
 NSString* const WDCustomerNameKey = @"WDCustomerName";
 
 NSString* const WDSerialKey = @"WDSerial";

@@ -75,6 +75,9 @@ typedef void (^SerialCheckHandler)(enum SerialVerdict verdict);
 
 @end
 
+// Use this const string instead of manual typing of the "applicationState" property name in KVO addition/removal of observers.
+extern NSString* const ApplicationStateKeyPath;
+
 // May be useful if someone wants to migrate user license data to a new place.
 extern NSString* const WDCustomerNameKey;
 
