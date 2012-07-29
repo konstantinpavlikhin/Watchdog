@@ -89,13 +89,16 @@
   
   [SRC registerWithCustomerName: name serial: serial handler: ^(enum SerialVerdict verdict)
   {
-    [self.spinner stopAnimation: self];
-    
-    [self.proceed setEnabled: YES];
-    
-    if(verdict != ValidSerialVerdict) { [self shakeWindow]; return; };
-    
-    [self clearInputFields];
+    dispatch_sync(dispatch_get_main_queue(), ^()
+    {
+      [self.spinner stopAnimation: self];
+      
+      [self.proceed setEnabled: YES];
+      
+      if(verdict != ValidSerialVerdict) { [self shakeWindow]; return; };
+      
+      [self clearInputFields];
+    });
   }];
 }
 
