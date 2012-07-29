@@ -108,14 +108,17 @@ static RegistrationWindowController* registrationWindowController = nil;
         
         [self registerWithCustomerName: customerName serial: serial handler: ^(enum SerialVerdict verdict)
         {
-          if(verdict != ValidSerialVerdict)
+          dispatch_async(dispatch_get_main_queue(), ^()
           {
-            [[[self class] alertWithSerialVerdict: verdict] runModal];
-            
-            return;
-          }
-          // Show Registration Window if everything is OK.
-          [self showRegistrationWindow: self];
+            if(verdict != ValidSerialVerdict)
+            {
+              [[[self class] alertWithSerialVerdict: verdict] runModal];
+              
+              return;
+            }
+            // Show Registration Window if everything is OK.
+            [self showRegistrationWindow: self];
+          });
         }];
         
         success = YES;
@@ -154,7 +157,6 @@ static RegistrationWindowController* registrationWindowController = nil;
         self.applicationState = RegisteredApplicationState;
       }
       
-      #warning На каком треде запускается этот хэндлер?
       // Calling handler with the corresponding verdict (used by the SerialEntryController to determine when to shake the input window).
       handler(verdict);
     }];
