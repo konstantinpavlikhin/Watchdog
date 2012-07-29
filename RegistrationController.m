@@ -447,7 +447,7 @@ static RegistrationWindowController* registrationWindowController = nil;
     [URLRequest setValue: hostAppName? hostAppName : @"Watchdog" forHTTPHeaderField: @"User-agent"];
   }}
   
-  [URLRequest setTimeoutInterval: 10.0];
+  [URLRequest setTimeoutInterval: 3.0];
   
   NSURLResponse* URLResponse = nil;
   
