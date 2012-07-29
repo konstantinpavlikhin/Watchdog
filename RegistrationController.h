@@ -67,7 +67,7 @@ typedef void (^SerialCheckHandler)(enum SerialVerdict verdict);
 // Returns the name of the successfully accepted customer. Thread safe.
 - (NSString*) registeredCustomerName;
 
-// Removes registration data from UserDefaults and puts app in unregistered state. Thread safe.
+// Removes registration data from UserDefaults and puts app in unregistered state. Should be called from the main thread only!
 - (void) deauthorizeAccount;
 
 // Launches an asynchronous check of the installed serial. Shows alerts on invalid serials.

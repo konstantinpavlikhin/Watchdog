@@ -140,7 +140,10 @@ static RegistrationWindowController* registrationWindowController = nil;
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
   {
     // Wiping out any existing registration data & state.
-    [self deauthorizeAccount];
+    dispatch_sync(dispatch_get_main_queue(), ^()
+    {
+      [self deauthorizeAccount];
+    });
     
     // Launching full-featured customer data check.
     [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum SerialVerdict verdict)
@@ -154,7 +157,11 @@ static RegistrationWindowController* registrationWindowController = nil;
         
         [userDefaults setObject: serial forKey: WDSerialKey];
         
-        self.applicationState = RegisteredApplicationState;
+        // KVO-notifications always arrive on the same thread that set the value.
+        dispatch_sync(dispatch_get_main_queue(), ^()
+        {
+          self.applicationState = RegisteredApplicationState;
+        });
       }
       
       // Calling handler with the corresponding verdict (used by the SerialEntryController to determine when to shake the input window).
@@ -199,20 +206,36 @@ static RegistrationWindowController* registrationWindowController = nil;
     NSString* serial = [userDefaults stringForKey: WDSerialKey];
     
     // If both parameters are missing — treat it (silently) like unregistered state.
-    if(!name && !serial) { self.applicationState = UnregisteredApplicationState; return; };
+    if(!name && !serial)
+    {
+      dispatch_sync(dispatch_get_main_queue(), ^()
+      {
+        self.applicationState = UnregisteredApplicationState;
+      });
+      
+      return;
+    };
     
     // Prepare block handler for any other cases.
     void (^handler)(enum SerialVerdict serialVerdict) = ^(enum SerialVerdict serialVerdict)
     {
-      if(serialVerdict == ValidSerialVerdict) { self.applicationState = RegisteredApplicationState; return; };
+      if(serialVerdict == ValidSerialVerdict)
+      {
+        dispatch_sync(dispatch_get_main_queue(), ^()
+        {
+          self.applicationState = RegisteredApplicationState;
+        });
+        
+        return;
+      };
       
       // Once we've reached this point something is definitely incorrect.
       
-      // Wiping out stored registration data and going to the unregistered state.
-      [self deauthorizeAccount];
-      
       dispatch_async(dispatch_get_main_queue(), ^()
       {
+        // Wiping out stored registration data and going to the unregistered state.
+        [self deauthorizeAccount];
+        
         [[[self class] alertWithSerialVerdict: serialVerdict] runModal];
       });
     };
