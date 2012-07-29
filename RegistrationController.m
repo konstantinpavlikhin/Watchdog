@@ -48,11 +48,11 @@ static RegistrationWindowController* registrationWindowController = nil;
 // Supplied link should look like this: bundledisplayname-wd://WEDSCVBNMRFHNMJJFCV:WSXFRFVBJUHNMQWETYIOPLKJHGFDSXCVBNYFVBGFCVBNMHSGHFKAJSHCASC.
 - (void) registerWithQuickApplyLink: (NSString*) link
 {
-  // Getting non-localized application display name.
-  NSString* appDisplayName = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleDisplayName"];
+  // Getting non-localized application name.
+  NSString* appName = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleName"];
   
   // Concatenating URL scheme part with forward slashes.
-  NSString* schemeWithSlashes = [appDisplayName stringByAppendingString: @"-wd://"];
+  NSString* schemeWithSlashes = [[appName lowercaseString] stringByAppendingString: @"-wd://"];
   
   // Wiping out link prefix.
   NSString* nameColonSerial = [link stringByReplacingOccurrencesOfString: schemeWithSlashes withString: @""];
