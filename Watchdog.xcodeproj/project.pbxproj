@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B509B68215D2DD6600F3B08C /* RegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68415D2DD6600F3B08C /* RegistrationWindow.xib */; };
+		B509B68A15D2DDB600F3B08C /* SerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68C15D2DDB600F3B08C /* SerialEntry.xib */; };
+		B509B69115D2DE2D00F3B08C /* RegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B69315D2DE2D00F3B08C /* RegistrationStatus.xib */; };
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
 		B53AA48F1561659A00745650 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA48E1561659A00745650 /* SenTestingKit.framework */; };
 		B53AA4901561659A00745650 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
@@ -21,12 +24,9 @@
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5F614FC14F54EB500C8565A /* RegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* RegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F614FD14F54EB500C8565A /* RegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* RegistrationController.m */; };
-		B5F614FE14F54EB500C8565A /* SerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F614F114F54EB500C8565A /* SerialEntry.xib */; };
 		B5F614FF14F54EB500C8565A /* SerialEntryController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F214F54EB500C8565A /* SerialEntryController.h */; };
 		B5F6150014F54EB500C8565A /* SerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* SerialEntryController.m */; };
-		B5F6150114F54EB500C8565A /* RegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F614F414F54EB500C8565A /* RegistrationStatus.xib */; };
 		B5F6150214F54EB500C8565A /* RegistrationStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F514F54EB500C8565A /* RegistrationStatusController.h */; };
-		B5F6150614F54EB500C8565A /* RegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F614F914F54EB500C8565A /* RegistrationWindow.xib */; };
 		B5F6150714F54EB500C8565A /* RegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */; };
 		B5F6150814F54EB500C8565A /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */; };
 		B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F6150914F54F0400C8565A /* Watchdog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,6 +81,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B509B68615D2DD7B00F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegistrationWindow.xib; sourceTree = "<group>"; };
+		B509B68815D2DD7F00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RegistrationWindow.strings; sourceTree = "<group>"; };
+		B509B68915D2DD8300F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RegistrationWindow.strings; sourceTree = "<group>"; };
+		B509B68D15D2DDB900F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SerialEntry.xib; sourceTree = "<group>"; };
+		B509B68F15D2DDBB00F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SerialEntry.strings; sourceTree = "<group>"; };
+		B509B69015D2DDBE00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SerialEntry.strings; sourceTree = "<group>"; };
+		B509B69415D2DE3200F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegistrationStatus.xib; sourceTree = "<group>"; };
+		B509B69615D2DE3200F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RegistrationStatus.strings; sourceTree = "<group>"; };
+		B509B69715D2DE3500F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RegistrationStatus.strings; sourceTree = "<group>"; };
 		B51D008415B173090035F26A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B53AA48D1561659900745650 /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,12 +109,9 @@
 		B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Watchdog-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		B5F614EF14F54EB500C8565A /* RegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationController.h; sourceTree = SOURCE_ROOT; };
 		B5F614F014F54EB500C8565A /* RegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F114F54EB500C8565A /* SerialEntry.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerialEntry.xib; sourceTree = SOURCE_ROOT; };
 		B5F614F214F54EB500C8565A /* SerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialEntryController.h; sourceTree = SOURCE_ROOT; };
 		B5F614F314F54EB500C8565A /* SerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialEntryController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F414F54EB500C8565A /* RegistrationStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationStatus.xib; sourceTree = SOURCE_ROOT; };
 		B5F614F514F54EB500C8565A /* RegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationStatusController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F914F54EB500C8565A /* RegistrationWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationWindow.xib; sourceTree = SOURCE_ROOT; };
 		B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
 		B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
 		B5F6150914F54F0400C8565A /* Watchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watchdog.h; sourceTree = "<group>"; };
@@ -169,7 +175,7 @@
 			children = (
 				B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */,
 				B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */,
-				B5F614F914F54EB500C8565A /* RegistrationWindow.xib */,
+				B509B68415D2DD6600F3B08C /* RegistrationWindow.xib */,
 				B5E0368D159DAF1600007230 /* Embedded Views */,
 			);
 			name = "Registration Window";
@@ -180,7 +186,7 @@
 			children = (
 				B5F614F214F54EB500C8565A /* SerialEntryController.h */,
 				B5F614F314F54EB500C8565A /* SerialEntryController.m */,
-				B5F614F114F54EB500C8565A /* SerialEntry.xib */,
+				B509B68C15D2DDB600F3B08C /* SerialEntry.xib */,
 			);
 			name = Entry;
 			sourceTree = "<group>";
@@ -190,7 +196,7 @@
 			children = (
 				B5F614F514F54EB500C8565A /* RegistrationStatusController.h */,
 				B5E036BC159F8CBC00007230 /* RegistrationStatusController.m */,
-				B5F614F414F54EB500C8565A /* RegistrationStatus.xib */,
+				B509B69315D2DE2D00F3B08C /* RegistrationStatus.xib */,
 			);
 			name = Status;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			knownRegions = (
 				en,
 				ru,
+				Base,
 			);
 			mainGroup = B5F0B4DC14F54B8B0069FFAF;
 			productRefGroup = B5F0B4E914F54B8B0069FFAF /* Products */;
@@ -355,9 +362,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F614FE14F54EB500C8565A /* SerialEntry.xib in Resources */,
-				B5F6150114F54EB500C8565A /* RegistrationStatus.xib in Resources */,
-				B5F6150614F54EB500C8565A /* RegistrationWindow.xib in Resources */,
+				B509B68A15D2DDB600F3B08C /* SerialEntry.xib in Resources */,
+				B509B69115D2DE2D00F3B08C /* RegistrationStatus.xib in Resources */,
+				B509B68215D2DD6600F3B08C /* RegistrationWindow.xib in Resources */,
 				B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +423,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B509B68415D2DD6600F3B08C /* RegistrationWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B509B68615D2DD7B00F3B08C /* Base */,
+				B509B68815D2DD7F00F3B08C /* en */,
+				B509B68915D2DD8300F3B08C /* ru */,
+			);
+			name = RegistrationWindow.xib;
+			sourceTree = SOURCE_ROOT;
+		};
+		B509B68C15D2DDB600F3B08C /* SerialEntry.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B509B68D15D2DDB900F3B08C /* Base */,
+				B509B68F15D2DDBB00F3B08C /* ru */,
+				B509B69015D2DDBE00F3B08C /* en */,
+			);
+			name = SerialEntry.xib;
+			sourceTree = SOURCE_ROOT;
+		};
+		B509B69315D2DE2D00F3B08C /* RegistrationStatus.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B509B69415D2DE3200F3B08C /* Base */,
+				B509B69615D2DE3200F3B08C /* ru */,
+				B509B69715D2DE3500F3B08C /* en */,
+			);
+			name = RegistrationStatus.xib;
+			sourceTree = SOURCE_ROOT;
+		};
 		B58522C115A4DD28008822D4 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -478,7 +515,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -504,7 +541,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;

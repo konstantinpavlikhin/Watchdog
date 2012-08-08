@@ -1,0 +1,24 @@
+
+/* Class = "NSTextFieldCell"; title = "Serial:"; ObjectID = "12"; */
+"12.title" = "Serial:";
+
+/* Class = "NSTextFieldCell"; title = "Name:"; ObjectID = "15"; */
+"15.title" = "Name:";
+
+/* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "73"; */
+"73.title" = "Unlock";
+
+/* Class = "NSTextFieldCell"; placeholderString = "you used when buying"; ObjectID = "75"; */
+"75.placeholderString" = "you used when buying";
+
+/* Class = "NSButtonCell"; title = "Buy Online…"; ObjectID = "94"; */
+"94.title" = "Buy Online…";
+
+/* Class = "NSTextFieldCell"; placeholderString = "exactly as listed in your receipt email"; ObjectID = "96"; */
+"96.placeholderString" = "exactly as listed in your receipt email";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "641"; */
+"641.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "Register Application"; ObjectID = "2287"; */
+"2287.title" = "Register Application";

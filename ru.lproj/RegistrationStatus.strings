@@ -1,0 +1,18 @@
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "289"; */
+"289.title" = "Box";
+
+/* Class = "NSTextFieldCell"; title = "Registered to:"; ObjectID = "306"; */
+"306.title" = "Пользователь:";
+
+/* Class = "NSTextFieldCell"; title = "Konstantin Pavlikhin"; ObjectID = "307"; */
+"307.title" = "Konstantin Pavlikhin";
+
+/* Class = "NSButtonCell"; title = "Deauthorize Account"; ObjectID = "309"; */
+"309.title" = "Деавторизовать аккаунт";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "311"; */
+"311.title" = "ОК";
+
+/* Class = "NSTextFieldCell"; title = "You can use your serial number to activate application on any personal Mac that you own. To use application from different accounts belonging to different persons, please consider buying additional licenses. <— This is bullshit."; ObjectID = "313"; */
+"313.title" = "Вы можете использовать свой лицензионный ключ для активаци приложения на любом персональном маке, за которым работаете, при условии что вы остаетесь единственным пользователем.";
