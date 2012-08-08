@@ -8,7 +8,9 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface SerialEntryController : ViewController
+#import <KPFoundation/KPViewController.h>
+
+@interface SerialEntryController : KPViewController
 
 // NSTextField that is used for the registration greetings message is bound to this property.
 @property(readwrite, retain) NSString* greeting;

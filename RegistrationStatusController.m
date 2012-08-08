@@ -36,13 +36,6 @@
   self.message = [NSString stringWithFormat: NSLocalizedString(@"You can use your serial to activate %@ on any personal Mac that you own. To use %@ from different accounts belonging to different persons, please consider buying additional serials.", @"Both embedded objects are strings containing application name."), appName, appName];
 }
 
-- (void) loadView
-{
-  [super loadView];
-  
-  [self viewDidLoad];
-}
-
 - (IBAction) deauthorizeAccount: (id) sender
 {
   [[RegistrationController sharedRegistrationController] deauthorizeAccount];

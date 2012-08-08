@@ -33,13 +33,6 @@
   self.greeting = [NSString stringWithFormat: NSLocalizedString(@"Register %@", @"Registration greeting. Parameter stays for the app name."), [self localizedAppName]];
 }
 
-- (void) loadView
-{
-  [super loadView];
-  
-  [self viewDidLoad];
-}
-
 - (NSString*) localizedAppName
 {
   return [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleName"];

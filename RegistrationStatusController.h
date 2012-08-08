@@ -8,7 +8,9 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface RegistrationStatusController : ViewController
+#import <KPFoundation/KPViewController.h>
+
+@interface RegistrationStatusController : KPViewController
 
 @property(readwrite, retain) NSString* message;
 
