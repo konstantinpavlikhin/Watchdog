@@ -3,13 +3,13 @@
 "12.title" = "Серийник:";
 
 /* Class = "NSTextFieldCell"; title = "Name:"; ObjectID = "15"; */
-"15.title" = "Имя:";
+"15.title" = "Покупатель:";
 
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "73"; */
 "73.title" = "Зарегистрировать";
 
 /* Class = "NSTextFieldCell"; placeholderString = "you used when buying"; ObjectID = "75"; */
-"75.placeholderString" = "указанное при покупке";
+"75.placeholderString" = "имя, указанное при покупке";
 
 /* Class = "NSButtonCell"; title = "Buy Online…"; ObjectID = "94"; */
 "94.title" = "Купить онлайн…";
