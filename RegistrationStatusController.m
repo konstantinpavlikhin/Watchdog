@@ -33,7 +33,7 @@
   // Returns a localized version, if available.
   NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleName"];
   
-  self.message = [NSString stringWithFormat: NSLocalizedString(@"You can use your serial to activate %@ on any personal Mac that you own. To use %@ from different accounts belonging to different persons, please consider buying additional serials.", @"Both embedded objects are strings containing application name."), appName, appName];
+  self.message = [NSString stringWithFormat: NSLocalizedStringFromTableInBundle(@"You can use your serial to activate %@ on any personal Mac that you own. To use %@ from different accounts belonging to different persons, please consider buying additional serials.", nil, [NSBundle bundleForClass: [self class]], @"Both embedded objects are strings containing application name."), appName, appName];
 }
 
 - (IBAction) deauthorizeAccount: (id) sender

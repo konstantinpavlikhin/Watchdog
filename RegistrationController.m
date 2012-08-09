@@ -250,9 +250,9 @@ static RegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[[NSAlert alloc] init] autorelease];
   
-  [alert setMessageText: NSLocalizedString(@"Corrupted Quick-Apply Link", @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Corrupted Quick-Apply Link", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedString(@"Please enter your registration data manualy.", @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Please enter your registration data manualy.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
   
   return alert;
 }
@@ -261,9 +261,9 @@ static RegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[[NSAlert alloc] init] autorelease];
   
-  [alert setMessageText: NSLocalizedString(@"Serial validation fail", @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedString(@"Your serial is corrupted. Please, re-register application.", @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, re-register application.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
   
   return alert;
 }
@@ -272,9 +272,9 @@ static RegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[[NSAlert alloc] init] autorelease];
   
-  [alert setMessageText: NSLocalizedString(@"Serial validation fail", @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedString(@"Your serial is blacklisted. Please, contact support to get a new key.", @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is blacklisted. Please, contact support to get a new key.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
   
   return alert;
 }
@@ -283,9 +283,9 @@ static RegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[[NSAlert alloc] init] autorelease];
   
-  [alert setMessageText: NSLocalizedString(@"Serial validation fail", @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedString(@"It seems like you are using pirated serial.", @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"It seems like you are using pirated serial.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
   
   return alert;
 }

@@ -30,7 +30,9 @@
 
 - (void) viewDidLoad
 {
-  self.greeting = [NSString stringWithFormat: NSLocalizedString(@"Register %@", @"Registration greeting. Parameter stays for the app name."), [self localizedAppName]];
+  NSString* str = NSLocalizedStringFromTableInBundle(@"Register %@", nil, [NSBundle bundleForClass: [self class]], @"Registration greeting. Parameter stays for the app name.");
+  
+  self.greeting = [NSString stringWithFormat: str, [self localizedAppName]];
 }
 
 - (NSString*) localizedAppName
