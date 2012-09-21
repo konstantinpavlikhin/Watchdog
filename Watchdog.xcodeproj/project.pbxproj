@@ -16,7 +16,6 @@
 		B53AA4AC1561665400745650 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
 		B53AA4AF1561666500745650 /* Watchdog.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
 		B558BA1D14F558D300C845FC /* KPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558BA1014F5586500C845FC /* KPFoundation.framework */; };
-		B558BA1E14F558DE00C845FC /* KPFoundation.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B558BA1014F5586500C845FC /* KPFoundation.framework */; };
 		B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B58522C115A4DD28008822D4 /* Localizable.strings */; };
 		B58D680F158D11AE008EEABC /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D680D158D11AE008EEABC /* Test.m */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
@@ -65,17 +64,6 @@
 			files = (
 				B53AA4AF1561666500745650 /* Watchdog.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5F6150D14F5568500C8565A /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B558BA1E14F558DE00C845FC /* KPFoundation.framework in Copy Files */,
-			);
-			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -293,7 +281,6 @@
 				B5F0B4E414F54B8B0069FFAF /* Frameworks */,
 				B5F0B4E514F54B8B0069FFAF /* Headers */,
 				B5F0B4E614F54B8B0069FFAF /* Resources */,
-				B5F6150D14F5568500C8565A /* Copy Files */,
 			);
 			buildRules = (
 			);
