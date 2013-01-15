@@ -300,21 +300,29 @@ static RegistrationWindowController* registrationWindowController = nil;
     case ValidSerialVerdict:
     {
       alert = nil;
+      
+      break;
     }
     
     case CorruptedSerialVerdict:
     {
       alert = [self corruptedRegistrationDataAlert];
+      
+      break;
     }
     
     case BlacklistedSerialVerdict:
     {
       alert = [self blacklistedRegistrationDataAlert];
+      
+      break;
     }
     
     case PiratedSerialVerdict:
     {
       alert = [self piratedRegistrationDataAlert];
+      
+      break;
     }
   }
   
