@@ -2,7 +2,6 @@
 /* Class = "NSBox"; title = "Box"; ObjectID = "289"; */
 "289.title" = "Box";
 
-/* Class = "NSTextFieldCell"; title = "Registered to:"; ObjectID = "306"; */
 "306.title" = "Пользователь:";
 
 /* Class = "NSTextFieldCell"; title = "Konstantin Pavlikhin"; ObjectID = "307"; */

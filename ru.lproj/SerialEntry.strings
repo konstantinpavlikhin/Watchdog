@@ -6,7 +6,7 @@
 "15.title" = "Покупатель:";
 
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "73"; */
-"73.title" = "Зарегистрировать";
+"73.title" = "Активировать";
 
 /* Class = "NSTextFieldCell"; placeholderString = "you used when buying"; ObjectID = "75"; */
 "75.placeholderString" = "имя, указанное при покупке";
@@ -20,5 +20,4 @@
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "641"; */
 "641.title" = "Отмена";
 
-/* Class = "NSTextFieldCell"; title = "Register Application"; ObjectID = "2287"; */
-"2287.title" = "Регистрация приложения";
+"2287.title" = "Активация приложения";

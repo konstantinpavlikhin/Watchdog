@@ -263,7 +263,7 @@ static RegistrationWindowController* registrationWindowController = nil;
   
   [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, re-register application.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, try again.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
   
   return alert;
 }
