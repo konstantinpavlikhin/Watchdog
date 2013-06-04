@@ -15,7 +15,6 @@
 		B53AA4901561659A00745650 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B53AA4AC1561665400745650 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
 		B53AA4AF1561666500745650 /* Watchdog.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
-		B558BA1D14F558D300C845FC /* KPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558BA1014F5586500C845FC /* KPFoundation.framework */; };
 		B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B58522C115A4DD28008822D4 /* Localizable.strings */; };
 		B58D680F158D11AE008EEABC /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D680D158D11AE008EEABC /* Test.m */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
@@ -29,6 +28,7 @@
 		B5F6150714F54EB500C8565A /* RegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */; };
 		B5F6150814F54EB500C8565A /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */; };
 		B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F6150914F54F0400C8565A /* Watchdog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5FDA838175E2E7B003D8998 /* KPToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FDA835175E2E70003D8998 /* KPToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,19 +39,19 @@
 			remoteGlobalIDString = B5F0B4E714F54B8B0069FFAF;
 			remoteInfo = Watchdog;
 		};
-		B558BA0F14F5586500C845FC /* PBXContainerItemProxy */ = {
+		B5FDA834175E2E70003D8998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B558BA0814F5586500C845FC /* KPFoundation.xcodeproj */;
+			containerPortal = B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B5EB581614F0FE7F00A3E708;
-			remoteInfo = KPFoundation;
+			remoteInfo = KPToolbox;
 		};
-		B558BA1B14F558CB00C845FC /* PBXContainerItemProxy */ = {
+		B5FDA836175E2E76003D8998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B558BA0814F5586500C845FC /* KPFoundation.xcodeproj */;
+			containerPortal = B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = B5EB581514F0FE7F00A3E708;
-			remoteInfo = KPFoundation;
+			remoteInfo = KPToolbox;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -82,7 +82,6 @@
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B53AA48D1561659900745650 /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53AA48E1561659A00745650 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
-		B558BA0814F5586500C845FC /* KPFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KPFoundation.xcodeproj; path = KPFoundation/KPFoundation.xcodeproj; sourceTree = "<group>"; };
 		B58522C015A4DD28008822D4 /* en */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B58522C215A4DD36008822D4 /* ru */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B58D680A158D11AE008EEABC /* Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -103,6 +102,7 @@
 		B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
 		B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
 		B5F6150914F54F0400C8565A /* Watchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watchdog.h; sourceTree = "<group>"; };
+		B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KPToolbox.xcodeproj; path = KPToolbox/KPToolbox.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +122,8 @@
 			files = (
 				B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */,
 				B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */,
-				B558BA1D14F558D300C845FC /* KPFoundation.framework in Frameworks */,
 				B53AA449155ED4B900745650 /* Security.framework in Frameworks */,
+				B5FDA838175E2E7B003D8998 /* KPToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,14 +139,6 @@
 				B58D680D158D11AE008EEABC /* Test.m */,
 			);
 			path = Test;
-			sourceTree = "<group>";
-		};
-		B558BA0914F5586500C845FC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B558BA1014F5586500C845FC /* KPFoundation.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B5E0368D159DAF1600007230 /* Embedded Views */ = {
@@ -192,7 +184,7 @@
 		B5F0B4DC14F54B8B0069FFAF = {
 			isa = PBXGroup;
 			children = (
-				B558BA0814F5586500C845FC /* KPFoundation.xcodeproj */,
+				B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */,
 				B51D008415B173090035F26A /* README.md */,
 				B5F6150914F54F0400C8565A /* Watchdog.h */,
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
@@ -233,6 +225,14 @@
 				B5E0368E159DB4D100007230 /* Registration Window */,
 			);
 			path = Watchdog;
+			sourceTree = "<group>";
+		};
+		B5FDA831175E2E6F003D8998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5FDA835175E2E70003D8998 /* KPToolbox.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +285,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B558BA1C14F558CB00C845FC /* PBXTargetDependency */,
+				B5FDA837175E2E76003D8998 /* PBXTargetDependency */,
 			);
 			name = Watchdog;
 			productName = Watchdog;
@@ -315,8 +315,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B558BA0914F5586500C845FC /* Products */;
-					ProjectRef = B558BA0814F5586500C845FC /* KPFoundation.xcodeproj */;
+					ProductGroup = B5FDA831175E2E6F003D8998 /* Products */;
+					ProjectRef = B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -328,11 +328,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B558BA1014F5586500C845FC /* KPFoundation.framework */ = {
+		B5FDA835175E2E70003D8998 /* KPToolbox.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = KPFoundation.framework;
-			remoteRef = B558BA0F14F5586500C845FC /* PBXContainerItemProxy */;
+			path = KPToolbox.framework;
+			remoteRef = B5FDA834175E2E70003D8998 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -402,10 +402,10 @@
 			target = B5F0B4E714F54B8B0069FFAF /* Watchdog */;
 			targetProxy = B53AA4AA1561664600745650 /* PBXContainerItemProxy */;
 		};
-		B558BA1C14F558CB00C845FC /* PBXTargetDependency */ = {
+		B5FDA837175E2E76003D8998 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = KPFoundation;
-			targetProxy = B558BA1B14F558CB00C845FC /* PBXContainerItemProxy */;
+			name = KPToolbox;
+			targetProxy = B5FDA836175E2E76003D8998 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

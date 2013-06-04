@@ -8,7 +8,7 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import <KPFoundation/KPViewController.h>
+#import <KPToolbox/KPViewController.h>
 
 @interface SerialEntryController : KPViewController
 

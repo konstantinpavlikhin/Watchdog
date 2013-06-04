@@ -11,7 +11,7 @@
 #ifdef __OBJC__
   
   #import <Cocoa/Cocoa.h>
-  
-  #import <KPFoundation/KPFoundation.h>
+
+  #import <KPToolbox/KPToolbox.h>
   
 #endif
