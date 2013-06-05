@@ -173,4 +173,4 @@ This framework is probably not a bullet proof in terms of piracy?
 
 ## License
 
-Nothing yet.
+Watchdog is released under the MIT license. See [License.md](https://github.com/konstantinpavlikhin/Watchdog/blob/master/License.md).
