@@ -21,13 +21,6 @@
   return self;
 }
 
-- (void) dealloc
-{
-  [_greeting release], _greeting = nil;
-  
-  [super dealloc];
-}
-
 - (void) viewDidLoad
 {
   NSString* str = NSLocalizedStringFromTableInBundle(@"Unlock %@", nil, [NSBundle bundleForClass: [self class]], @"Registration greeting. Parameter stays for the app name.");

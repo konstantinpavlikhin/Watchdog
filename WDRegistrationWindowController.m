@@ -41,12 +41,6 @@
 {
   // Terminating the observation.
   [[WDRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
-  
-  [serialEntryController release], serialEntryController = nil;
-  
-  [registrationStatusController release], registrationStatusController = nil;
-  
-  [super dealloc];
 }
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context

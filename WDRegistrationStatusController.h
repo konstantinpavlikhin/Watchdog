@@ -12,7 +12,7 @@
 
 @interface WDRegistrationStatusController : KPViewController
 
-@property(readwrite, retain) NSString* message;
+@property(readwrite, strong) NSString* message;
 
 @property(readwrite, assign) IBOutlet NSButton* dismissButton;
 

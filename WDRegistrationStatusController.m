@@ -21,13 +21,6 @@
   return self;
 }
 
-- (void) dealloc
-{
-  [_message release], _message = nil;
-  
-  [super dealloc];
-}
-
 - (void) viewDidLoad
 {
   // Returns a localized version, if available.

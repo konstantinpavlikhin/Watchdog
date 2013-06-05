@@ -48,10 +48,10 @@ enum SerialVerdict
 @property(readonly, atomic) enum ApplicationState applicationState;
 
 // Must be set to the application DSA public key in PEM format.
-@property(readwrite, retain, atomic) NSString* DSAPublicKeyPEM;
+@property(readwrite, strong, atomic) NSString* DSAPublicKeyPEM;
 
 // Should be set to the array of the blacklisted serials.
-@property(readwrite, retain, atomic) NSArray* serialsStaticBlacklist;
+@property(readwrite, strong, atomic) NSArray* serialsStaticBlacklist;
 
 // Accepts a Quick-Apply link string in form of "appname-wd://GFUENLVNDLPOJHJB:GAWWERTYUIOPEDCNJIKLKJHGFDXCVBNM". Runs asynchronously. Shows either alerts or registration window.
 - (void) registerWithQuickApplyLink: (NSString*) link;

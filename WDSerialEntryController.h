@@ -13,7 +13,7 @@
 @interface WDSerialEntryController : KPViewController
 
 // NSTextField that is used for the registration greetings message is bound to this property.
-@property(readwrite, retain) NSString* greeting;
+@property(readwrite, strong) NSString* greeting;
 
 // All outlets are declared as "assign" because these objects are nested in the one top-level window that is managed by the NSViewController.
 @property(readwrite, assign) IBOutlet NSTextField* customerName;

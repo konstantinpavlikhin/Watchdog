@@ -94,7 +94,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   {
     BOOL success = NO;
     
-    NSData* tempData = [customerNameInBase32 dataUsingEncoding: NSUTF8StringEncoding];
+    CFDataRef tempData = CFBridgingRetain([customerNameInBase32 dataUsingEncoding: NSUTF8StringEncoding]);
     
     // Задаем входной параметр в виде NSData.
     if(SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, tempData, NULL))
@@ -104,7 +104,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
       
       if(customerNameData)
       {
-        NSString* customerName = [[[NSString alloc] initWithData: customerNameData encoding: NSUTF8StringEncoding] autorelease];
+        NSString* customerName = [[NSString alloc] initWithData: CFBridgingRelease(customerNameData) encoding: NSUTF8StringEncoding];
         
         [self registerWithCustomerName: customerName serial: serial handler: ^(enum SerialVerdict verdict)
         {
@@ -124,6 +124,8 @@ static WDRegistrationWindowController* registrationWindowController = nil;
         success = YES;
       }
     }
+    
+    CFRelease(tempData);
     
     CFRelease(base32DecodeTransform);
     
@@ -248,7 +250,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 + (NSAlert*) corruptedQuickApplyLinkAlert
 {
-  NSAlert* alert = [[[NSAlert alloc] init] autorelease];
+  NSAlert* alert = [[NSAlert alloc] init];
   
   [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Corrupted Quick-Apply Link", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
@@ -259,7 +261,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 + (NSAlert*) corruptedRegistrationDataAlert
 {
-  NSAlert* alert = [[[NSAlert alloc] init] autorelease];
+  NSAlert* alert = [[NSAlert alloc] init];
   
   [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
@@ -270,7 +272,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 + (NSAlert*) blacklistedRegistrationDataAlert
 {
-  NSAlert* alert = [[[NSAlert alloc] init] autorelease];
+  NSAlert* alert = [[NSAlert alloc] init];
   
   [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
@@ -281,7 +283,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 + (NSAlert*) piratedRegistrationDataAlert
 {
-  NSAlert* alert = [[[NSAlert alloc] init] autorelease];
+  NSAlert* alert = [[NSAlert alloc] init];
   
   [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
   
@@ -341,16 +343,6 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return self;
 }
 
-// WDSince RegistrationController is a singleton instance this method most probably won't be called at all. But it is here for the pedantic completeness sense.
-- (void) dealloc
-{
-  [_DSAPublicKeyPEM release], _DSAPublicKeyPEM = nil;
-  
-  [_serialsStaticBlacklist release], _serialsStaticBlacklist = nil;
-  
-  [super dealloc];
-}
-
 // Lazy RegistrationWindowController constructor.
 - (WDRegistrationWindowController*) registrationWindowController
 {
@@ -381,49 +373,52 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   // Проверка на элементарные вырожденные случаи.
   if(!serial || !name || ![serial length] || ![name length]) return NO;
   
-  void (^logAndReleaseError)(void) = ^
-  {
-    CFShow(*error), CFRelease(*error);
-  };
+  CFErrorRef tempError;
   
   // Переводим серийник из base32 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   // Создаем трансформацию перевода из base32.
-  SecTransformRef base32DecodeTransform = SecDecodeTransformCreate(kSecBase32Encoding, (CFErrorRef*)error);
+  SecTransformRef base32DecodeTransform = SecDecodeTransformCreate(kSecBase32Encoding, &tempError);
   
   // Если трансформация не создана — выход с ошибкой.
   if(base32DecodeTransform == NULL)
   {
-    logAndReleaseError();
+    *error = CFBridgingRelease(tempError);
     
     return NO;
   }
   
   // Задаем входной параметр в виде NSData.
-  if(!SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, [serial dataUsingEncoding: NSUTF8StringEncoding], (CFErrorRef*)error))
+  CFDataRef tempData = CFBridgingRetain([serial dataUsingEncoding: NSUTF8StringEncoding]);
+  
+  Boolean result = SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, tempData, &tempError);
+  
+  CFRelease(tempData);
+  
+  if(!result)
   {
-    logAndReleaseError();
+    *error = CFBridgingRelease(tempError);
     
-    // Трансформация была создана — освобождаем ее.
     CFRelease(base32DecodeTransform);
     
     return NO;
   }
   
   // Запускаем трансформацию.
-  CFTypeRef signature = SecTransformExecute(base32DecodeTransform, (CFErrorRef*)error);
+  CFTypeRef signature = SecTransformExecute(base32DecodeTransform, &tempError);
   
   if(signature == NULL)
   {
-    logAndReleaseError();
+    *error = CFBridgingRelease(tempError);
     
-    // Трансформация была создана — освобождаем ее.
     CFRelease(base32DecodeTransform);
     
     return NO;
   }
   
-  return [self verifyDSASignature: signature data: [name dataUsingEncoding: NSUTF8StringEncoding] error: NULL];
+  CFRelease(base32DecodeTransform);
+  
+  return [self verifyDSASignature: CFBridgingRelease(signature) data: [name dataUsingEncoding: NSUTF8StringEncoding] error: NULL];
 }
 
 - (BOOL) verifyDSASignature: (NSData*) signature data: (NSData*) sourceData error: (NSError**) error
@@ -431,36 +426,71 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   if(!self.DSAPublicKeyPEM) [NSException raise: NSInternalInconsistencyException format: @"DSA public key is not set."];
   
   // Получаем публичный ключ от делегата в виде строки формата PEM и переводим его в дату.
-  CFDataRef publicKeyData = (CFDataRef)[self.DSAPublicKeyPEM dataUsingEncoding: NSUTF8StringEncoding];
+  CFDataRef publicKeyData = CFBridgingRetain([self.DSAPublicKeyPEM dataUsingEncoding: NSUTF8StringEncoding]);
   
   // Приводим публичный ключ к виду SecKeyRef.
-  SecItemImportExportKeyParameters params;
-  
-  params.keyUsage = NULL;
-  
-  params.keyAttributes = NULL;
-  
-  SecExternalItemType itemType = kSecItemTypePublicKey;
   
   SecExternalFormat externalFormat = kSecFormatPEMSequence;
   
-  int flags = 0;
+  SecExternalItemType externalItemType = kSecItemTypePublicKey;
   
-  NSMutableArray* temparray = [NSMutableArray array];
+  SecItemImportExportKeyParameters itemImportExportKeyParameters;
+  {
+    itemImportExportKeyParameters.keyUsage = NULL;
+    
+    itemImportExportKeyParameters.keyAttributes = NULL;
+  }
   
-  SecItemImport(publicKeyData, NULL, &externalFormat, &itemType, flags, &params, NULL, (CFArrayRef*)&temparray);
+  CFArrayRef tempArray;
   
-  SecKeyRef publicKey = (SecKeyRef)CFArrayGetValueAtIndex((CFArrayRef)temparray, 0);
+  // TODO: check status?
+  OSStatus status = SecItemImport(publicKeyData, NULL, &externalFormat, &externalItemType, 0, &itemImportExportKeyParameters, NULL, &tempArray);
+  
+  CFRelease(publicKeyData);
+  
+  SecKeyRef publicKey = (SecKeyRef)CFRetain(CFArrayGetValueAtIndex(tempArray, 0));
+  
+  CFRelease(tempArray);
   
   // Создаем трансформацию проверки подписи.
-  SecTransformRef verifier = SecVerifyTransformCreate(publicKey, (CFDataRef)signature, (CFErrorRef*)error);
+  CFDataRef tempSignature = CFBridgingRetain(signature);
+  
+  CFErrorRef tempError;
+  
+  SecTransformRef verifier = SecVerifyTransformCreate(publicKey, tempSignature, &tempError);
+  
+  CFRelease(publicKey);
+  
+  CFRelease(tempSignature);
+  
+  if(verifier == NULL)
+  {
+    *error = CFBridgingRelease(tempError);
+    
+    return NO;
+  }
   
   // Задаем дату, чью подпись мы собираемся проверять.
-  SecTransformSetAttribute(verifier, kSecTransformInputAttributeName, sourceData, (CFErrorRef*)error);
+  CFDataRef tempSourceData = CFBridgingRetain(sourceData);
   
-  CFTypeRef result = SecTransformExecute(verifier, (CFErrorRef*)error);
+  Boolean result = SecTransformSetAttribute(verifier, kSecTransformInputAttributeName, tempSourceData, &tempError);
   
-  return (result == kCFBooleanTrue)? YES : NO;
+  CFRelease(tempSourceData);
+  
+  if(!result)
+  {
+    *error = CFBridgingRelease(tempError);
+    
+    CFRelease(verifier);
+    
+    return NO;
+  }
+  
+  CFTypeRef isValid = SecTransformExecute(verifier, &tempError);
+  
+  CFRelease(verifier);
+  
+  return (isValid == kCFBooleanTrue)? YES : NO;
 }
 
 // Performs server check of the supplied serial.
@@ -489,7 +519,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   #warning TODO: переделать на асинхронное поведение
   NSData* responseData = [NSURLConnection sendSynchronousRequest: URLRequest returningResponse: &URLResponse error: &error];
   
-  NSString* string = [[[NSString alloc] initWithData: responseData encoding: NSUTF8StringEncoding] autorelease];
+  NSString* string = [[NSString alloc] initWithData: responseData encoding: NSUTF8StringEncoding];
   
   if([string isEqualToString: @"Valid"])
   {
