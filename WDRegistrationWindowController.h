@@ -8,20 +8,20 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-@class SerialEntryController;
+@class WDSerialEntryController;
 
-@class RegistrationStatusController;
+@class WDRegistrationStatusController;
 
-@interface RegistrationWindowController : NSWindowController <NSWindowDelegate>
+@interface WDRegistrationWindowController : NSWindowController <NSWindowDelegate>
 
-// Lazy SerialEntryController constructor.
-- (SerialEntryController*) serialEntryController;
+// Lazy WDSerialEntryController constructor.
+- (WDSerialEntryController*) serialEntryController;
 
 // Fade-in/fade-out subview switcher.
 - (void) switchToSerialEntrySubview;
 
-// Lazy RegistrationStatusController constructor.
-- (RegistrationStatusController*) registrationStatusController;
+// Lazy WDRegistrationStatusController constructor.
+- (WDRegistrationStatusController*) registrationStatusController;
 
 // Fade-in/fade-out subview switcher.
 - (void) switchToRegistrationStatusSubview;

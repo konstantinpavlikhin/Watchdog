@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  RegistrationController.m
+//  WDRegistrationController.m
 //  
 //  Watchdog
 //  
@@ -8,9 +8,9 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "RegistrationController.h"
+#import "WDRegistrationController.h"
 
-#import "RegistrationWindowController.h"
+#import "WDRegistrationWindowController.h"
 
 NSString* const ApplicationStateKeyPath = @"applicationState";
 
@@ -20,25 +20,25 @@ NSString* const WDSerialKey = @"WDSerial";
 
 NSString* const WDDynamicBlacklistKey = @"WDDynamicBlacklist";
 
-// RegistrationController is a singleton instance, so we can allow ourselves this trick.
-static RegistrationWindowController* registrationWindowController = nil;
+// WDRegistrationController is a singleton instance, so we can allow ourselves this trick.
+static WDRegistrationWindowController* registrationWindowController = nil;
 
-@interface RegistrationController ()
+@interface WDRegistrationController ()
 
 // Redeclare this property as private readwrite.
 @property(readwrite, assign, atomic) enum ApplicationState applicationState;
 
 @end
 
-@implementation RegistrationController
+@implementation WDRegistrationController
 
 #pragma mark - Public Methods
 
-+ (RegistrationController*) sharedRegistrationController
++ (WDRegistrationController*) sharedRegistrationController
 {
   static dispatch_once_t predicate;
   
-  static RegistrationController *sharedRegistrationController = nil;
+  static WDRegistrationController *sharedRegistrationController = nil;
   
   dispatch_once(&predicate, ^{ sharedRegistrationController = [self new]; });
   
@@ -164,7 +164,7 @@ static RegistrationWindowController* registrationWindowController = nil;
         });
       }
       
-      // Calling handler with the corresponding verdict (used by the SerialEntryController to determine when to shake the input window).
+      // Calling handler with the corresponding verdict (used by the WDSerialEntryController to determine when to shake the input window).
       handler(verdict);
     }];
   });
@@ -341,7 +341,7 @@ static RegistrationWindowController* registrationWindowController = nil;
   return self;
 }
 
-// Since RegistrationController is a singleton instance this method most probably won't be called at all. But it is here for the pedantic completeness sense.
+// WDSince RegistrationController is a singleton instance this method most probably won't be called at all. But it is here for the pedantic completeness sense.
 - (void) dealloc
 {
   [_DSAPublicKeyPEM release], _DSAPublicKeyPEM = nil;
@@ -352,9 +352,9 @@ static RegistrationWindowController* registrationWindowController = nil;
 }
 
 // Lazy RegistrationWindowController constructor.
-- (RegistrationWindowController*) registrationWindowController
+- (WDRegistrationWindowController*) registrationWindowController
 {
-  if(!registrationWindowController) registrationWindowController = [RegistrationWindowController new];
+  if(!registrationWindowController) registrationWindowController = [WDRegistrationWindowController new];
   
   return registrationWindowController;
 }

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  RegistrationStatusController.m
+//  WDRegistrationStatusController.m
 //  
 //  Watchdog
 //  
@@ -8,15 +8,15 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "RegistrationStatusController.h"
+#import "WDRegistrationStatusController.h"
 
-#import "RegistrationController.h"
+#import "WDRegistrationController.h"
 
-@implementation RegistrationStatusController
+@implementation WDRegistrationStatusController
 
 - (id) init
 {
-  self = [self initWithNibName: @"RegistrationStatus" bundle: [NSBundle bundleForClass: [self class]]];
+  self = [self initWithNibName: @"WDRegistrationStatus" bundle: [NSBundle bundleForClass: [self class]]];
   
   return self;
 }
@@ -38,7 +38,7 @@
 
 - (IBAction) deauthorizeAccount: (id) sender
 {
-  [[RegistrationController sharedRegistrationController] deauthorizeAccount];
+  [[WDRegistrationController sharedRegistrationController] deauthorizeAccount];
 }
 
 - (IBAction) dismiss: (id) sender

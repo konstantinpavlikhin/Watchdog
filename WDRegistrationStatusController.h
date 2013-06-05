@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  RegistrationStatusController.h
+//  WDRegistrationStatusController.h
 //  
 //  Watchdog
 //  
@@ -10,7 +10,7 @@
 
 #import <KPToolbox/KPViewController.h>
 
-@interface RegistrationStatusController : KPViewController
+@interface WDRegistrationStatusController : KPViewController
 
 @property(readwrite, retain) NSString* message;
 

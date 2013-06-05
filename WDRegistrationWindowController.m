@@ -8,31 +8,31 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "RegistrationWindowController.h"
+#import "WDRegistrationWindowController.h"
 
-#import "RegistrationController.h"
+#import "WDRegistrationController.h"
 
-#import "SerialEntryController.h"
+#import "WDSerialEntryController.h"
 
-#import "RegistrationStatusController.h"
+#import "WDRegistrationStatusController.h"
 
 #import <QuartzCore/CoreAnimation.h>
 
-@implementation RegistrationWindowController
+@implementation WDRegistrationWindowController
 {
-  SerialEntryController* serialEntryController;
+  WDSerialEntryController* serialEntryController;
   
-  RegistrationStatusController* registrationStatusController;
+  WDRegistrationStatusController* registrationStatusController;
 }
 
 - (id) init
 {
-  self = [super initWithWindowNibName: @"RegistrationWindow"];
+  self = [super initWithWindowNibName: @"WDRegistrationWindow"];
   
   if(!self) return nil;
   
-  // Immediately starting to observe RegistrationController's applicationState property.
-  [[RegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
+  // Immediately starting to observe WDRegistrationController's applicationState property.
+  [[WDRegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
   
   return self;
 }
@@ -40,7 +40,7 @@
 - (void) dealloc
 {
   // Terminating the observation.
-  [[RegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
+  [[WDRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
   
   [serialEntryController release], serialEntryController = nil;
   
@@ -51,7 +51,7 @@
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
 {
-  RegistrationController* SRC = [RegistrationController sharedRegistrationController];
+  WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
   
   if(object == SRC && [keyPath isEqualToString: ApplicationStateKeyPath])
   {
@@ -83,11 +83,11 @@
   [super showWindow: sender];
 }
 
-- (SerialEntryController*) serialEntryController
+- (WDSerialEntryController*) serialEntryController
 {
   if(!serialEntryController)
   {
-    serialEntryController = [SerialEntryController new];
+    serialEntryController = [WDSerialEntryController new];
     
     serialEntryController.windowController = self;
   }
@@ -95,11 +95,11 @@
   return serialEntryController;
 }
 
-- (RegistrationStatusController*) registrationStatusController
+- (WDRegistrationStatusController*) registrationStatusController
 {
   if(!registrationStatusController)
   {
-    registrationStatusController = [RegistrationStatusController new];
+    registrationStatusController = [WDRegistrationStatusController new];
     
     registrationStatusController.windowController = self;
   }

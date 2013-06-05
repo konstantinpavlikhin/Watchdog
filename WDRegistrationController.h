@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  RegistrationController.h
+//  WDRegistrationController.h
 //  
 //  Watchdog
 //  
@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class RegistrationWindowController;
+@class WDRegistrationWindowController;
 
 enum ApplicationState
 {
@@ -39,10 +39,10 @@ enum SerialVerdict
   PiratedSerialVerdict
 };
 
-@interface RegistrationController : NSObject
+@interface WDRegistrationController : NSObject
 
-// Returnes a singleton of the RegistrationController.
-+ (RegistrationController*) sharedRegistrationController;
+// Returnes a singleton of the WDRegistrationController.
++ (WDRegistrationController*) sharedRegistrationController;
 
 // Returns current registration state of the application.
 @property(readonly, atomic) enum ApplicationState applicationState;

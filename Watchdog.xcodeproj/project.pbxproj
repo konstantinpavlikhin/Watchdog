@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B509B68215D2DD6600F3B08C /* RegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68415D2DD6600F3B08C /* RegistrationWindow.xib */; };
-		B509B68A15D2DDB600F3B08C /* SerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68C15D2DDB600F3B08C /* SerialEntry.xib */; };
-		B509B69115D2DE2D00F3B08C /* RegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B69315D2DE2D00F3B08C /* RegistrationStatus.xib */; };
+		B509B68215D2DD6600F3B08C /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68415D2DD6600F3B08C /* WDRegistrationWindow.xib */; };
+		B509B68A15D2DDB600F3B08C /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */; };
+		B509B69115D2DE2D00F3B08C /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */; };
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
 		B53AA48F1561659A00745650 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA48E1561659A00745650 /* SenTestingKit.framework */; };
 		B53AA4901561659A00745650 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
@@ -18,15 +18,15 @@
 		B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B58522C115A4DD28008822D4 /* Localizable.strings */; };
 		B58D680F158D11AE008EEABC /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D680D158D11AE008EEABC /* Test.m */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
-		B5E036BB159F8CBC00007230 /* RegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* RegistrationStatusController.m */; };
+		B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */; };
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
-		B5F614FC14F54EB500C8565A /* RegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* RegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5F614FD14F54EB500C8565A /* RegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* RegistrationController.m */; };
-		B5F614FF14F54EB500C8565A /* SerialEntryController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F214F54EB500C8565A /* SerialEntryController.h */; };
-		B5F6150014F54EB500C8565A /* SerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* SerialEntryController.m */; };
-		B5F6150214F54EB500C8565A /* RegistrationStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F514F54EB500C8565A /* RegistrationStatusController.h */; };
-		B5F6150714F54EB500C8565A /* RegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */; };
-		B5F6150814F54EB500C8565A /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */; };
+		B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F614FD14F54EB500C8565A /* WDRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* WDRegistrationController.m */; };
+		B5F614FF14F54EB500C8565A /* WDSerialEntryController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F214F54EB500C8565A /* WDSerialEntryController.h */; };
+		B5F6150014F54EB500C8565A /* WDSerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* WDSerialEntryController.m */; };
+		B5F6150214F54EB500C8565A /* WDRegistrationStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */; };
+		B5F6150714F54EB500C8565A /* WDRegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */; };
+		B5F6150814F54EB500C8565A /* WDRegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */; };
 		B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F6150914F54F0400C8565A /* Watchdog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5FDA838175E2E7B003D8998 /* KPToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FDA835175E2E70003D8998 /* KPToolbox.framework */; };
 /* End PBXBuildFile section */
@@ -69,16 +69,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B509B68615D2DD7B00F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegistrationWindow.xib; sourceTree = "<group>"; };
-		B509B68815D2DD7F00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RegistrationWindow.strings; sourceTree = "<group>"; };
-		B509B68915D2DD8300F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RegistrationWindow.strings; sourceTree = "<group>"; };
-		B509B68D15D2DDB900F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SerialEntry.xib; sourceTree = "<group>"; };
-		B509B68F15D2DDBB00F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SerialEntry.strings; sourceTree = "<group>"; };
-		B509B69015D2DDBE00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SerialEntry.strings; sourceTree = "<group>"; };
-		B509B69415D2DE3200F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegistrationStatus.xib; sourceTree = "<group>"; };
-		B509B69615D2DE3200F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RegistrationStatus.strings; sourceTree = "<group>"; };
-		B509B69715D2DE3500F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RegistrationStatus.strings; sourceTree = "<group>"; };
-		B51D008415B173090035F26A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		B509B68615D2DD7B00F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WDRegistrationWindow.xib; sourceTree = "<group>"; };
+		B509B68815D2DD7F00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WDRegistrationWindow.strings; sourceTree = "<group>"; };
+		B509B68915D2DD8300F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WDRegistrationWindow.strings; sourceTree = "<group>"; };
+		B509B68D15D2DDB900F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WDSerialEntry.xib; sourceTree = "<group>"; };
+		B509B68F15D2DDBB00F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WDSerialEntry.strings; sourceTree = "<group>"; };
+		B509B69015D2DDBE00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WDSerialEntry.strings; sourceTree = "<group>"; };
+		B509B69415D2DE3200F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WDRegistrationStatus.xib; sourceTree = "<group>"; };
+		B509B69615D2DE3200F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WDRegistrationStatus.strings; sourceTree = "<group>"; };
+		B509B69715D2DE3500F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WDRegistrationStatus.strings; sourceTree = "<group>"; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B53AA48D1561659900745650 /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53AA48E1561659A00745650 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
@@ -89,18 +88,18 @@
 		B58D680C158D11AE008EEABC /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = SOURCE_ROOT; };
 		B58D680D158D11AE008EEABC /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = SOURCE_ROOT; };
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B5E036BC159F8CBC00007230 /* RegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
+		B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
 		B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Watchdog-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Watchdog-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		B5F614EF14F54EB500C8565A /* RegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F014F54EB500C8565A /* RegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F214F54EB500C8565A /* SerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialEntryController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F314F54EB500C8565A /* SerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialEntryController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F514F54EB500C8565A /* RegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationStatusController.h; sourceTree = SOURCE_ROOT; };
-		B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
-		B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
+		B5F614EF14F54EB500C8565A /* WDRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRegistrationController.h; sourceTree = SOURCE_ROOT; };
+		B5F614F014F54EB500C8565A /* WDRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationController.m; sourceTree = SOURCE_ROOT; };
+		B5F614F214F54EB500C8565A /* WDSerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSerialEntryController.h; sourceTree = SOURCE_ROOT; };
+		B5F614F314F54EB500C8565A /* WDSerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSerialEntryController.m; sourceTree = SOURCE_ROOT; };
+		B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRegistrationStatusController.h; sourceTree = SOURCE_ROOT; };
+		B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
+		B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
 		B5F6150914F54F0400C8565A /* Watchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watchdog.h; sourceTree = "<group>"; };
 		B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KPToolbox.xcodeproj; path = KPToolbox/KPToolbox.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,9 +152,9 @@
 		B5E0368E159DB4D100007230 /* Registration Window */ = {
 			isa = PBXGroup;
 			children = (
-				B5F614FA14F54EB500C8565A /* RegistrationWindowController.h */,
-				B5F614FB14F54EB500C8565A /* RegistrationWindowController.m */,
-				B509B68415D2DD6600F3B08C /* RegistrationWindow.xib */,
+				B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */,
+				B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */,
+				B509B68415D2DD6600F3B08C /* WDRegistrationWindow.xib */,
 				B5E0368D159DAF1600007230 /* Embedded Views */,
 			);
 			name = "Registration Window";
@@ -164,9 +163,9 @@
 		B5E036B0159F6FFA00007230 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
-				B5F614F214F54EB500C8565A /* SerialEntryController.h */,
-				B5F614F314F54EB500C8565A /* SerialEntryController.m */,
-				B509B68C15D2DDB600F3B08C /* SerialEntry.xib */,
+				B5F614F214F54EB500C8565A /* WDSerialEntryController.h */,
+				B5F614F314F54EB500C8565A /* WDSerialEntryController.m */,
+				B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */,
 			);
 			name = Entry;
 			sourceTree = "<group>";
@@ -174,9 +173,9 @@
 		B5E036B1159F700000007230 /* Status */ = {
 			isa = PBXGroup;
 			children = (
-				B5F614F514F54EB500C8565A /* RegistrationStatusController.h */,
-				B5E036BC159F8CBC00007230 /* RegistrationStatusController.m */,
-				B509B69315D2DE2D00F3B08C /* RegistrationStatus.xib */,
+				B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */,
+				B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */,
+				B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */,
 			);
 			name = Status;
 			sourceTree = "<group>";
@@ -185,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */,
-				B51D008415B173090035F26A /* README.md */,
 				B5F6150914F54F0400C8565A /* Watchdog.h */,
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
 				B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */,
@@ -220,8 +218,8 @@
 		B5F0B4F114F54B8B0069FFAF /* Watchdog */ = {
 			isa = PBXGroup;
 			children = (
-				B5F614EF14F54EB500C8565A /* RegistrationController.h */,
-				B5F614F014F54EB500C8565A /* RegistrationController.m */,
+				B5F614EF14F54EB500C8565A /* WDRegistrationController.h */,
+				B5F614F014F54EB500C8565A /* WDRegistrationController.m */,
 				B5E0368E159DB4D100007230 /* Registration Window */,
 			);
 			path = Watchdog;
@@ -243,10 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */,
-				B5F614FC14F54EB500C8565A /* RegistrationController.h in Headers */,
-				B5F614FF14F54EB500C8565A /* SerialEntryController.h in Headers */,
-				B5F6150214F54EB500C8565A /* RegistrationStatusController.h in Headers */,
-				B5F6150714F54EB500C8565A /* RegistrationWindowController.h in Headers */,
+				B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */,
+				B5F614FF14F54EB500C8565A /* WDSerialEntryController.h in Headers */,
+				B5F6150214F54EB500C8565A /* WDRegistrationStatusController.h in Headers */,
+				B5F6150714F54EB500C8565A /* WDRegistrationWindowController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B509B68A15D2DDB600F3B08C /* SerialEntry.xib in Resources */,
-				B509B69115D2DE2D00F3B08C /* RegistrationStatus.xib in Resources */,
-				B509B68215D2DD6600F3B08C /* RegistrationWindow.xib in Resources */,
+				B509B68A15D2DDB600F3B08C /* WDSerialEntry.xib in Resources */,
+				B509B69115D2DE2D00F3B08C /* WDRegistrationStatus.xib in Resources */,
+				B509B68215D2DD6600F3B08C /* WDRegistrationWindow.xib in Resources */,
 				B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,10 +385,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F614FD14F54EB500C8565A /* RegistrationController.m in Sources */,
-				B5F6150014F54EB500C8565A /* SerialEntryController.m in Sources */,
-				B5E036BB159F8CBC00007230 /* RegistrationStatusController.m in Sources */,
-				B5F6150814F54EB500C8565A /* RegistrationWindowController.m in Sources */,
+				B5F614FD14F54EB500C8565A /* WDRegistrationController.m in Sources */,
+				B5F6150014F54EB500C8565A /* WDSerialEntryController.m in Sources */,
+				B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */,
+				B5F6150814F54EB500C8565A /* WDRegistrationWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,34 +408,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B509B68415D2DD6600F3B08C /* RegistrationWindow.xib */ = {
+		B509B68415D2DD6600F3B08C /* WDRegistrationWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B509B68615D2DD7B00F3B08C /* Base */,
 				B509B68815D2DD7F00F3B08C /* en */,
 				B509B68915D2DD8300F3B08C /* ru */,
 			);
-			name = RegistrationWindow.xib;
+			name = WDRegistrationWindow.xib;
 			sourceTree = SOURCE_ROOT;
 		};
-		B509B68C15D2DDB600F3B08C /* SerialEntry.xib */ = {
+		B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B509B68D15D2DDB900F3B08C /* Base */,
 				B509B68F15D2DDBB00F3B08C /* ru */,
 				B509B69015D2DDBE00F3B08C /* en */,
 			);
-			name = SerialEntry.xib;
+			name = WDSerialEntry.xib;
 			sourceTree = SOURCE_ROOT;
 		};
-		B509B69315D2DE2D00F3B08C /* RegistrationStatus.xib */ = {
+		B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B509B69415D2DE3200F3B08C /* Base */,
 				B509B69615D2DE3200F3B08C /* ru */,
 				B509B69715D2DE3500F3B08C /* en */,
 			);
-			name = RegistrationStatus.xib;
+			name = WDRegistrationStatus.xib;
 			sourceTree = SOURCE_ROOT;
 		};
 		B58522C115A4DD28008822D4 /* Localizable.strings */ = {

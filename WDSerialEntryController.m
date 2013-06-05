@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  
-//  SerialEntryController.m
+//  WDSerialEntryController.m
 //  
 //  Watchdog
 //  
@@ -8,15 +8,15 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "SerialEntryController.h"
+#import "WDSerialEntryController.h"
 
-#import "RegistrationController.h"
+#import "WDRegistrationController.h"
 
-@implementation SerialEntryController
+@implementation WDSerialEntryController
 
 - (id) init
 {
-  self = [self initWithNibName: @"SerialEntry" bundle: [NSBundle bundleForClass: [self class]]];
+  self = [self initWithNibName: @"WDSerialEntry" bundle: [NSBundle bundleForClass: [self class]]];
   
   return self;
 }
@@ -79,8 +79,8 @@
   
   [self.proceed setEnabled: NO];
   
-  // Pushing data to the RegistrationController.
-  RegistrationController* SRC = [RegistrationController sharedRegistrationController];
+  // Pushing data to the WDRegistrationController.
+  WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
   
   [SRC registerWithCustomerName: name serial: serial handler: ^(enum SerialVerdict verdict)
   {
