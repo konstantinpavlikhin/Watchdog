@@ -370,55 +370,53 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 - (BOOL) isSerial: (NSString*) serial conformsToCustomerName: (NSString*) name error: (NSError**) error
 {
-  // Проверка на элементарные вырожденные случаи.
-  if(!serial || !name || ![serial length] || ![name length]) return NO;
+  // These parameters are mandatory.
+  NSParameterAssert(serial);
+  
+  NSParameterAssert(name);
+  
+  // There is no reason to validate anything if supplied strings are void.
+  if([serial length] == 0 || [name length] == 0) return NO;
+  
+  BOOL result = NO;
+  
+  BOOL reachedEnd = NO;
   
   CFErrorRef tempError;
   
-  // Переводим серийник из base32 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
-  // Создаем трансформацию перевода из base32.
+  // Creating transformation from base32 string to the actual data.
   SecTransformRef base32DecodeTransform = SecDecodeTransformCreate(kSecBase32Encoding, &tempError);
   
-  // Если трансформация не создана — выход с ошибкой.
-  if(base32DecodeTransform == NULL)
+  if(base32DecodeTransform)
   {
-    *error = CFBridgingRelease(tempError);
+    CFDataRef tempData = CFBridgingRetain([serial dataUsingEncoding: NSUTF8StringEncoding]);
     
-    return NO;
-  }
-  
-  // Задаем входной параметр в виде NSData.
-  CFDataRef tempData = CFBridgingRetain([serial dataUsingEncoding: NSUTF8StringEncoding]);
-  
-  Boolean result = SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, tempData, &tempError);
-  
-  CFRelease(tempData);
-  
-  if(!result)
-  {
-    *error = CFBridgingRelease(tempError);
+    if(SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, tempData, &tempError))
+    {
+      CFTypeRef signature = SecTransformExecute(base32DecodeTransform, &tempError);
+      
+      if(signature)
+      {
+        NSData* tempSignature = CFBridgingRelease(signature);
+        
+        result = [self verifyDSASignature: tempSignature data: [name dataUsingEncoding: NSUTF8StringEncoding] error: error];
+        
+        reachedEnd = YES;
+      }
+    }
+    
+    CFRelease(tempData);
     
     CFRelease(base32DecodeTransform);
-    
-    return NO;
   }
   
-  // Запускаем трансформацию.
-  CFTypeRef signature = SecTransformExecute(base32DecodeTransform, &tempError);
-  
-  if(signature == NULL)
+  if(!reachedEnd)
   {
+    // Control flow didn't reached end → something went wrong.
     *error = CFBridgingRelease(tempError);
-    
-    CFRelease(base32DecodeTransform);
-    
-    return NO;
   }
   
-  CFRelease(base32DecodeTransform);
-  
-  return [self verifyDSASignature: CFBridgingRelease(signature) data: [name dataUsingEncoding: NSUTF8StringEncoding] error: NULL];
+  return result;
 }
 
 - (BOOL) verifyDSASignature: (NSData*) signature data: (NSData*) sourceData error: (NSError**) error

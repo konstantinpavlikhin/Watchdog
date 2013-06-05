@@ -740,6 +740,7 @@
 				B5DBD738175FABBA001F4709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5F0B4E114F54B8B0069FFAF /* Build configuration list for PBXProject "Watchdog" */ = {
 			isa = XCConfigurationList;
