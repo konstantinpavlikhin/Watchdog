@@ -368,7 +368,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   handler([self synchronousServerCheckWithSerial: serial]);
 }
 
-- (BOOL) isSerial: (NSString*) serial conformsToCustomerName: (NSString*) name error: (NSError**) error
+- (BOOL) isSerial: (NSString*) serial conformsToCustomerName: (NSString*) name error: (NSError* __autoreleasing *) error
 {
   // These parameters are mandatory.
   NSParameterAssert(serial);
@@ -419,15 +419,19 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return result;
 }
 
-- (BOOL) verifyDSASignature: (NSData*) signature data: (NSData*) sourceData error: (NSError**) error
+- (BOOL) verifyDSASignature: (NSData*) signature data: (NSData*) sourceData error: (NSError* __autoreleasing *) error
 {
-  if(!self.DSAPublicKeyPEM) [NSException raise: NSInternalInconsistencyException format: @"DSA public key is not set."];
+  // These parameters are mandatory.
+  NSParameterAssert(signature);
   
-  // Получаем публичный ключ от делегата в виде строки формата PEM и переводим его в дату.
+  NSParameterAssert(sourceData);
+  
+  // Make sure developer didn't forget to set the public key.
+  NSAssert(self.DSAPublicKeyPEM, @"DSA public key is not set.");
+  
   CFDataRef publicKeyData = CFBridgingRetain([self.DSAPublicKeyPEM dataUsingEncoding: NSUTF8StringEncoding]);
   
-  // Приводим публичный ключ к виду SecKeyRef.
-  
+  // Turning our public key in PEM form into SecKeyRef.
   SecExternalFormat externalFormat = kSecFormatPEMSequence;
   
   SecExternalItemType externalItemType = kSecItemTypePublicKey;
@@ -446,49 +450,56 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   CFRelease(publicKeyData);
   
+  // Getting SecKeyRef from the array and retaining it.
   SecKeyRef publicKey = (SecKeyRef)CFRetain(CFArrayGetValueAtIndex(tempArray, 0));
   
   CFRelease(tempArray);
   
-  // Создаем трансформацию проверки подписи.
+  // Creating signature verification transformation.
   CFDataRef tempSignature = CFBridgingRetain(signature);
+  
+  BOOL result = NO;
+  
+  BOOL reachedEnd = NO;
   
   CFErrorRef tempError;
   
-  SecTransformRef verifier = SecVerifyTransformCreate(publicKey, tempSignature, &tempError);
+  SecTransformRef verifyTransform = SecVerifyTransformCreate(publicKey, tempSignature, &tempError);
   
   CFRelease(publicKey);
   
   CFRelease(tempSignature);
   
-  if(verifier == NULL)
+  if(verifyTransform)
   {
-    *error = CFBridgingRelease(tempError);
+    CFDataRef tempSourceData = CFBridgingRetain(sourceData);
     
-    return NO;
+    if(SecTransformSetAttribute(verifyTransform, kSecTransformInputAttributeName, tempSourceData, &tempError))
+    {
+      // See http://openradar.appspot.com/12184687
+      CFBooleanRef booleanOrNull = SecTransformExecute(verifyTransform, &tempError);
+      
+      // The Apple' sample code seems to test the *error argument to determine success, instead of checking the result... Wat?
+      if(booleanOrNull != NULL)
+      {
+        result = (booleanOrNull == kCFBooleanTrue)? YES : NO;
+        
+        reachedEnd = YES;
+      }
+    }
+    
+    CFRelease(tempSourceData);
+    
+    CFRelease(verifyTransform);
   }
   
-  // Задаем дату, чью подпись мы собираемся проверять.
-  CFDataRef tempSourceData = CFBridgingRetain(sourceData);
-  
-  Boolean result = SecTransformSetAttribute(verifier, kSecTransformInputAttributeName, tempSourceData, &tempError);
-  
-  CFRelease(tempSourceData);
-  
-  if(!result)
+  if(!reachedEnd)
   {
+    // Control flow didn't reached end → something went wrong.
     *error = CFBridgingRelease(tempError);
-    
-    CFRelease(verifier);
-    
-    return NO;
   }
   
-  CFTypeRef isValid = SecTransformExecute(verifier, &tempError);
-  
-  CFRelease(verifier);
-  
-  return (isValid == kCFBooleanTrue)? YES : NO;
+  return result;
 }
 
 // Performs server check of the supplied serial.
