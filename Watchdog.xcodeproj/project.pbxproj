@@ -13,6 +13,15 @@
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
 		B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B58522C115A4DD28008822D4 /* Localizable.strings */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
+		B5DBD727175FABBA001F4709 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD726175FABBA001F4709 /* SenTestingKit.framework */; };
+		B5DBD728175FABBA001F4709 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
+		B5DBD732175FABBA001F4709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD730175FABBA001F4709 /* InfoPlist.strings */; };
+		B5DBD735175FABBA001F4709 /* WatchdogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD734175FABBA001F4709 /* WatchdogTests.m */; };
+		B5DBD746175FAC27001F4709 /* libSpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD745175FAC27001F4709 /* libSpecta.a */; };
+		B5DBD769175FAD1D001F4709 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD766175FAD1D001F4709 /* libExpecta.a */; };
+		B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
+		B5DBD770175FB673001F4709 /* SamplePrivateKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */; };
+		B5DBD771175FB673001F4709 /* SamplePublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */; };
 		B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */; };
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B5DBD76B175FB29B001F4709 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5F0B4E714F54B8B0069FFAF;
+			remoteInfo = Watchdog;
+		};
 		B5FDA834175E2E70003D8998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5FDA830175E2E6F003D8998 /* KPToolbox.xcodeproj */;
@@ -59,6 +75,63 @@
 		B58522C015A4DD28008822D4 /* en */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B58522C215A4DD36008822D4 /* ru */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5DBD725175FABBA001F4709 /* WatchdogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5DBD726175FABBA001F4709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B5DBD72A175FABBA001F4709 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B5DBD72B175FABBA001F4709 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B5DBD72C175FABBA001F4709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogTests-Info.plist"; sourceTree = "<group>"; };
+		B5DBD731175FABBA001F4709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5DBD733175FABBA001F4709 /* WatchdogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchdogTests.h; sourceTree = "<group>"; };
+		B5DBD734175FABBA001F4709 /* WatchdogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchdogTests.m; sourceTree = "<group>"; };
+		B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WatchdogTests-Prefix.pch"; sourceTree = "<group>"; };
+		B5DBD73A175FAC01001F4709 /* Specta-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Specta-Prefix.pch"; path = "specta/build/Release/Specta-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		B5DBD73B175FAC01001F4709 /* Specta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Specta.h; path = specta/build/Release/Specta.h; sourceTree = SOURCE_ROOT; };
+		B5DBD73C175FAC01001F4709 /* SpectaSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpectaSupport.h; path = specta/build/Release/SpectaSupport.h; sourceTree = SOURCE_ROOT; };
+		B5DBD73D175FAC01001F4709 /* SpectaTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = specta/build/Release/SpectaTypes.h; sourceTree = SOURCE_ROOT; };
+		B5DBD73E175FAC01001F4709 /* SpectaUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = specta/build/Release/SpectaUtility.h; sourceTree = SOURCE_ROOT; };
+		B5DBD73F175FAC01001F4709 /* SPTExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = specta/build/Release/SPTExample.h; sourceTree = SOURCE_ROOT; };
+		B5DBD740175FAC01001F4709 /* SPTExampleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = specta/build/Release/SPTExampleGroup.h; sourceTree = SOURCE_ROOT; };
+		B5DBD741175FAC01001F4709 /* SPTSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTSenTestCase.h; path = specta/build/Release/SPTSenTestCase.h; sourceTree = SOURCE_ROOT; };
+		B5DBD742175FAC01001F4709 /* SPTSenTestInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTSenTestInvocation.h; path = specta/build/Release/SPTSenTestInvocation.h; sourceTree = SOURCE_ROOT; };
+		B5DBD743175FAC01001F4709 /* SPTSharedExampleGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTSharedExampleGroups.h; path = specta/build/Release/SPTSharedExampleGroups.h; sourceTree = SOURCE_ROOT; };
+		B5DBD744175FAC01001F4709 /* SPTSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTSpec.h; path = specta/build/Release/SPTSpec.h; sourceTree = SOURCE_ROOT; };
+		B5DBD745175FAC27001F4709 /* libSpecta.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSpecta.a; path = specta/build/Release/libSpecta.a; sourceTree = SOURCE_ROOT; };
+		B5DBD749175FAD1D001F4709 /* EXPBackwardCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPBackwardCompatibility.h; path = expecta/build/Release/EXPBackwardCompatibility.h; sourceTree = SOURCE_ROOT; };
+		B5DBD74A175FAD1D001F4709 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = expecta/build/Release/EXPBlockDefinedMatcher.h; sourceTree = SOURCE_ROOT; };
+		B5DBD74B175FAD1D001F4709 /* EXPDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = expecta/build/Release/EXPDefines.h; sourceTree = SOURCE_ROOT; };
+		B5DBD74C175FAD1D001F4709 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = expecta/build/Release/EXPDoubleTuple.h; sourceTree = SOURCE_ROOT; };
+		B5DBD74D175FAD1D001F4709 /* Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expecta.h; path = expecta/build/Release/Expecta.h; sourceTree = SOURCE_ROOT; };
+		B5DBD74E175FAD1D001F4709 /* ExpectaSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpectaSupport.h; path = expecta/build/Release/ExpectaSupport.h; sourceTree = SOURCE_ROOT; };
+		B5DBD74F175FAD1D001F4709 /* EXPExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = expecta/build/Release/EXPExpect.h; sourceTree = SOURCE_ROOT; };
+		B5DBD750175FAD1D001F4709 /* EXPFloatTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = expecta/build/Release/EXPFloatTuple.h; sourceTree = SOURCE_ROOT; };
+		B5DBD751175FAD1D001F4709 /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPMatcher.h; path = expecta/build/Release/EXPMatcher.h; sourceTree = SOURCE_ROOT; };
+		B5DBD752175FAD1D001F4709 /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPMatcherHelpers.h; path = expecta/build/Release/EXPMatcherHelpers.h; sourceTree = SOURCE_ROOT; };
+		B5DBD753175FAD1D001F4709 /* EXPMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPMatchers.h; path = expecta/build/Release/EXPMatchers.h; sourceTree = SOURCE_ROOT; };
+		B5DBD754175FAD1D001F4709 /* EXPMatchers+beCloseTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beCloseTo.h"; path = "expecta/build/Release/EXPMatchers+beCloseTo.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD755175FAD1D001F4709 /* EXPMatchers+beFalsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beFalsy.h"; path = "expecta/build/Release/EXPMatchers+beFalsy.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD756175FAD1D001F4709 /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "expecta/build/Release/EXPMatchers+beGreaterThan.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD757175FAD1D001F4709 /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "expecta/build/Release/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD758175FAD1D001F4709 /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beIdenticalTo.h"; path = "expecta/build/Release/EXPMatchers+beIdenticalTo.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD759175FAD1D001F4709 /* EXPMatchers+beInstanceOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInstanceOf.h"; path = "expecta/build/Release/EXPMatchers+beInstanceOf.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD75A175FAD1D001F4709 /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "expecta/build/Release/EXPMatchers+beInTheRangeOf.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD75B175FAD1D001F4709 /* EXPMatchers+beKindOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beKindOf.h"; path = "expecta/build/Release/EXPMatchers+beKindOf.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD75C175FAD1D001F4709 /* EXPMatchers+beLessThan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThan.h"; path = "expecta/build/Release/EXPMatchers+beLessThan.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD75D175FAD1D001F4709 /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "expecta/build/Release/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD75E175FAD1D001F4709 /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "expecta/build/Release/EXPMatchers+beNil.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD75F175FAD1D001F4709 /* EXPMatchers+beSubclassOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSubclassOf.h"; path = "expecta/build/Release/EXPMatchers+beSubclassOf.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD760175FAD1D001F4709 /* EXPMatchers+beTruthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beTruthy.h"; path = "expecta/build/Release/EXPMatchers+beTruthy.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD761175FAD1D001F4709 /* EXPMatchers+contain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+contain.h"; path = "expecta/build/Release/EXPMatchers+contain.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD762175FAD1D001F4709 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "expecta/build/Release/EXPMatchers+equal.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD763175FAD1D001F4709 /* EXPMatchers+haveCountOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+haveCountOf.h"; path = "expecta/build/Release/EXPMatchers+haveCountOf.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD764175FAD1D001F4709 /* EXPMatchers+raise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raise.h"; path = "expecta/build/Release/EXPMatchers+raise.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD765175FAD1D001F4709 /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPUnsupportedObject.h; path = expecta/build/Release/EXPUnsupportedObject.h; sourceTree = SOURCE_ROOT; };
+		B5DBD766175FAD1D001F4709 /* libExpecta.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libExpecta.a; path = expecta/build/Release/libExpecta.a; sourceTree = SOURCE_ROOT; };
+		B5DBD767175FAD1D001F4709 /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "expecta/build/Release/NSObject+Expecta.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD768175FAD1D001F4709 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSValue+Expecta.h"; path = "expecta/build/Release/NSValue+Expecta.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationController+Private.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SamplePrivateKey.pem; sourceTree = "<group>"; };
+		B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SamplePublicKey.pem; sourceTree = "<group>"; };
 		B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
 		B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -76,6 +149,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B5DBD721175FABBA001F4709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */,
+				B5DBD727175FABBA001F4709 /* SenTestingKit.framework in Frameworks */,
+				B5DBD728175FABBA001F4709 /* Cocoa.framework in Frameworks */,
+				B5DBD746175FAC27001F4709 /* libSpecta.a in Frameworks */,
+				B5DBD769175FAD1D001F4709 /* libExpecta.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5F0B4E414F54B8B0069FFAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,6 +175,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5DBD729175FABBA001F4709 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD72A175FABBA001F4709 /* AppKit.framework */,
+				B5DBD72B175FABBA001F4709 /* CoreData.framework */,
+				B5DBD72C175FABBA001F4709 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B5DBD72D175FABBA001F4709 /* WatchdogTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */,
+				B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */,
+				B5DBD747175FAD01001F4709 /* Specta */,
+				B5DBD748175FAD07001F4709 /* Expecta */,
+				B5DBD733175FABBA001F4709 /* WatchdogTests.h */,
+				B5DBD734175FABBA001F4709 /* WatchdogTests.m */,
+				B5DBD72E175FABBA001F4709 /* Supporting Files */,
+			);
+			path = WatchdogTests;
+			sourceTree = "<group>";
+		};
+		B5DBD72E175FABBA001F4709 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */,
+				B5DBD730175FABBA001F4709 /* InfoPlist.strings */,
+				B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5DBD747175FAD01001F4709 /* Specta */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD745175FAC27001F4709 /* libSpecta.a */,
+				B5DBD73A175FAC01001F4709 /* Specta-Prefix.pch */,
+				B5DBD73B175FAC01001F4709 /* Specta.h */,
+				B5DBD73C175FAC01001F4709 /* SpectaSupport.h */,
+				B5DBD73D175FAC01001F4709 /* SpectaTypes.h */,
+				B5DBD73E175FAC01001F4709 /* SpectaUtility.h */,
+				B5DBD73F175FAC01001F4709 /* SPTExample.h */,
+				B5DBD740175FAC01001F4709 /* SPTExampleGroup.h */,
+				B5DBD741175FAC01001F4709 /* SPTSenTestCase.h */,
+				B5DBD742175FAC01001F4709 /* SPTSenTestInvocation.h */,
+				B5DBD743175FAC01001F4709 /* SPTSharedExampleGroups.h */,
+				B5DBD744175FAC01001F4709 /* SPTSpec.h */,
+			);
+			name = Specta;
+			sourceTree = "<group>";
+		};
+		B5DBD748175FAD07001F4709 /* Expecta */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD749175FAD1D001F4709 /* EXPBackwardCompatibility.h */,
+				B5DBD74A175FAD1D001F4709 /* EXPBlockDefinedMatcher.h */,
+				B5DBD74B175FAD1D001F4709 /* EXPDefines.h */,
+				B5DBD74C175FAD1D001F4709 /* EXPDoubleTuple.h */,
+				B5DBD74D175FAD1D001F4709 /* Expecta.h */,
+				B5DBD74E175FAD1D001F4709 /* ExpectaSupport.h */,
+				B5DBD74F175FAD1D001F4709 /* EXPExpect.h */,
+				B5DBD750175FAD1D001F4709 /* EXPFloatTuple.h */,
+				B5DBD751175FAD1D001F4709 /* EXPMatcher.h */,
+				B5DBD752175FAD1D001F4709 /* EXPMatcherHelpers.h */,
+				B5DBD753175FAD1D001F4709 /* EXPMatchers.h */,
+				B5DBD754175FAD1D001F4709 /* EXPMatchers+beCloseTo.h */,
+				B5DBD755175FAD1D001F4709 /* EXPMatchers+beFalsy.h */,
+				B5DBD756175FAD1D001F4709 /* EXPMatchers+beGreaterThan.h */,
+				B5DBD757175FAD1D001F4709 /* EXPMatchers+beGreaterThanOrEqualTo.h */,
+				B5DBD758175FAD1D001F4709 /* EXPMatchers+beIdenticalTo.h */,
+				B5DBD759175FAD1D001F4709 /* EXPMatchers+beInstanceOf.h */,
+				B5DBD75A175FAD1D001F4709 /* EXPMatchers+beInTheRangeOf.h */,
+				B5DBD75B175FAD1D001F4709 /* EXPMatchers+beKindOf.h */,
+				B5DBD75C175FAD1D001F4709 /* EXPMatchers+beLessThan.h */,
+				B5DBD75D175FAD1D001F4709 /* EXPMatchers+beLessThanOrEqualTo.h */,
+				B5DBD75E175FAD1D001F4709 /* EXPMatchers+beNil.h */,
+				B5DBD75F175FAD1D001F4709 /* EXPMatchers+beSubclassOf.h */,
+				B5DBD760175FAD1D001F4709 /* EXPMatchers+beTruthy.h */,
+				B5DBD761175FAD1D001F4709 /* EXPMatchers+contain.h */,
+				B5DBD762175FAD1D001F4709 /* EXPMatchers+equal.h */,
+				B5DBD763175FAD1D001F4709 /* EXPMatchers+haveCountOf.h */,
+				B5DBD764175FAD1D001F4709 /* EXPMatchers+raise.h */,
+				B5DBD765175FAD1D001F4709 /* EXPUnsupportedObject.h */,
+				B5DBD766175FAD1D001F4709 /* libExpecta.a */,
+				B5DBD767175FAD1D001F4709 /* NSObject+Expecta.h */,
+				B5DBD768175FAD1D001F4709 /* NSValue+Expecta.h */,
+			);
+			name = Expecta;
+			sourceTree = "<group>";
+		};
 		B5E0368E159DB4D100007230 /* Registration window controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +312,7 @@
 				B58522C115A4DD28008822D4 /* Localizable.strings */,
 				B5F0B4F114F54B8B0069FFAF /* Registration controller */,
 				B5E0368E159DB4D100007230 /* Registration window controller */,
+				B5DBD72D175FABBA001F4709 /* WatchdogTests */,
 				B5F0B4EA14F54B8B0069FFAF /* Frameworks */,
 				B5F0B4E914F54B8B0069FFAF /* Products */,
 			);
@@ -144,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */,
+				B5DBD725175FABBA001F4709 /* WatchdogTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +333,8 @@
 				B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */,
 				B53AA448155ED4B900745650 /* Security.framework */,
 				B5C91ADD14F568DC009696B3 /* QuartzCore.framework */,
+				B5DBD726175FABBA001F4709 /* SenTestingKit.framework */,
+				B5DBD729175FABBA001F4709 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +344,7 @@
 			children = (
 				B5F614EF14F54EB500C8565A /* WDRegistrationController.h */,
 				B5F614F014F54EB500C8565A /* WDRegistrationController.m */,
+				B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */,
 			);
 			name = "Registration controller";
 			path = Watchdog;
@@ -194,6 +376,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B5DBD724175FABBA001F4709 /* WatchdogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5DBD739175FABBA001F4709 /* Build configuration list for PBXNativeTarget "WatchdogTests" */;
+			buildPhases = (
+				B5DBD720175FABBA001F4709 /* Sources */,
+				B5DBD721175FABBA001F4709 /* Frameworks */,
+				B5DBD722175FABBA001F4709 /* Resources */,
+				B5DBD723175FABBA001F4709 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5DBD76C175FB29B001F4709 /* PBXTargetDependency */,
+			);
+			name = WatchdogTests;
+			productName = WatchdogTests;
+			productReference = B5DBD725175FABBA001F4709 /* WatchdogTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		B5F0B4E714F54B8B0069FFAF /* Watchdog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5F0B4FD14F54B8B0069FFAF /* Build configuration list for PBXNativeTarget "Watchdog" */;
@@ -243,6 +444,7 @@
 			projectRoot = "";
 			targets = (
 				B5F0B4E714F54B8B0069FFAF /* Watchdog */,
+				B5DBD724175FABBA001F4709 /* WatchdogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +460,16 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B5DBD722175FABBA001F4709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5DBD732175FABBA001F4709 /* InfoPlist.strings in Resources */,
+				B5DBD770175FB673001F4709 /* SamplePrivateKey.pem in Resources */,
+				B5DBD771175FB673001F4709 /* SamplePublicKey.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5F0B4E614F54B8B0069FFAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,7 +483,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B5DBD723175FABBA001F4709 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		B5DBD720175FABBA001F4709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5DBD735175FABBA001F4709 /* WatchdogTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5F0B4E314F54B8B0069FFAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +522,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B5DBD76C175FB29B001F4709 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5F0B4E714F54B8B0069FFAF /* Watchdog */;
+			targetProxy = B5DBD76B175FB29B001F4709 /* PBXContainerItemProxy */;
+		};
 		B5FDA837175E2E76003D8998 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KPToolbox;
@@ -333,9 +574,71 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		B5DBD730175FABBA001F4709 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5DBD731175FABBA001F4709 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B5DBD737175FABBA001F4709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WatchdogTests/WatchdogTests-Prefix.pch";
+				INFOPLIST_FILE = "WatchdogTests/WatchdogTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/specta/build/Release\"",
+					"\"$(SRCROOT)/expecta/build/Release\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = expecta/build/Release;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B5DBD738175FABBA001F4709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WatchdogTests/WatchdogTests-Prefix.pch";
+				INFOPLIST_FILE = "WatchdogTests/WatchdogTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/specta/build/Release\"",
+					"\"$(SRCROOT)/expecta/build/Release\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = expecta/build/Release;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		B5F0B4FB14F54B8B0069FFAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -430,6 +733,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B5DBD739175FABBA001F4709 /* Build configuration list for PBXNativeTarget "WatchdogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5DBD737175FABBA001F4709 /* Debug */,
+				B5DBD738175FABBA001F4709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B5F0B4E114F54B8B0069FFAF /* Build configuration list for PBXProject "Watchdog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
