@@ -167,27 +167,27 @@ Watchdog' UI is currently localized to English and Russian.
 
 ### DSA Keys
 
-Generate a DSA private key:
+Generate a DSA private key:  
 `$ openssl dsaparam -genkey 2048 -noout -out DSAPrivateKey.pem`
 
-Check components of the generated private key:
+Check components of the generated private key:  
 `$ openssl dsa -in DSAPrivateKey.pem -text -noout`
 
-Extract public key from the private key:
+Extract public key from the private key:  
 `$ openssl dsa -in DSAPrivateKey.pem -pubout -outform PEM -out DSAPublicKey.pem`
 
 ### ECDSA Keys
 
-List all available curves:
+List all available curves:  
 `$ openssl ecparam -list_curves`
 
-Generate an EC private key:
+Generate an ECDSA private key:  
 `$ openssl ecparam -genkey -name secp521r1 -noout -out ECDSAPrivateKey.pem`
 
-Check components of the generated private key:
+Check components of the generated private key:  
 `$ openssl ec -in ECDSAPrivateKey.pem -text -noout`
 
-Extract public key from the private key:
+Extract public key from the private key:  
 `$ openssl ec -in ECDSAPrivateKey.pem -pubout -outform PEM -out ECDSAPublicKey.pem`
 
 ## Important asymmetric cryptography notice
