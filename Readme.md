@@ -57,12 +57,12 @@ Watchdog requires you to define the following keys in your `ApplicationName-Info
 </array>
 ```
 
-### `RegistrationController` Singleton
+### `WDRegistrationController` Singleton
 
-At the launch time of your app (`-applicationDidFinishLaunching:`) request the `RegistrationController` singleton instance and set its properies.
+At the launch time of your app (`-applicationDidFinishLaunching:`) request the `WDRegistrationController` singleton instance and set its properies.
 
 ```objective-c
-RegistrationController* SRC = [RegistrationController sharedRegistrationController];
+WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
 ```
 
 Set the `DSAPublicKeyPEM` property to your application' DSA public key:
