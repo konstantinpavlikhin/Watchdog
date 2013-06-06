@@ -50,6 +50,8 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 // Supplied link should look like this: bundledisplayname-wd://WEDSCVBNMRFHNMJJFCV:WSXFRFVBJUHNMQWETYIOPLKJHGFDSXCVBNYFVBGFCVBNMHSGHFKAJSHCASC.
 - (void) registerWithQuickApplyLink: (NSString*) link
 {
+  NSParameterAssert(link);
+  
   // Getting non-localized application name.
   NSString* appName = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleName"];
   
@@ -141,6 +143,10 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 // Tries to register application with supplied customer name & serial pair.
 - (void) registerWithCustomerName: (NSString*) name serial: (NSString*) serial handler: (SerialCheckHandler) handler
 {
+  NSParameterAssert(name);
+  
+  NSParameterAssert(serial);
+  
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
   {
     // Wiping out any existing registration data & state.
@@ -355,6 +361,10 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 - (void) complexCheckOfCustomerName: (NSString*) name serial: (NSString*) serial completionHandler: (SerialCheckHandler) handler
 {
+  NSParameterAssert(name);
+  
+  NSParameterAssert(serial);
+  
   // Если лицензия не расшифровалась...
   if(![self isSerial: serial conformsToCustomerName: name error: NULL])
   {
@@ -507,6 +517,8 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 // Performs server check of the supplied serial.
 - (enum SerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
 {
+  NSParameterAssert(serial);
+  
   NSString* serialCheckBase = [[NSBundle mainBundle] objectForInfoDictionaryKey: WDServerCheckURLKey];
   
   NSString* userNameHash = [[NSUserName() dataUsingEncoding: NSUTF8StringEncoding] SHA1HexString];
@@ -556,12 +568,16 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 // Checks whether specified serial is present in the static blacklist.
 - (BOOL) isSerialInStaticBlacklist: (NSString*) serial
 {
+  NSParameterAssert(serial);
+  
   return [self.serialsStaticBlacklist containsObject: serial];
 }
 
 // Checks whether specified serial is present in the dynamic blacklist.
 - (BOOL) isSerialInDynamicBlacklist: (NSString*) serial
 {
+  NSParameterAssert(serial);
+  
   NSArray* dynamicBlacklist = [[NSUserDefaults standardUserDefaults] arrayForKey: WDDynamicBlacklistKey];
   
   return [dynamicBlacklist containsObject: serial];
@@ -570,6 +586,8 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 // Adds specified serial to the dynamic blacklist.
 - (void) addSerialToDynamicBlacklist: (NSString*) serial
 {
+  NSParameterAssert(serial);
+  
   NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
   
   NSArray* dynamicBlacklist = [userDefaults arrayForKey: WDDynamicBlacklistKey];
