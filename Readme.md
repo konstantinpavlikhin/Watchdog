@@ -163,6 +163,33 @@ Watchdog utilizes Base Internationalization technology, thats why its minimum SD
 
 Watchdog' UI is currently localized to English and Russian.
 
+## Generating Keys
+
+### DSA Keys
+
+Generate a DSA private key:
+`$ openssl dsaparam -genkey 2048 -noout -out DSAPrivateKey.pem`
+
+Check components of the generated private key:
+`$ openssl dsa -in DSAPrivateKey.pem -text -noout`
+
+Extract public key from the private key:
+`$ openssl dsa -in DSAPrivateKey.pem -pubout -outform PEM -out DSAPublicKey.pem`
+
+### ECDSA Keys
+
+List all available curves:
+`$ openssl ecparam -list_curves`
+
+Generate an EC private key:
+`$ openssl ecparam -genkey -name secp521r1 -noout -out ECDSAPrivateKey.pem`
+
+Check components of the generated private key:
+`$ openssl ec -in ECDSAPrivateKey.pem -text -noout`
+
+Extract public key from the private key:
+`$ openssl ec -in ECDSAPrivateKey.pem -pubout -outform PEM -out ECDSAPublicKey.pem`
+
 ## Important asymmetric cryptography notice
 
 Keep your application' private key in a really safe place and make sure you have a reliable backup. If you lose your private key you no longer be able to generate new serials for your app. If your private key will be compromised, bad, really bad things will happen: anyone will be able to produce valid serials on their own so you most probably will have to change public key, embedded in your app. You have been warned!
