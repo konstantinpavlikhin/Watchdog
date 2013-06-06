@@ -22,6 +22,7 @@
 		B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
 		B5DBD770175FB673001F4709 /* SamplePrivateKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */; };
 		B5DBD771175FB673001F4709 /* SamplePublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */; };
+		B5DBD77E17608864001F4709 /* WDPlistConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD77D17608864001F4709 /* WDPlistConstants.m */; };
 		B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */; };
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -132,6 +133,8 @@
 		B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationController+Private.h"; sourceTree = SOURCE_ROOT; };
 		B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SamplePrivateKey.pem; sourceTree = "<group>"; };
 		B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SamplePublicKey.pem; sourceTree = "<group>"; };
+		B5DBD77C17608851001F4709 /* WDPlistConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDPlistConstants.h; sourceTree = SOURCE_ROOT; };
+		B5DBD77D17608864001F4709 /* WDPlistConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDPlistConstants.m; sourceTree = SOURCE_ROOT; };
 		B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
 		B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -267,6 +270,16 @@
 			name = Expecta;
 			sourceTree = "<group>";
 		};
+		B5DBD77F1760886A001F4709 /* Plist constants */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD77C17608851001F4709 /* WDPlistConstants.h */,
+				B5DBD77D17608864001F4709 /* WDPlistConstants.m */,
+			);
+			name = "Plist constants";
+			path = Watchdog;
+			sourceTree = "<group>";
+		};
 		B5E0368E159DB4D100007230 /* Registration window controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +323,7 @@
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
 				B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */,
 				B58522C115A4DD28008822D4 /* Localizable.strings */,
+				B5DBD77F1760886A001F4709 /* Plist constants */,
 				B5F0B4F114F54B8B0069FFAF /* Registration controller */,
 				B5E0368E159DB4D100007230 /* Registration window controller */,
 				B5DBD72D175FABBA001F4709 /* WatchdogTests */,
@@ -343,8 +357,8 @@
 			isa = PBXGroup;
 			children = (
 				B5F614EF14F54EB500C8565A /* WDRegistrationController.h */,
-				B5F614F014F54EB500C8565A /* WDRegistrationController.m */,
 				B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */,
+				B5F614F014F54EB500C8565A /* WDRegistrationController.m */,
 			);
 			name = "Registration controller";
 			path = Watchdog;
@@ -516,6 +530,7 @@
 				B5F6150014F54EB500C8565A /* WDSerialEntryController.m in Sources */,
 				B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */,
 				B5F6150814F54EB500C8565A /* WDRegistrationWindowController.m in Sources */,
+				B5DBD77E17608864001F4709 /* WDPlistConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

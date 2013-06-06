@@ -12,6 +12,8 @@
 
 #import "WDRegistrationController.h"
 
+#import "WDPlistConstants.h"
+
 @implementation WDSerialEntryController
 
 - (id) init
@@ -35,12 +37,12 @@
 
 - (NSURL*) supportURL
 {
-  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: @"WDSupportURL"]];
+  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: WDSupportURLKey]];
 }
 
 - (NSURL*) buyOnlineURL
 {
-  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: @"WDBuyOnlineURL"]];
+  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: WDBuyOnlineURLKey]];
 }
 
 - (IBAction) lostKey: (id) sender

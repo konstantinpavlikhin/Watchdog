@@ -12,6 +12,8 @@
 
 #import "WDRegistrationWindowController.h"
 
+#import "WDPlistConstants.h"
+
 NSString* const ApplicationStateKeyPath = @"applicationState";
 
 NSString* const WDCustomerNameKey = @"WDCustomerName";
@@ -505,7 +507,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 // Performs server check of the supplied serial.
 - (enum SerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
 {
-  NSString* serialCheckBase = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"WDServerCheckURL"];
+  NSString* serialCheckBase = [[NSBundle mainBundle] objectForInfoDictionaryKey: WDServerCheckURLKey];
   
   NSString* userNameHash = [[NSUserName() dataUsingEncoding: NSUTF8StringEncoding] SHA1HexString];
   
