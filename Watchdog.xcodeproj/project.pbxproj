@@ -20,9 +20,19 @@
 		B5DBD746175FAC27001F4709 /* libSpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD745175FAC27001F4709 /* libSpecta.a */; };
 		B5DBD769175FAD1D001F4709 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD766175FAD1D001F4709 /* libExpecta.a */; };
 		B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
-		B5DBD770175FB673001F4709 /* SamplePrivateKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */; };
-		B5DBD771175FB673001F4709 /* SamplePublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */; };
 		B5DBD77E17608864001F4709 /* WDPlistConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD77D17608864001F4709 /* WDPlistConstants.m */; };
+		B5DBD7BC1760B831001F4709 /* 1024-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7BB1760B831001F4709 /* 1024-private.pem */; };
+		B5DBD7BE1760B841001F4709 /* 2048-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7BD1760B841001F4709 /* 2048-private.pem */; };
+		B5DBD7C01760B84C001F4709 /* secp384r1-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */; };
+		B5DBD7C21760B855001F4709 /* secp521r1-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7C11760B855001F4709 /* secp521r1-private.pem */; };
+		B5DBD7C41760B891001F4709 /* 1024-public.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7C31760B891001F4709 /* 1024-public.pem */; };
+		B5DBD7C61760B897001F4709 /* 2048-public.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7C51760B897001F4709 /* 2048-public.pem */; };
+		B5DBD7C81760B8E8001F4709 /* secp384r1-public.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7C71760B8E8001F4709 /* secp384r1-public.pem */; };
+		B5DBD7CA1760B8EF001F4709 /* secp521r1-public.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7C91760B8EF001F4709 /* secp521r1-public.pem */; };
+		B5DBD7CC1760B953001F4709 /* secp384r1-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7CB1760B953001F4709 /* secp384r1-data.plist */; };
+		B5DBD7CE1760B96D001F4709 /* secp521r1-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */; };
+		B5DBD7D01760B97D001F4709 /* 1024-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7CF1760B97D001F4709 /* 1024-data.plist */; };
+		B5DBD7D21760B98C001F4709 /* 2048-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7D11760B98C001F4709 /* 2048-data.plist */; };
 		B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */; };
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,10 +141,20 @@
 		B5DBD767175FAD1D001F4709 /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "expecta/build/Release/NSObject+Expecta.h"; sourceTree = SOURCE_ROOT; };
 		B5DBD768175FAD1D001F4709 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSValue+Expecta.h"; path = "expecta/build/Release/NSValue+Expecta.h"; sourceTree = SOURCE_ROOT; };
 		B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationController+Private.h"; sourceTree = SOURCE_ROOT; };
-		B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SamplePrivateKey.pem; sourceTree = "<group>"; };
-		B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SamplePublicKey.pem; sourceTree = "<group>"; };
 		B5DBD77C17608851001F4709 /* WDPlistConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDPlistConstants.h; sourceTree = SOURCE_ROOT; };
 		B5DBD77D17608864001F4709 /* WDPlistConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDPlistConstants.m; sourceTree = SOURCE_ROOT; };
+		B5DBD7BB1760B831001F4709 /* 1024-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1024-private.pem"; sourceTree = "<group>"; };
+		B5DBD7BD1760B841001F4709 /* 2048-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2048-private.pem"; sourceTree = "<group>"; };
+		B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp384r1-private.pem"; sourceTree = "<group>"; };
+		B5DBD7C11760B855001F4709 /* secp521r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp521r1-private.pem"; sourceTree = "<group>"; };
+		B5DBD7C31760B891001F4709 /* 1024-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1024-public.pem"; sourceTree = "<group>"; };
+		B5DBD7C51760B897001F4709 /* 2048-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2048-public.pem"; sourceTree = "<group>"; };
+		B5DBD7C71760B8E8001F4709 /* secp384r1-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp384r1-public.pem"; sourceTree = "<group>"; };
+		B5DBD7C91760B8EF001F4709 /* secp521r1-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp521r1-public.pem"; sourceTree = "<group>"; };
+		B5DBD7CB1760B953001F4709 /* secp384r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "secp384r1-data.plist"; sourceTree = "<group>"; };
+		B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "secp521r1-data.plist"; sourceTree = "<group>"; };
+		B5DBD7CF1760B97D001F4709 /* 1024-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "1024-data.plist"; sourceTree = "<group>"; };
+		B5DBD7D11760B98C001F4709 /* 2048-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "2048-data.plist"; sourceTree = "<group>"; };
 		B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
 		B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -191,8 +211,8 @@
 		B5DBD72D175FABBA001F4709 /* WatchdogTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5DBD76E175FB673001F4709 /* SamplePrivateKey.pem */,
-				B5DBD76F175FB673001F4709 /* SamplePublicKey.pem */,
+				B5DBD78117608EC9001F4709 /* ECDSA */,
+				B5DBD78017608EB5001F4709 /* DSA */,
 				B5DBD747175FAD01001F4709 /* Specta */,
 				B5DBD748175FAD07001F4709 /* Expecta */,
 				B5DBD733175FABBA001F4709 /* WatchdogTests.h */,
@@ -278,6 +298,64 @@
 			);
 			name = "Plist constants";
 			path = Watchdog;
+			sourceTree = "<group>";
+		};
+		B5DBD78017608EB5001F4709 /* DSA */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD7B91760B6FD001F4709 /* 1024 */,
+				B5DBD7BA1760B701001F4709 /* 2048 */,
+			);
+			name = DSA;
+			sourceTree = "<group>";
+		};
+		B5DBD78117608EC9001F4709 /* ECDSA */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD78517608F60001F4709 /* secp384r1 */,
+				B5DBD78617608F68001F4709 /* secp521r1 */,
+			);
+			name = ECDSA;
+			sourceTree = "<group>";
+		};
+		B5DBD78517608F60001F4709 /* secp384r1 */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */,
+				B5DBD7C71760B8E8001F4709 /* secp384r1-public.pem */,
+				B5DBD7CB1760B953001F4709 /* secp384r1-data.plist */,
+			);
+			name = secp384r1;
+			sourceTree = "<group>";
+		};
+		B5DBD78617608F68001F4709 /* secp521r1 */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD7C11760B855001F4709 /* secp521r1-private.pem */,
+				B5DBD7C91760B8EF001F4709 /* secp521r1-public.pem */,
+				B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */,
+			);
+			name = secp521r1;
+			sourceTree = "<group>";
+		};
+		B5DBD7B91760B6FD001F4709 /* 1024 */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD7BB1760B831001F4709 /* 1024-private.pem */,
+				B5DBD7C31760B891001F4709 /* 1024-public.pem */,
+				B5DBD7CF1760B97D001F4709 /* 1024-data.plist */,
+			);
+			name = 1024;
+			sourceTree = "<group>";
+		};
+		B5DBD7BA1760B701001F4709 /* 2048 */ = {
+			isa = PBXGroup;
+			children = (
+				B5DBD7BD1760B841001F4709 /* 2048-private.pem */,
+				B5DBD7C51760B897001F4709 /* 2048-public.pem */,
+				B5DBD7D11760B98C001F4709 /* 2048-data.plist */,
+			);
+			name = 2048;
 			sourceTree = "<group>";
 		};
 		B5E0368E159DB4D100007230 /* Registration window controller */ = {
@@ -479,8 +557,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5DBD732175FABBA001F4709 /* InfoPlist.strings in Resources */,
-				B5DBD770175FB673001F4709 /* SamplePrivateKey.pem in Resources */,
-				B5DBD771175FB673001F4709 /* SamplePublicKey.pem in Resources */,
+				B5DBD7BC1760B831001F4709 /* 1024-private.pem in Resources */,
+				B5DBD7BE1760B841001F4709 /* 2048-private.pem in Resources */,
+				B5DBD7C01760B84C001F4709 /* secp384r1-private.pem in Resources */,
+				B5DBD7C21760B855001F4709 /* secp521r1-private.pem in Resources */,
+				B5DBD7C41760B891001F4709 /* 1024-public.pem in Resources */,
+				B5DBD7C61760B897001F4709 /* 2048-public.pem in Resources */,
+				B5DBD7C81760B8E8001F4709 /* secp384r1-public.pem in Resources */,
+				B5DBD7CA1760B8EF001F4709 /* secp521r1-public.pem in Resources */,
+				B5DBD7CC1760B953001F4709 /* secp384r1-data.plist in Resources */,
+				B5DBD7CE1760B96D001F4709 /* secp521r1-data.plist in Resources */,
+				B5DBD7D01760B97D001F4709 /* 1024-data.plist in Resources */,
+				B5DBD7D21760B98C001F4709 /* 2048-data.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

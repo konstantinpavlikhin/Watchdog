@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+  <dict>
+    <key>Name</key>
+    <string>John Appleseed</string>
+    
+    <key>Serial</key>
+    <string>GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M======</string>
+  </dict>
+  
+  <dict>
+    <key>Name</key>
+    <string>Константин Павлихин</string>
+    
+    <key>Serial</key>
+    <string>GAWQEFCBQHCN2TW35HJ5VQRBBRREUIWA26SPVMQCCUAJJTFSID2K7ZF7QKOWSBF7W5UOZH4GUEHA====</string>
+  </dict>
+  
+  <dict>
+    <key>Name</key>
+    <string>ประเทศไทย</string>
+    
+    <key>Serial</key>
+    <string>GAWAEFCW5A3KGXNOXYMX6HMABC6CQUA75Q2F2ZACCRV5WTJGNB6BLDVKBKD7FRVJAJGJFHK6WY======</string>
+  </dict>
+</array>
+</plist>

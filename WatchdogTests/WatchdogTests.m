@@ -20,19 +20,31 @@ SpecBegin(WDRegistrationController)
 
 describe(@"WDRegistrationController", ^
 {
-  it(@"should differentiate valid serials from corrupted", ^
+  it(@"should accept valid serials", ^
   {
     WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
     
-    NSString* path = [[NSBundle bundleForClass: [self class]] pathForResource: @"SamplePublicKey" ofType: @"pem" inDirectory: nil];
+    NSArray* prefixes = @[@"secp384r1", @"secp521r1", @"1024", @"2048"];
     
-    SRC.DSAPublicKeyPEM = [NSString stringWithContentsOfFile: path encoding: NSUTF8StringEncoding error: NULL];
-    
-    expect([SRC isSerial: @"GAWAEFAT2C5CQLRALLUX4DZ2YU6XFSD3YRRTCYICCRZQ6M4ONA4253TRAX3DNFLODY76TCYJ2Y" conformsToCustomerName: @"Konstantin Pavlikhin" error: NULL]).to.equal(YES);
-    
-    //expect([SRC isSerial: @"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" conformsToCustomerName: @"Konstantin Pavlikhin" error: NULL]).to.equal(NO);
-    
-    expect([SRC isSerial: @"GAWAEFAT2C5CQLRALLUX4DZ2YU6XFSD3YRRTCYICCRZQ6M4ONA4253TRAX3DNFLODY76TCYJ2Y" conformsToCustomerName: @"Somebody Else" error: NULL]).to.equal(NO);
+    [prefixes enumerateObjectsUsingBlock: ^(NSString* prefix, NSUInteger idx, BOOL* stop)
+    {
+      NSString* publicPEMName = [prefix stringByAppendingString: @"-public"];
+      
+      NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: publicPEMName ofType: @"pem" inDirectory: nil];
+      
+      SRC.DSAPublicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
+      
+      NSString* dataName = [prefix stringByAppendingString: @"-data"];
+      
+      NSString* dataPath = [[NSBundle bundleForClass: [self class]] pathForResource: dataName ofType: @"plist" inDirectory: nil];
+      
+      NSArray* dataArray = [NSPropertyListSerialization propertyListWithData: [NSData dataWithContentsOfFile: dataPath] options: 0 format: 0 error: NULL];
+      
+      [dataArray enumerateObjectsUsingBlock: ^(NSDictionary* customer, NSUInteger idx, BOOL* stop)
+      {
+        expect([SRC isSerial: customer[@"Serial"] conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(YES);
+      }];
+    }];
   });
 });
 

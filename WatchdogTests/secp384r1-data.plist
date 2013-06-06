@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <array>
+    <dict>
+      <key>Name</key>
+      <string>John Appleseed</string>
+      
+      <key>Serial</key>
+      <string>GBSQEMIA5K734JXT4ZEECT3MKTYD5MCYWZOXRZJ646R2AWYPN4ZXCFYZWNIHX4336BE5VFTY7VR4VVDQK2KNUARQMS3S3NAUNGPUIQ536RBVJOQUC2SQBIGLVC5LQKV3VCX7D6WTKNCKE3NMGMBCS4CC5DGMBOD6UMS4Q===</string>
+    </dict>
+    
+    <dict>
+      <key>Name</key>
+      <string>Константин Павлихин</string>
+      
+      <key>Serial</key>
+      <string>GBSAEMAQINPK6XNA2PJWTTEDHN7KKC3NOOYEWNXQIC7YKRLUBAMR7CBSRZBKQIAKVLQW2SNMFIQP7OKM4P6AEMAY45E6X3VFSKL6CPOF3CFN6MB7LRBZ2N4AM5VOBXWGC5KZDOOMKSZ6GPRTJKA2MSJEB5OM6HXLPFFQ====</string>
+    </dict>
+    
+    <dict>
+      <key>Name</key>
+      <string>ประเทศไทย</string>
+      
+      <key>Serial</key>
+      <string>GBSQEMCGZSCHNG76AHAOAWU773LL4GU7YRK2W7H3NUG4DVVQK7N4MJBA7JGOUIIKZJ64CV7HQZRYYMW2QYZAEMIA7ETWKYLSWWE47XGRM3DFVWFTYHSJYR6CTFY7S5YROND3ZZUKUZZDKE6OKQSEWSRG3IQMVCDMXHTQC===</string>
+    </dict>
+  </array>
+</plist>
