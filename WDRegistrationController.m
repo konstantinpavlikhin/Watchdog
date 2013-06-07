@@ -155,7 +155,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
   {
     // Wiping out any existing registration data & state.
-    dispatch_sync(dispatch_get_main_queue(), ^()
+    dispatch_async(dispatch_get_main_queue(), ^()
     {
       [self deauthorizeAccount];
     });
@@ -173,7 +173,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
         [userDefaults setObject: serial forKey: WDSerialKey];
         
         // KVO-notifications always arrive on the same thread that set the value.
-        dispatch_sync(dispatch_get_main_queue(), ^()
+        dispatch_async(dispatch_get_main_queue(), ^()
         {
           self.applicationState = WDRegisteredApplicationState;
         });
