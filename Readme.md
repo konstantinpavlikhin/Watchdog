@@ -9,11 +9,12 @@ Watchdog has nothing to do with with trial periods or evaluation launches count.
 ## Adding Watchdog to your project
 
 1. Add Watchdog to your project as a submodule.
-```bash
-$ cd ~/Development/Application
-$ git submodule add https://github.com/konstantinpavlikhin/Watchdog.git
-$ git submodule update --init --recursive
-```
+  ```
+  $ cd ~/Development/Application
+  $ git submodule add https://github.com/konstantinpavlikhin/Watchdog.git
+  $ git submodule update --init --recursive
+  ```
+
 2. Setup a dependency between your project and Watchdog
   * Find `Watchdog.xcodeproj` inside of the cloned repository directory and drag it into the Xcode' Project Navigator.
   * Configure your application target to be dependent on Watchdog.framework.
