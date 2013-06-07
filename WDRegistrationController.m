@@ -47,35 +47,29 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return sharedRegistrationController;
 }
 
-// Supplied link should look like this: bundledisplayname-wd://WEDSCVBNMRFHNMJJFCV:WSXFRFVBJUHNMQWETYIOPLKJHGFDSXCVBNYFVBGFCVBNMHSGHFKAJSHCASC.
-- (void) registerWithQuickApplyLink: (NSString*) link
+// Supplied link should look like this: bundlename-wd://WEDSCVBNMRFHNMJJFCV:GAWWSXFRFVBJU...CVBNMHSGHFKAJSHC.
+- (NSDictionary*) decomposeQuickApplyLink: (NSString*) link utilizingBundleName: (NSString*) bundleName
 {
   NSParameterAssert(link);
   
-  // Getting non-localized application name.
-  NSString* appName = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleName"];
+  NSParameterAssert(bundleName);
   
-  // Concatenating URL scheme part with forward slashes.
-  NSString* schemeWithSlashes = [[appName lowercaseString] stringByAppendingString: @"-wd://"];
+  // Concatenating URL scheme part with suffix.
+  NSString* schemeWithSlashes = [[bundleName lowercaseString] stringByAppendingString: @"-wd://"];
   
   // Wiping out link prefix.
   NSString* nameColonSerial = [link stringByReplacingOccurrencesOfString: schemeWithSlashes withString: @""];
   
   NSRange rangeOfColon = [nameColonSerial rangeOfString: @":"];
   
-  // Colon name/serial separator not found — link is corrupted.
-  if(rangeOfColon.location == NSNotFound)
-  {
-    [[[self class] corruptedQuickApplyLinkAlert] runModal];
-    
-    return;
-  }
+  // Colon (name/serial separator) not found — link is corrupted.
+  if(rangeOfColon.location == NSNotFound) return nil;
   
   NSString* customerNameInBase32 = nil;
   
   NSString* serial = nil;
   
-  // -substringToIndex can raise an exception...
+  // -substringToIndex or -substringFromIndex can raise an exception...
   @try
   {
     customerNameInBase32 = [nameColonSerial substringToIndex: rangeOfColon.location];
@@ -84,60 +78,71 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   }
   @catch(NSException* exception)
   {
-    [[[self class] corruptedQuickApplyLinkAlert] runModal];
-    
-    return;
+    return nil;
   }
+  
+  if(!customerNameInBase32 || !serial) return nil;
   
   // If we are here we already got two base32 encoded parts: customer name & the serial itself. Lets decode a name!
   
-  // Создаем трансформацию перевода из base32.
+  NSDictionary* result = nil;
+  
   SecTransformRef base32DecodeTransform = SecDecodeTransformCreate(kSecBase32Encoding, NULL);
   
   if(base32DecodeTransform)
   {
-    BOOL success = NO;
-    
     CFDataRef tempData = CFBridgingRetain([customerNameInBase32 dataUsingEncoding: NSUTF8StringEncoding]);
     
-    // Задаем входной параметр в виде NSData.
     if(SecTransformSetAttribute(base32DecodeTransform, kSecTransformInputAttributeName, tempData, NULL))
     {
-      // Запускаем трансформацию.
       CFTypeRef customerNameData = SecTransformExecute(base32DecodeTransform, NULL);
       
       if(customerNameData)
       {
         NSString* customerName = [[NSString alloc] initWithData: CFBridgingRelease(customerNameData) encoding: NSUTF8StringEncoding];
         
-        [self registerWithCustomerName: customerName serial: serial handler: ^(enum WDSerialVerdict verdict)
-        {
-          dispatch_async(dispatch_get_main_queue(), ^()
-          {
-            if(verdict != WDValidSerialVerdict)
-            {
-              [[[self class] alertWithSerialVerdict: verdict] runModal];
-              
-              return;
-            }
-            // Show Registration Window if everything is OK.
-            [self showRegistrationWindow: self];
-          });
-        }];
-        
-        success = YES;
+        result = @{@"name": customerName, @"serial": serial};
       }
     }
     
     CFRelease(tempData);
     
     CFRelease(base32DecodeTransform);
-    
-    if(success) return;
   }
   
-  // Error state.
-  [[[self class] corruptedQuickApplyLinkAlert] runModal];
+  return result;
+}
+
+- (void) registerWithQuickApplyLink: (NSString*) link
+{
+  NSParameterAssert(link);
+  
+  // Getting non-localized application name.
+  NSString* bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleName"];
+  
+  NSDictionary* dict = [self decomposeQuickApplyLink: link utilizingBundleName: bundleName];
+  
+  if(!dict)
+  {
+    [[[self class] corruptedQuickApplyLinkAlert] runModal];
+    
+    return;
+  }
+  
+  [self registerWithCustomerName: dict[@"name"] serial: dict[@"serial"] handler: ^(enum WDSerialVerdict verdict)
+  {
+    dispatch_async(dispatch_get_main_queue(), ^()
+    {
+      if(verdict != WDValidSerialVerdict)
+      {
+        [[[self class] alertWithSerialVerdict: verdict] runModal];
+        
+        return;
+      }
+      
+      [self showRegistrationWindow: self];
+    });
+  }];
 }
 
 // Tries to register application with supplied customer name & serial pair.
@@ -205,7 +210,6 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 - (void) checkForStoredSerialAndValidateIt
 {
-  // Starting a separate thread...
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^()
   {
     // Looking for serial data in user preferences.
@@ -215,10 +219,10 @@ static WDRegistrationWindowController* registrationWindowController = nil;
     
     NSString* serial = [userDefaults stringForKey: WDSerialKey];
     
-    // If both parameters are missing — treat it (silently) like unregistered state.
-    if(!name && !serial)
+    // If one of parameters is missing — treat it (silently) like unregistered state.
+    if(!name || !serial)
     {
-      dispatch_sync(dispatch_get_main_queue(), ^()
+      dispatch_async(dispatch_get_main_queue(), ^()
       {
         self.applicationState = WDUnregisteredApplicationState;
       });
@@ -226,31 +230,22 @@ static WDRegistrationWindowController* registrationWindowController = nil;
       return;
     };
     
-    // Prepare block handler for any other cases.
-    void (^handler)(enum WDSerialVerdict serialVerdict) = ^(enum WDSerialVerdict serialVerdict)
+    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDSerialVerdict serialVerdict)
     {
-      if(serialVerdict == WDValidSerialVerdict)
-      {
-        dispatch_sync(dispatch_get_main_queue(), ^()
-        {
-          self.applicationState = WDRegisteredApplicationState;
-        });
-        
-        return;
-      };
-      
-      // Once we've reached this point something is definitely incorrect.
-      
       dispatch_async(dispatch_get_main_queue(), ^()
       {
-        // Wiping out stored registration data and going to the unregistered state.
+        if(serialVerdict == WDValidSerialVerdict)
+        {
+          self.applicationState = WDRegisteredApplicationState;
+          
+          return;
+        }
+        
         [self deauthorizeAccount];
         
         [[[self class] alertWithSerialVerdict: serialVerdict] runModal];
       });
-    };
-    
-    [self complexCheckOfCustomerName: name serial: serial completionHandler: handler];
+    }];
   });
 }
 

@@ -10,6 +10,10 @@
 
 @interface WDRegistrationController ()
 
+// These method prototypes are here for unit testing purposes.
+
+- (NSDictionary*) decomposeQuickApplyLink: (NSString*) link utilizingBundleName: (NSString*) bundleName;
+
 - (BOOL) isSerial: (NSString*) serial conformsToCustomerName: (NSString*) name error: (NSError**) error;
 
 @end

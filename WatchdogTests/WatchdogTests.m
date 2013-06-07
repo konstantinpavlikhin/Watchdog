@@ -48,6 +48,23 @@ describe(@"WDRegistrationController", ^
     }];
   });
   
+  it(@"should decompose Quick-Apply Links", ^
+  {
+    NSString* name = @"John Appleseed";
+    
+    NSString* nameInBase32 = @"JJXWQ3RAIFYHA3DFONSWKZA";
+    
+    NSString* serial = @"FUNNYSERIALNUMBER";
+    
+    NSString* link = [NSString stringWithFormat: @"application-wd://%@:%@", nameInBase32, serial];
+    
+    NSDictionary* dict = [SRC decomposeQuickApplyLink: link utilizingBundleName: @"Application"];
+    
+    expect(dict[@"name"]).to.equal(name);
+    
+    expect(dict[@"serial"]).to.equal(serial);
+  });
+  
   it(@"should transition from the unknown state to the registered state", ^AsyncBlock
   {
     // Before any checks are made we can't make any assumptions about app' state.
