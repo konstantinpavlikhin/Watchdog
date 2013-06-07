@@ -60,15 +60,25 @@
   [self.windowController close];
 }
 
++ (NSString*) sanitizeString: (NSString*) string
+{
+  NSCharacterSet* characterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+  
+  return [string stringByTrimmingCharactersInSet: characterSet];
+}
+
 - (IBAction) proceed: (id) sender
 {
-  #warning TODO: sanitize values!
-  NSString* name = [self.customerName stringValue];
+  NSString* name = [[self class] sanitizeString: [self.customerName stringValue]];
   
-  NSString* serial = [self.licenseKey stringValue];
+  NSString* serial = [[self class] sanitizeString: [self.licenseKey stringValue]];
   
-  // Dumb check.
-  if(![name length] || ![serial length]) { [self shakeWindow]; return; };
+  if([name length] < 1 || [serial length] < 1)
+  {
+    [self shakeWindow];
+    
+    return;
+  };
   
   [self.spinner startAnimation: self];
   
@@ -85,7 +95,12 @@
       
       [self.proceed setEnabled: YES];
       
-      if(verdict != WDValidSerialVerdict) { [self shakeWindow]; return; };
+      if(verdict != WDValidSerialVerdict)
+      {
+        [self shakeWindow];
+        
+        return;
+      };
       
       [self clearInputFields];
     });
