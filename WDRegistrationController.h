@@ -14,13 +14,13 @@
 
 enum ApplicationState
 {
-  // Application state before any checkings are made.
-  UnknownApplicationState,
+  // Application state before any checks are made.
+  UnknownApplicationState = 0,
   
   // Application state when no [valid] serial is found.
   UnregisteredApplicationState,
   
-  // Application state when all checkings are succeeded.
+  // Application state when all checks are succeeded.
   RegisteredApplicationState
 };
 

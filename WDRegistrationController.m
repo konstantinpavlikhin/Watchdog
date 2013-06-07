@@ -339,18 +339,6 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return alert;
 }
 
-- (id) init
-{
-  self = [super init];
-  
-  if(!self) return nil;
-  
-  // We can't judge about application state until we execute all checks.
-  _applicationState = UnknownApplicationState; // Using synthesized instance variable directly so no KVO-notification is being fired!
-  
-  return self;
-}
-
 // Lazy RegistrationWindowController constructor.
 - (WDRegistrationWindowController*) registrationWindowController
 {

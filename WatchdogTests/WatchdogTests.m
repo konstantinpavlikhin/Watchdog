@@ -20,10 +20,11 @@ SpecBegin(WDRegistrationController)
 
 describe(@"WDRegistrationController", ^
 {
+  WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
+  
   it(@"should accept valid serials", ^
   {
-    WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
-    
+    // Test against two EC keys and two DSAs.
     NSArray* prefixes = @[@"secp384r1", @"secp521r1", @"1024", @"2048"];
     
     [prefixes enumerateObjectsUsingBlock: ^(NSString* prefix, NSUInteger idx, BOOL* stop)
@@ -45,6 +46,41 @@ describe(@"WDRegistrationController", ^
         expect([SRC isSerial: customer[@"Serial"] conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(YES);
       }];
     }];
+  });
+  
+  it(@"should transition from the unknown state to the registered state", ^AsyncBlock
+  {
+    // Before any checks are made we can't make any assumptions about app' state.
+    expect(SRC.applicationState).to.equal(UnknownApplicationState);
+    
+    NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
+    
+    SRC.DSAPublicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
+    
+    // Valid credentials from the "1024 DSA" sample.
+    NSString* name = @"John Appleseed";
+    
+    NSString* serial = @"GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M";
+    
+    [SRC registerWithCustomerName: name serial: serial handler: ^(enum SerialVerdict verdict)
+    {
+      expect(verdict).to.equal(ValidSerialVerdict);
+      
+      expect(SRC.applicationState).to.equal(RegisteredApplicationState);
+      
+      expect([SRC registeredCustomerName]).to.equal(name);
+      
+      done();
+    }];
+  });
+  
+  it(@"should transition to the unregistered state", ^
+  {
+    expect(SRC.applicationState).to.equal(RegisteredApplicationState);
+    
+    [SRC deauthorizeAccount];
+    
+    expect(SRC.applicationState).to.equal(UnregisteredApplicationState);
   });
 });
 
