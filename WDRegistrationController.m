@@ -399,7 +399,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
       {
         NSData* tempSignature = CFBridgingRelease(signature);
         
-        result = [self verifyDSASignature: tempSignature data: [name dataUsingEncoding: NSUTF8StringEncoding] error: error];
+        result = [self verifySignature: tempSignature data: [name dataUsingEncoding: NSUTF8StringEncoding] error: error];
         
         reachedEnd = YES;
       }
@@ -419,7 +419,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return result;
 }
 
-- (BOOL) verifyDSASignature: (NSData*) signature data: (NSData*) sourceData error: (NSError* __autoreleasing *) error
+- (BOOL) verifySignature: (NSData*) signature data: (NSData*) sourceData error: (NSError* __autoreleasing *) error
 {
   // These parameters are mandatory.
   NSParameterAssert(signature);
@@ -427,9 +427,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   NSParameterAssert(sourceData);
   
   // Make sure developer didn't forget to set the public key.
-  NSAssert(self.DSAPublicKeyPEM, @"DSA public key is not set.");
+  NSAssert(self.publicKeyPEM, @"DSA/ECDSA public key is not set.");
   
-  CFDataRef publicKeyData = CFBridgingRetain([self.DSAPublicKeyPEM dataUsingEncoding: NSUTF8StringEncoding]);
+  CFDataRef publicKeyData = CFBridgingRetain([self.publicKeyPEM dataUsingEncoding: NSUTF8StringEncoding]);
   
   // Turning our public key in PEM form into SecKeyRef.
   SecExternalFormat externalFormat = kSecFormatPEMSequence;

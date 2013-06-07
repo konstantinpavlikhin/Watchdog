@@ -47,8 +47,8 @@ enum SerialVerdict
 // Returns current registration state of the application.
 @property(readonly, atomic) enum ApplicationState applicationState;
 
-// Must be set to the application DSA public key in PEM format.
-@property(readwrite, strong, atomic) NSString* DSAPublicKeyPEM;
+// Must be set to the application DSA/ECDSA public key in PEM format.
+@property(readwrite, strong, atomic) NSString* publicKeyPEM;
 
 // Should be set to the array of the blacklisted serials.
 @property(readwrite, strong, atomic) NSArray* serialsStaticBlacklist;

@@ -33,7 +33,7 @@ describe(@"WDRegistrationController", ^
       
       NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: publicPEMName ofType: @"pem" inDirectory: nil];
       
-      SRC.DSAPublicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
+      SRC.publicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
       
       NSString* dataName = [prefix stringByAppendingString: @"-data"];
       
@@ -55,7 +55,7 @@ describe(@"WDRegistrationController", ^
     
     NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
     
-    SRC.DSAPublicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
+    SRC.publicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
     
     // Valid credentials from the "1024 DSA" sample.
     NSString* name = @"John Appleseed";

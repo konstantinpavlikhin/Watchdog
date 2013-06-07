@@ -1,6 +1,6 @@
 # Watchdog
 
-Watchdog is a simple application registration framework based on the DSA signature.
+Watchdog is a simple application registration framework based on the DSA/ECDSA signatures.
 
 ## What Watchdog is not
 
@@ -65,10 +65,10 @@ At the launch time of your app (`-applicationDidFinishLaunching:`) request the `
 WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
 ```
 
-Set the `DSAPublicKeyPEM` property to your application' DSA public key:
+Set the `publicKeyPEM` property to your application' DSA/ECDSA public key:
 ```objective-c
 ...
-SRC.DSAPublicKeyPEM = @"-----BEGIN PUBLIC KEY-----\n ... -----END PUBLIC KEY-----";
+SRC.publicKeyPEM = @"-----BEGIN PUBLIC KEY-----\n ... -----END PUBLIC KEY-----";
 ```
 
 Set the `serialsStaticBlacklist` property to the array of blacklisted serials (if you have some):
@@ -142,7 +142,7 @@ Instead of torturing customers with long serial keys consider using Quick-Apply 
 Quick-Apply Link consists of the following parts:  
 `applicationname-wd://CUSTOMERNAME:SERIAL`
 
-`applicationname` is a non-localized, lowercased name of your app, without any spaces. `CUSTOMERNAME` stands for Base32 encoded customer name and SERIAL is an actual serial (which is itself a Base32 encoded DSA signature of the customer' name).
+`applicationname` is a non-localized, lowercased name of your app, without any spaces. `CUSTOMERNAME` stands for Base32 encoded customer name and SERIAL is an actual serial (which is itself a Base32 encoded DSA/ECDSA signature of the customer' name).
 
 **HINT**: Consider redirecting customers after successfull purchases to the corresponding Quick-Apply links to make seamless and trouble-free app-activation experiences.
 
