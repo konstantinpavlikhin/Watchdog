@@ -86,6 +86,8 @@
 		B58522C015A4DD28008822D4 /* en */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B58522C215A4DD36008822D4 /* ru */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5DAA40E1761D86100A82BF8 /* WDRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationStatusController+Private.h"; sourceTree = SOURCE_ROOT; };
+		B5DAA40F1761D8C000A82BF8 /* WDSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDSerialEntryController+Private.h"; sourceTree = SOURCE_ROOT; };
 		B5DBD725175FABBA001F4709 /* WatchdogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DBD726175FABBA001F4709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B5DBD72A175FABBA001F4709 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -375,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F614F214F54EB500C8565A /* WDSerialEntryController.h */,
+				B5DAA40F1761D8C000A82BF8 /* WDSerialEntryController+Private.h */,
 				B5F614F314F54EB500C8565A /* WDSerialEntryController.m */,
 				B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */,
 			);
@@ -385,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */,
+				B5DAA40E1761D86100A82BF8 /* WDRegistrationStatusController+Private.h */,
 				B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */,
 				B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */,
 			);

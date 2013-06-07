@@ -77,6 +77,7 @@
   [super showWindow: sender];
 }
 
+// Lazy WDSerialEntryController constructor.
 - (WDSerialEntryController*) serialEntryController
 {
   if(!serialEntryController)
@@ -89,6 +90,7 @@
   return serialEntryController;
 }
 
+// Lazy WDRegistrationStatusController constructor.
 - (WDRegistrationStatusController*) registrationStatusController
 {
   if(!registrationStatusController)
@@ -101,6 +103,7 @@
   return registrationStatusController;
 }
 
+// Fade-in/fade-out subview switcher.
 - (void) switchToRegistrationStatusSubview
 {
   NSView* contentView = self.window.contentView;
@@ -121,6 +124,7 @@
   [self.window makeFirstResponder: registrationStatusController.dismissButton];
 }
 
+// Fade-in/fade-out subview switcher.
 - (void) switchToSerialEntrySubview
 {
   NSView* contentView = self.window.contentView;

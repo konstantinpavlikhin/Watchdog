@@ -8,7 +8,7 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "WDRegistrationStatusController.h"
+#import "WDRegistrationStatusController+Private.h"
 
 #import "WDRegistrationController.h"
 

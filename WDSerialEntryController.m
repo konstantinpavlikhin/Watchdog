@@ -8,7 +8,7 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "WDSerialEntryController.h"
+#import "WDSerialEntryController+Private.h"
 
 #import "WDRegistrationController.h"
 
