@@ -28,7 +28,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 @interface WDRegistrationController ()
 
 // Redeclare this property as private readwrite.
-@property(readwrite, assign, atomic) enum ApplicationState applicationState;
+@property(readwrite, assign, atomic) enum WDApplicationState applicationState;
 
 @end
 
@@ -110,11 +110,11 @@ static WDRegistrationWindowController* registrationWindowController = nil;
       {
         NSString* customerName = [[NSString alloc] initWithData: CFBridgingRelease(customerNameData) encoding: NSUTF8StringEncoding];
         
-        [self registerWithCustomerName: customerName serial: serial handler: ^(enum SerialVerdict verdict)
+        [self registerWithCustomerName: customerName serial: serial handler: ^(enum WDSerialVerdict verdict)
         {
           dispatch_async(dispatch_get_main_queue(), ^()
           {
-            if(verdict != ValidSerialVerdict)
+            if(verdict != WDValidSerialVerdict)
             {
               [[[self class] alertWithSerialVerdict: verdict] runModal];
               
@@ -156,10 +156,10 @@ static WDRegistrationWindowController* registrationWindowController = nil;
     });
     
     // Launching full-featured customer data check.
-    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum SerialVerdict verdict)
+    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDSerialVerdict verdict)
     {
       // If all of the tests pass...
-      if(verdict == ValidSerialVerdict)
+      if(verdict == WDValidSerialVerdict)
       {
         NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
         
@@ -170,7 +170,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
         // KVO-notifications always arrive on the same thread that set the value.
         dispatch_sync(dispatch_get_main_queue(), ^()
         {
-          self.applicationState = RegisteredApplicationState;
+          self.applicationState = WDRegisteredApplicationState;
         });
       }
       
@@ -187,7 +187,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 - (NSString*) registeredCustomerName
 {
-  if([self applicationState] != RegisteredApplicationState) return nil;
+  if([self applicationState] != WDRegisteredApplicationState) return nil;
   
   return [[NSUserDefaults standardUserDefaults] stringForKey: WDCustomerNameKey];
 }
@@ -200,7 +200,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   [userDefaults removeObjectForKey: WDSerialKey];
   
-  self.applicationState = UnregisteredApplicationState;
+  self.applicationState = WDUnregisteredApplicationState;
 }
 
 - (void) checkForStoredSerialAndValidateIt
@@ -220,20 +220,20 @@ static WDRegistrationWindowController* registrationWindowController = nil;
     {
       dispatch_sync(dispatch_get_main_queue(), ^()
       {
-        self.applicationState = UnregisteredApplicationState;
+        self.applicationState = WDUnregisteredApplicationState;
       });
       
       return;
     };
     
     // Prepare block handler for any other cases.
-    void (^handler)(enum SerialVerdict serialVerdict) = ^(enum SerialVerdict serialVerdict)
+    void (^handler)(enum WDSerialVerdict serialVerdict) = ^(enum WDSerialVerdict serialVerdict)
     {
-      if(serialVerdict == ValidSerialVerdict)
+      if(serialVerdict == WDValidSerialVerdict)
       {
         dispatch_sync(dispatch_get_main_queue(), ^()
         {
-          self.applicationState = RegisteredApplicationState;
+          self.applicationState = WDRegisteredApplicationState;
         });
         
         return;
@@ -300,35 +300,35 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return alert;
 }
 
-+ (NSAlert*) alertWithSerialVerdict: (enum SerialVerdict) verdict
++ (NSAlert*) alertWithSerialVerdict: (enum WDSerialVerdict) verdict
 {
   NSAlert* alert = nil;
   
   switch(verdict)
   {
     // Compiler generates warning if this constant not handled in switch.
-    case ValidSerialVerdict:
+    case WDValidSerialVerdict:
     {
       alert = nil;
       
       break;
     }
     
-    case CorruptedSerialVerdict:
+    case WDCorruptedSerialVerdict:
     {
       alert = [self corruptedRegistrationDataAlert];
       
       break;
     }
     
-    case BlacklistedSerialVerdict:
+    case WDBlacklistedSerialVerdict:
     {
       alert = [self blacklistedRegistrationDataAlert];
       
       break;
     }
     
-    case PiratedSerialVerdict:
+    case WDPiratedSerialVerdict:
     {
       alert = [self piratedRegistrationDataAlert];
       
@@ -356,13 +356,13 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   // Если лицензия не расшифровалась...
   if(![self isSerial: serial conformsToCustomerName: name error: NULL])
   {
-    handler(CorruptedSerialVerdict); return;
+    handler(WDCorruptedSerialVerdict); return;
   }
   
   // Если лицензия найдена в одном из черных списков...
   if([self isSerialInStaticBlacklist: serial] || [self isSerialInDynamicBlacklist: serial])
   {
-    handler(BlacklistedSerialVerdict); return;
+    handler(WDBlacklistedSerialVerdict); return;
   }
   
   handler([self synchronousServerCheckWithSerial: serial]);
@@ -503,7 +503,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 }
 
 // Performs server check of the supplied serial.
-- (enum SerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
+- (enum WDSerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
 {
   NSParameterAssert(serial);
   
@@ -534,23 +534,23 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   if([string isEqualToString: @"Valid"])
   {
-    return ValidSerialVerdict;
+    return WDValidSerialVerdict;
   }
   else if([string isEqualToString: @"Blacklisted"])
   {
     [self addSerialToDynamicBlacklist: serial];
     
-    return BlacklistedSerialVerdict;
+    return WDBlacklistedSerialVerdict;
   }
   else if([string isEqualToString: @"Pirated"])
   {
     [self addSerialToDynamicBlacklist: serial];
     
-    return PiratedSerialVerdict;
+    return WDPiratedSerialVerdict;
   }
   
   // Not going to be too strict at this point.
-  return ValidSerialVerdict;
+  return WDValidSerialVerdict;
 }
 
 // Checks whether specified serial is present in the static blacklist.

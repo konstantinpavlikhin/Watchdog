@@ -77,7 +77,7 @@
   // Pushing data to the WDRegistrationController.
   WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
   
-  [SRC registerWithCustomerName: name serial: serial handler: ^(enum SerialVerdict verdict)
+  [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDSerialVerdict verdict)
   {
     dispatch_sync(dispatch_get_main_queue(), ^()
     {
@@ -85,7 +85,7 @@
       
       [self.proceed setEnabled: YES];
       
-      if(verdict != ValidSerialVerdict) { [self shakeWindow]; return; };
+      if(verdict != WDValidSerialVerdict) { [self shakeWindow]; return; };
       
       [self clearInputFields];
     });

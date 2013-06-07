@@ -49,7 +49,7 @@
   
   if(object == SRC && [keyPath isEqualToString: ApplicationStateKeyPath])
   {
-    SRC.applicationState == RegisteredApplicationState? [self switchToRegistrationStatusSubview] : [self switchToSerialEntrySubview];
+    SRC.applicationState == WDRegisteredApplicationState? [self switchToRegistrationStatusSubview] : [self switchToSerialEntrySubview];
   }
 }
 

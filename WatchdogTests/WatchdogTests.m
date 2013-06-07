@@ -51,7 +51,7 @@ describe(@"WDRegistrationController", ^
   it(@"should transition from the unknown state to the registered state", ^AsyncBlock
   {
     // Before any checks are made we can't make any assumptions about app' state.
-    expect(SRC.applicationState).to.equal(UnknownApplicationState);
+    expect(SRC.applicationState).to.equal(WDUnknownApplicationState);
     
     NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
     
@@ -62,11 +62,11 @@ describe(@"WDRegistrationController", ^
     
     NSString* serial = @"GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M";
     
-    [SRC registerWithCustomerName: name serial: serial handler: ^(enum SerialVerdict verdict)
+    [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDSerialVerdict verdict)
     {
-      expect(verdict).to.equal(ValidSerialVerdict);
+      expect(verdict).to.equal(WDValidSerialVerdict);
       
-      expect(SRC.applicationState).to.equal(RegisteredApplicationState);
+      expect(SRC.applicationState).to.equal(WDRegisteredApplicationState);
       
       expect([SRC registeredCustomerName]).to.equal(name);
       
@@ -76,11 +76,11 @@ describe(@"WDRegistrationController", ^
   
   it(@"should transition to the unregistered state", ^
   {
-    expect(SRC.applicationState).to.equal(RegisteredApplicationState);
+    expect(SRC.applicationState).to.equal(WDRegisteredApplicationState);
     
     [SRC deauthorizeAccount];
     
-    expect(SRC.applicationState).to.equal(UnregisteredApplicationState);
+    expect(SRC.applicationState).to.equal(WDUnregisteredApplicationState);
   });
 });
 
