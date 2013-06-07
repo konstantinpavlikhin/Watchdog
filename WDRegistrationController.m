@@ -408,7 +408,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   if(!reachedEnd)
   {
     // Control flow didn't reached end → something went wrong.
-    *error = CFBridgingRelease(tempError);
+    if(error != NULL) *error = CFBridgingRelease(tempError);
   }
   
   return result;
@@ -491,7 +491,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   if(!reachedEnd)
   {
     // Control flow didn't reached end → something went wrong.
-    *error = CFBridgingRelease(tempError);
+    if(error != NULL) *error = CFBridgingRelease(tempError);
   }
   
   return result;

@@ -22,7 +22,7 @@ describe(@"WDRegistrationController", ^
 {
   WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
   
-  it(@"should accept valid serials", ^
+  it(@"should accept only valid serials", ^
   {
     // Test against two EC keys and two DSAs.
     NSArray* prefixes = @[@"secp384r1", @"secp521r1", @"1024", @"2048"];
@@ -44,6 +44,24 @@ describe(@"WDRegistrationController", ^
       [dataArray enumerateObjectsUsingBlock: ^(NSDictionary* customer, NSUInteger idx, BOOL* stop)
       {
         expect([SRC isSerial: customer[@"Serial"] conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(YES);
+        
+        // * * *.
+        
+        expect([SRC isSerial: customer[@"Serial"] conformsToCustomerName: @"Invalid Customer Name" error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: @"" conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: @" " conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: @"0123456789" conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: @"FUNNYSERIALNUMBER" conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: @"SERIAL\nNUMBER\nWITH\nNEWLINES\n" conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: @"U2FtcGxlIHRleHQgdG8gYmUgZW5jb2RlZCBhcyBiYXNlNjQ" conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
+        
+        expect([SRC isSerial: customer[@"Name"] conformsToCustomerName: customer[@"Name"] error: NULL]).to.equal(NO);
       }];
     }];
   });
