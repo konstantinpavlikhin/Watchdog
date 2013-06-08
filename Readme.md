@@ -240,7 +240,7 @@ If you adding Watchdog to a sandboxed app you should put the following lines in 
 
     A: Objective-C by its nature is very dynamic and reflective. Rich metadata is preserved after compilation: class hierarchies, method signatures, strings, NIBs and so on... Tools like [class-dump](https://github.com/nygard/class-dump) and [Hopper](http://www.hopperapp.com) allow to teardown your application to the atomic building blocks and even reconstruct it in pseudocode. There is no way to hide or protect your algorithms from an educated computer engineer.
 
-- **Q: If Objective-C is so dynamic, why use it at all in a registration framework?
+- **Q: If Objective-C is so dynamic, why use it at all in a registration framework?**
 
     A: Let's face the facts. Everybody loves simple high-level Cocoaesque-APIs that are no brainer. Even if you implement your registration handling code in a pure Assembler, smartasses torrenting you lovely app is just a matter of time (less) and demand (more). Every DRM system will be broken (think of iOS Jailbreak, numerous keygens, appname[k] torrents and so on...). We just have to keep honest people honest, without treating them like criminals and turning their app activation experience into hell.
 
