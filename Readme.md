@@ -1,10 +1,16 @@
 # Watchdog
 
-Watchdog is a simple application registration framework based on the DSA/ECDSA signatures.
+Watchdog is a simple registration framework for OS X apps.
+
+## Watchdog features
+* Drop-in component for application registration. Watchdog has clear API, trivial to install to your project.
+* No heavyweight dependancies — framework doesn't rely on ugly OpenSSL library and uses modern Security.framework APIs.
+* Watchdog utilizes robust and secure industry standart DSA/ECDSA signature algorithms.
+* Watchdog seamlessly supports both DSA and ECDSA serials — just set an appropriate public key.
 
 ## What Watchdog is not
 
-Watchdog has nothing to do with with trial periods or evaluation launches count. It's up to you to implement an appropriate `TrialController` with behavior specific to your domain. There are numerous ways you can implement a trial. For example, some applications allow limited time of an unrestricted app usage, some allow limited number of launches when in trial mode, some just restrict feature set and so on... There is no possibility (an need) to abstract this stuff into Watchdog.
+Watchdog has nothing to do with with trial periods or evaluation launches count. It's up to you to implement an appropriate `TrialController` with behavior specific to your domain. There are numerous ways you can implement a trial. For example, some applications allow limited time of an unrestricted app usage, some allow limited number of launches in trial mode, some just restrict feature set and so on... There is no possibility (an need) to abstract this stuff into Watchdog.
 
 ## Adding Watchdog to your project
 
@@ -148,6 +154,7 @@ Quick-Apply Link consists of the following parts:
 **HINT**: Consider redirecting customers after successfull purchases to the corresponding Quick-Apply links to make seamless and trouble-free app-activation experiences.
 
 ## Serials Blacklists
+
 ### Static Blacklist
 
 TODO:!
@@ -165,6 +172,29 @@ Watchdog utilizes Base Internationalization technology, thats why its minimum SD
 Watchdog' UI is currently localized to English and Russian.
 
 ## Generating Keys
+
+Choose an appropriate key length to keep a good ballance between security and length of a resulting serial.
+
+### Example Serials
+
+**Customer Name**:  
+John Appleseed
+
+**1024 bit DSA serial**:  
+GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M
+
+**2048 bit DSA serial**:  
+GAXAEFIAX2ZAZRGNXXBACEX4IIHEHSHSM66NUTVMAIKQB4UXRWTDMGV6L7RHCUYITVQYGKB5FS5S4
+
+Compared to currently prevalent cryptosystems such as RSA and DSA, ECDSA offers equivalent security with smaller key sizes.
+
+**192 bit ECDSA serial (comparable to 1024 bit DSA)**:  
+GA2QEGAYX46LAYMZQSAFRCFWHC4FU73OLVH3HKKK3LM4GAQZADZNC3PVNFQIXA5EUZE5NJMTHDOIDH2YOTQGMSO2
+
+**384 bit ECDSA serial (comparable to 7680 bit DSA)**:  
+GBSQEMIA5K734JXT4ZEECT3MKTYD5MCYWZOXRZJ646R2AWYPN4ZXCFYZWNIHX4336BE5VFTY7VR4VVDQK2KNUARQMS3S3NAUNGPUIQ536RBVJOQUC2SQBIGLVC5LQKV3VCX7D6WTKNCKE3NMGMBCS4CC5DGMBOD6UMS4Q
+
+TODO: citation needed.
 
 ### DSA Keys
 
@@ -195,9 +225,24 @@ Extract public key from the private key:
 
 Keep your application' private key in a really safe place and make sure you have a reliable backup. If you lose your private key you no longer be able to generate new serials for your app. If your private key will be compromised, bad, really bad things will happen: anyone will be able to produce valid serials on their own so you most probably will have to change public key, embedded in your app. You have been warned!
 
+## Sandboxing
+
+If you adding Watchdog to a sandboxed app you should put the following lines in your `ApplicationName.entitlements`:
+
+```xml
+<key>com.apple.security.network.client</key>
+<true/>
+```
+
 ## FAQ
 
-This framework is probably not a bullet proof in terms of piracy?
+- **Q: How bulletproof Watchdog is?**
+
+    A: Objective-C by its nature is very dynamic and reflective. Rich metadata is preserved after compilation: class hierarchies, method signatures, strings, NIBs and so on... Tools like [class-dump](https://github.com/nygard/class-dump) and [Hopper](http://www.hopperapp.com) allow to teardown your application to the atomic building blocks and even reconstruct it in pseudocode. There is no way to hide or protect your algorithms from an educated computer engineer.
+
+— **Q: If Objective-C is so dynamic, why use it at all in a registration framework?
+
+    A: Let's face the facts. Everybody loves simple high-level Cocoaesque-APIs that are no brainer. Even if you implement your registration handling code in a pure Assembler, smartasses torrenting you lovely app is just a matter of time (less) and demand (more). Every DRM system will be broken (think of iOS Jailbreak, numerous keygens, appname[k] torrents and so on...). We just have to keep honest people honest, without treating them like criminals and turning their app activation experience into hell.
 
 ## License
 
