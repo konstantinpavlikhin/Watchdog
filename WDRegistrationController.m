@@ -154,12 +154,6 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
   {
-    // Wiping out any existing registration data & state.
-    dispatch_async(dispatch_get_main_queue(), ^()
-    {
-      [self deauthorizeAccount];
-    });
-    
     // Launching full-featured customer data check.
     [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDSerialVerdict verdict)
     {
@@ -171,6 +165,8 @@ static WDRegistrationWindowController* registrationWindowController = nil;
         [userDefaults setObject: name forKey: WDCustomerNameKey];
         
         [userDefaults setObject: serial forKey: WDSerialKey];
+        
+        [userDefaults synchronize];
         
         // KVO-notifications always arrive on the same thread that set the value.
         dispatch_async(dispatch_get_main_queue(), ^()
@@ -205,7 +201,12 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   [userDefaults removeObjectForKey: WDSerialKey];
   
-  self.applicationState = WDUnregisteredApplicationState;
+  [userDefaults synchronize];
+  
+  dispatch_async(dispatch_get_main_queue(), ^()
+  {
+    self.applicationState = WDUnregisteredApplicationState;
+  });
 }
 
 - (void) checkForStoredSerialAndValidateIt
