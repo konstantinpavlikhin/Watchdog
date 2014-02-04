@@ -442,7 +442,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   CFArrayRef tempArray;
   
   // TODO: check status?
-  OSStatus status = SecItemImport(publicKeyData, NULL, &externalFormat, &externalItemType, 0, &itemImportExportKeyParameters, NULL, &tempArray);
+  SecItemImport(publicKeyData, NULL, &externalFormat, &externalItemType, 0, &itemImportExportKeyParameters, NULL, &tempArray);
   
   CFRelease(publicKeyData);
   
@@ -523,7 +523,6 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   NSError* error = nil;
   
-  #warning TODO: переделать на асинхронное поведение
   NSData* responseData = [NSURLConnection sendSynchronousRequest: URLRequest returningResponse: &URLResponse error: &error];
   
   NSString* string = [[NSString alloc] initWithData: responseData encoding: NSUTF8StringEncoding];
