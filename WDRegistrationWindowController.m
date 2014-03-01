@@ -83,8 +83,6 @@
   if(!serialEntryController)
   {
     serialEntryController = [WDSerialEntryController new];
-    
-    serialEntryController.windowController = self;
   }
   
   return serialEntryController;
@@ -96,8 +94,6 @@
   if(!registrationStatusController)
   {
     registrationStatusController = [WDRegistrationStatusController new];
-    
-    registrationStatusController.windowController = self;
   }
   
   return registrationStatusController;
@@ -117,10 +113,6 @@
     [contentView addSubview: [[self registrationStatusController] view]];
   }
   
-  [serialEntryController setWindowController: nil];
-  
-  [registrationStatusController setWindowController: self];
-  
   [self.window makeFirstResponder: registrationStatusController.dismissButton];
 }
 
@@ -137,10 +129,6 @@
   {
     [[[self window] contentView] addSubview: [[self serialEntryController] view]];
   }
-  
-  [registrationStatusController setWindowController: nil];
-  
-  [serialEntryController setWindowController: self];
   
   [self.window makeFirstResponder: serialEntryController.customerName];
 }

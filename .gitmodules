@@ -1,6 +1,3 @@
-[submodule "KPToolbox"]
-	path = KPToolbox
-	url = https://github.com/konstantinpavlikhin/KPToolbox.git
 [submodule "specta"]
 	path = specta
 	url = https://github.com/github/specta.git

@@ -21,7 +21,7 @@
   return self;
 }
 
-- (void) viewDidLoad
+- (void) awakeFromNib
 {
   // Returns a localized version, if available.
   NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleName"];
@@ -36,7 +36,7 @@
 
 - (IBAction) dismiss: (id) sender
 {
-  [self.windowController close];
+  [[[[self view] window] windowController] close];
 }
 
 @end

@@ -14,6 +14,8 @@
 
 #import "WDPlistConstants.h"
 
+#import <CommonCrypto/CommonDigest.h>
+
 NSString* const ApplicationStateKeyPath = @"applicationState";
 
 NSString* const WDCustomerNameKey = @"WDCustomerName";
@@ -498,6 +500,31 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   return result;
 }
 
++ (NSData*) SHA1DataWithData: (NSData*) data
+{
+  unsigned char hashBytes[CC_SHA1_DIGEST_LENGTH];
+  
+  CC_SHA1((const unsigned char*)[data bytes], (CC_LONG)[data length], (unsigned char*)hashBytes);
+  
+  return [NSData dataWithBytes: hashBytes length: CC_SHA1_DIGEST_LENGTH];
+}
+
++ (NSString*) hexStringWithData: (NSData*) data
+{
+  NSUInteger dataLength = [data length];
+  
+  const unsigned char* dataBytes = [data bytes];
+  
+  NSMutableString* result = [NSMutableString stringWithCapacity: dataLength * 2];
+  
+  for(NSUInteger i = 0; i < dataLength; i++)
+  {
+    [result appendFormat: @"%02x", dataBytes[i]];
+  }
+  
+  return result;
+}
+
 // Performs server check of the supplied serial.
 - (enum WDSerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
 {
@@ -505,7 +532,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   NSString* serialCheckBase = [[NSBundle mainBundle] objectForInfoDictionaryKey: WDServerCheckURLKey];
   
-  NSString* userNameHash = [[NSUserName() dataUsingEncoding: NSUTF8StringEncoding] SHA1HexString];
+  NSData* userNameData = [NSUserName() dataUsingEncoding: NSUTF8StringEncoding];
+  
+  NSString* userNameHash = [[self class] hexStringWithData: [[self class] SHA1DataWithData: userNameData]];
   
   NSString* queryString = [NSString stringWithFormat: @"%@?serial=%@&account=%@", serialCheckBase, serial, userNameHash];
   

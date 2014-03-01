@@ -14,6 +14,8 @@
 
 #import "WDPlistConstants.h"
 
+#import "ShakeAnimation.h"
+
 @implementation WDSerialEntryController
 
 - (id) init
@@ -23,7 +25,7 @@
   return self;
 }
 
-- (void) viewDidLoad
+- (void) awakeFromNib
 {
   NSString* str = NSLocalizedStringFromTableInBundle(@"Unlock %@", nil, [NSBundle bundleForClass: [self class]], @"Registration greeting. Parameter stays for the app name.");
   
@@ -57,7 +59,7 @@
 
 - (IBAction) cancel: (id) sender
 {
-  [self.windowController close];
+  [[[[self view] window] windowController] close];
 }
 
 + (NSString*) sanitizeString: (NSString*) string
@@ -109,7 +111,7 @@
 
 - (void) shakeWindow
 {
-  NSWindow* window = [[self windowController] window];
+  NSWindow* window = [[self view] window];
   
   [window setAnimations: [NSDictionary dictionaryWithObject: shakeAnimation([window frame], 4, 0.4, 0.05) forKey: @"frameOrigin"]];
   

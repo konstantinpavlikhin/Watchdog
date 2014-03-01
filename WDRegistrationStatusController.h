@@ -8,9 +8,7 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import <KPToolbox/KPViewController.h>
-
-@interface WDRegistrationStatusController : KPViewController
+@interface WDRegistrationStatusController : NSViewController
 
 @property(readwrite, assign) IBOutlet NSButton* dismissButton;
 

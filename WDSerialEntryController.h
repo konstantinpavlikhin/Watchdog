@@ -8,9 +8,7 @@
 //  
 ////////////////////////////////////////////////////////////////////////////////
 
-#import <KPToolbox/KPViewController.h>
-
-@interface WDSerialEntryController : KPViewController
+@interface WDSerialEntryController : NSViewController
 
 @property(readwrite, assign) IBOutlet NSTextField* customerName;
 
