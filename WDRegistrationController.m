@@ -14,6 +14,8 @@
 
 #import "WDPlistConstants.h"
 
+#import "WDResources.h"
+
 #import <CommonCrypto/CommonDigest.h>
 
 NSString* const ApplicationStateKeyPath = @"applicationState";
@@ -258,9 +260,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Corrupted Quick-Apply Link", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Corrupted Quick-Apply Link", nil, [WDResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Please enter your registration data manualy.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Please enter your registration data manualy.", nil, [WDResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
@@ -269,9 +271,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, try again.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, try again.", nil, [WDResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
@@ -280,9 +282,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is blacklisted. Please, contact support to get a new key.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is blacklisted. Please, contact support to get a new key.", nil, [WDResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
@@ -291,9 +293,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [NSBundle bundleForClass: [self class]], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"It seems like you are using pirated serial.", nil, [NSBundle bundleForClass: [self class]], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"It seems like you are using pirated serial.", nil, [WDResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }

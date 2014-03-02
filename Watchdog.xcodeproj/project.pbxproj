@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B509B68215D2DD6600F3B08C /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68415D2DD6600F3B08C /* WDRegistrationWindow.xib */; };
-		B509B68A15D2DDB600F3B08C /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */; };
-		B509B69115D2DE2D00F3B08C /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */; };
 		B531F5B818C219A500E65397 /* ShakeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5B618C219A500E65397 /* ShakeAnimation.h */; };
 		B531F5B918C219A500E65397 /* ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5B718C219A500E65397 /* ShakeAnimation.m */; };
+		B531F5EA18C2316D00E65397 /* WDResources.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5E818C2316D00E65397 /* WDResources.h */; };
+		B531F5EB18C2316D00E65397 /* WDResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5E918C2316D00E65397 /* WDResources.m */; };
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
-		B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B58522C115A4DD28008822D4 /* Localizable.strings */; };
+		B595170018C2676C00FE2026 /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */; };
+		B595170518C267FD00FE2026 /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDSerialEntry.xib */; };
+		B595170818C2681200FE2026 /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDRegistrationStatus.xib */; };
+		B595170F18C268E100FE2026 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
+		B595171318C2696E00FE2026 /* WatchdogResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B59516E318C2665100FE2026 /* WatchdogResources.bundle */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
 		B5DBD727175FABBA001F4709 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD726175FABBA001F4709 /* SenTestingKit.framework */; };
 		B5DBD728175FABBA001F4709 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
-		B5DBD732175FABBA001F4709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD730175FABBA001F4709 /* InfoPlist.strings */; };
 		B5DBD735175FABBA001F4709 /* WatchdogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD734175FABBA001F4709 /* WatchdogTests.m */; };
 		B5DBD746175FAC27001F4709 /* libSpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD745175FAC27001F4709 /* libSpecta.a */; };
 		B5DBD769175FAD1D001F4709 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD766175FAD1D001F4709 /* libExpecta.a */; };
@@ -48,6 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B595171118C2696500FE2026 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B59516E218C2665100FE2026;
+			remoteInfo = WatchdogResources;
+		};
 		B5DBD76B175FB29B001F4709 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
@@ -58,33 +67,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B509B68615D2DD7B00F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WDRegistrationWindow.xib; sourceTree = "<group>"; };
-		B509B68815D2DD7F00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WDRegistrationWindow.strings; sourceTree = "<group>"; };
-		B509B68915D2DD8300F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WDRegistrationWindow.strings; sourceTree = "<group>"; };
-		B509B68D15D2DDB900F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WDSerialEntry.xib; sourceTree = "<group>"; };
-		B509B68F15D2DDBB00F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WDSerialEntry.strings; sourceTree = "<group>"; };
-		B509B69015D2DDBE00F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WDSerialEntry.strings; sourceTree = "<group>"; };
-		B509B69415D2DE3200F3B08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WDRegistrationStatus.xib; sourceTree = "<group>"; };
-		B509B69615D2DE3200F3B08C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WDRegistrationStatus.strings; sourceTree = "<group>"; };
-		B509B69715D2DE3500F3B08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WDRegistrationStatus.strings; sourceTree = "<group>"; };
 		B531F5B618C219A500E65397 /* ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimation.h; sourceTree = "<group>"; };
 		B531F5B718C219A500E65397 /* ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimation.m; sourceTree = "<group>"; };
 		B531F5BC18C21D7F00E65397 /* Watchdog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Watchdog.podspec; sourceTree = "<group>"; };
+		B531F5E818C2316D00E65397 /* WDResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDResources.h; sourceTree = "<group>"; };
+		B531F5E918C2316D00E65397 /* WDResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDResources.m; sourceTree = "<group>"; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B5421805175F8973008D056B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		B5421806175F8973008D056B /* License.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
-		B58522C015A4DD28008822D4 /* en */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B58522C215A4DD36008822D4 /* ru */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B59516E318C2665100FE2026 /* WatchdogResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59516E618C2665100FE2026 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B59516E718C2665100FE2026 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B59516E818C2665100FE2026 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B59516EB18C2665100FE2026 /* WatchdogResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogResources-Info.plist"; sourceTree = "<group>"; };
+		B59516FF18C2676C00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDRegistrationWindow.xib; sourceTree = SOURCE_ROOT; };
+		B595170118C2677E00FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDRegistrationWindow.strings; sourceTree = SOURCE_ROOT; };
+		B595170218C267BE00FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDRegistrationWindow.strings; sourceTree = SOURCE_ROOT; };
+		B595170418C267FD00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDSerialEntry.xib; sourceTree = SOURCE_ROOT; };
+		B595170718C2681200FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDRegistrationStatus.xib; sourceTree = SOURCE_ROOT; };
+		B595170918C2682800FE2026 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDSerialEntry.strings; sourceTree = SOURCE_ROOT; };
+		B595170A18C2682B00FE2026 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDSerialEntry.strings; sourceTree = SOURCE_ROOT; };
+		B595170B18C2683400FE2026 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDRegistrationStatus.strings; sourceTree = SOURCE_ROOT; };
+		B595170C18C2683600FE2026 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDRegistrationStatus.strings; sourceTree = SOURCE_ROOT; };
+		B595170E18C268E100FE2026 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B595171018C268E400FE2026 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B5DAA40E1761D86100A82BF8 /* WDRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationStatusController+Private.h"; sourceTree = SOURCE_ROOT; };
 		B5DAA40F1761D8C000A82BF8 /* WDSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDSerialEntryController+Private.h"; sourceTree = SOURCE_ROOT; };
 		B5DBD725175FABBA001F4709 /* WatchdogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DBD726175FABBA001F4709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B5DBD72A175FABBA001F4709 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		B5DBD72B175FABBA001F4709 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B5DBD72C175FABBA001F4709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogTests-Info.plist"; sourceTree = "<group>"; };
-		B5DBD731175FABBA001F4709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5DBD733175FABBA001F4709 /* WatchdogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchdogTests.h; sourceTree = "<group>"; };
 		B5DBD734175FABBA001F4709 /* WatchdogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchdogTests.m; sourceTree = "<group>"; };
 		B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WatchdogTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -163,6 +175,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B59516E018C2665100FE2026 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5DBD721175FABBA001F4709 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,14 +216,39 @@
 			name = "Shake animation";
 			sourceTree = "<group>";
 		};
-		B5DBD729175FABBA001F4709 /* Other Frameworks */ = {
+		B531F5EC18C2317600E65397 /* WDResources */ = {
 			isa = PBXGroup;
 			children = (
-				B5DBD72A175FABBA001F4709 /* AppKit.framework */,
-				B5DBD72B175FABBA001F4709 /* CoreData.framework */,
-				B5DBD72C175FABBA001F4709 /* Foundation.framework */,
+				B531F5E818C2316D00E65397 /* WDResources.h */,
+				B531F5E918C2316D00E65397 /* WDResources.m */,
+			);
+			name = WDResources;
+			sourceTree = "<group>";
+		};
+		B59516E518C2665100FE2026 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59516E618C2665100FE2026 /* Foundation.framework */,
+				B59516E718C2665100FE2026 /* CoreData.framework */,
+				B59516E818C2665100FE2026 /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B59516E918C2665100FE2026 /* WatchdogResources */ = {
+			isa = PBXGroup;
+			children = (
+				B59516EA18C2665100FE2026 /* Supporting Files */,
+			);
+			path = WatchdogResources;
+			sourceTree = "<group>";
+		};
+		B59516EA18C2665100FE2026 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B59516EB18C2665100FE2026 /* WatchdogResources-Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B5DBD72D175FABBA001F4709 /* WatchdogTests */ = {
@@ -225,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */,
-				B5DBD730175FABBA001F4709 /* InfoPlist.strings */,
 				B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -360,11 +403,9 @@
 		B5E0368E159DB4D100007230 /* Registration window controller */ = {
 			isa = PBXGroup;
 			children = (
-				B5E036B0159F6FFA00007230 /* Serial entry controller */,
-				B5E036B1159F700000007230 /* Registration status controller */,
+				B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */,
 				B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */,
 				B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */,
-				B509B68415D2DD6600F3B08C /* WDRegistrationWindow.xib */,
 			);
 			name = "Registration window controller";
 			path = Watchdog;
@@ -373,23 +414,25 @@
 		B5E036B0159F6FFA00007230 /* Serial entry controller */ = {
 			isa = PBXGroup;
 			children = (
+				B595170318C267FD00FE2026 /* WDSerialEntry.xib */,
 				B5F614F214F54EB500C8565A /* WDSerialEntryController.h */,
 				B5DAA40F1761D8C000A82BF8 /* WDSerialEntryController+Private.h */,
 				B5F614F314F54EB500C8565A /* WDSerialEntryController.m */,
-				B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */,
 			);
 			name = "Serial entry controller";
+			path = Watchdog;
 			sourceTree = "<group>";
 		};
 		B5E036B1159F700000007230 /* Registration status controller */ = {
 			isa = PBXGroup;
 			children = (
+				B595170618C2681200FE2026 /* WDRegistrationStatus.xib */,
 				B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */,
 				B5DAA40E1761D86100A82BF8 /* WDRegistrationStatusController+Private.h */,
 				B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */,
-				B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */,
 			);
 			name = "Registration status controller";
+			path = Watchdog;
 			sourceTree = "<group>";
 		};
 		B5F0B4DC14F54B8B0069FFAF = {
@@ -401,12 +444,16 @@
 				B5F6150914F54F0400C8565A /* Watchdog.h */,
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
 				B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */,
-				B58522C115A4DD28008822D4 /* Localizable.strings */,
+				B595170D18C268E100FE2026 /* Localizable.strings */,
 				B5F0B4F114F54B8B0069FFAF /* Registration controller */,
 				B5E0368E159DB4D100007230 /* Registration window controller */,
+				B5E036B0159F6FFA00007230 /* Serial entry controller */,
+				B5E036B1159F700000007230 /* Registration status controller */,
 				B5DBD77F1760886A001F4709 /* Plist constants */,
 				B531F5BA18C219A800E65397 /* Shake animation */,
+				B531F5EC18C2317600E65397 /* WDResources */,
 				B5DBD72D175FABBA001F4709 /* WatchdogTests */,
+				B59516E918C2665100FE2026 /* WatchdogResources */,
 				B5F0B4EA14F54B8B0069FFAF /* Frameworks */,
 				B5F0B4E914F54B8B0069FFAF /* Products */,
 			);
@@ -417,6 +464,7 @@
 			children = (
 				B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */,
 				B5DBD725175FABBA001F4709 /* WatchdogTests.octest */,
+				B59516E318C2665100FE2026 /* WatchdogResources.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,7 +476,7 @@
 				B53AA448155ED4B900745650 /* Security.framework */,
 				B5C91ADD14F568DC009696B3 /* QuartzCore.framework */,
 				B5DBD726175FABBA001F4709 /* SenTestingKit.framework */,
-				B5DBD729175FABBA001F4709 /* Other Frameworks */,
+				B59516E518C2665100FE2026 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -451,6 +499,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B531F5EA18C2316D00E65397 /* WDResources.h in Headers */,
 				B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */,
 				B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */,
 				B531F5B818C219A500E65397 /* ShakeAnimation.h in Headers */,
@@ -463,6 +512,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B59516E218C2665100FE2026 /* WatchdogResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B59516F018C2665100FE2026 /* Build configuration list for PBXNativeTarget "WatchdogResources" */;
+			buildPhases = (
+				B59516DF18C2665100FE2026 /* Sources */,
+				B59516E018C2665100FE2026 /* Frameworks */,
+				B59516E118C2665100FE2026 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchdogResources;
+			productName = WatchdogResources;
+			productReference = B59516E318C2665100FE2026 /* WatchdogResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		B5DBD724175FABBA001F4709 /* WatchdogTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5DBD739175FABBA001F4709 /* Build configuration list for PBXNativeTarget "WatchdogTests" */;
@@ -494,6 +560,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B595171218C2696500FE2026 /* PBXTargetDependency */,
 			);
 			name = Watchdog;
 			productName = Watchdog;
@@ -525,16 +592,27 @@
 			targets = (
 				B5F0B4E714F54B8B0069FFAF /* Watchdog */,
 				B5DBD724175FABBA001F4709 /* WatchdogTests */,
+				B59516E218C2665100FE2026 /* WatchdogResources */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B59516E118C2665100FE2026 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B595170F18C268E100FE2026 /* Localizable.strings in Resources */,
+				B595170018C2676C00FE2026 /* WDRegistrationWindow.xib in Resources */,
+				B595170518C267FD00FE2026 /* WDSerialEntry.xib in Resources */,
+				B595170818C2681200FE2026 /* WDRegistrationStatus.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5DBD722175FABBA001F4709 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5DBD732175FABBA001F4709 /* InfoPlist.strings in Resources */,
 				B5DBD7BC1760B831001F4709 /* 1024-private.pem in Resources */,
 				B5DBD7BE1760B841001F4709 /* 2048-private.pem in Resources */,
 				B5DBD7C01760B84C001F4709 /* secp384r1-private.pem in Resources */,
@@ -554,10 +632,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B509B68A15D2DDB600F3B08C /* WDSerialEntry.xib in Resources */,
-				B509B69115D2DE2D00F3B08C /* WDRegistrationStatus.xib in Resources */,
-				B509B68215D2DD6600F3B08C /* WDRegistrationWindow.xib in Resources */,
-				B58522BF15A4DD28008822D4 /* Localizable.strings in Resources */,
+				B595171318C2696E00FE2026 /* WatchdogResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +655,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B59516DF18C2665100FE2026 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5DBD720175FABBA001F4709 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -593,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F614FD14F54EB500C8565A /* WDRegistrationController.m in Sources */,
+				B531F5EB18C2316D00E65397 /* WDResources.m in Sources */,
 				B5F6150014F54EB500C8565A /* WDSerialEntryController.m in Sources */,
 				B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */,
 				B531F5B918C219A500E65397 /* ShakeAnimation.m in Sources */,
@@ -604,6 +687,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B595171218C2696500FE2026 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B59516E218C2665100FE2026 /* WatchdogResources */;
+			targetProxy = B595171118C2696500FE2026 /* PBXContainerItemProxy */;
+		};
 		B5DBD76C175FB29B001F4709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B5F0B4E714F54B8B0069FFAF /* Watchdog */;
@@ -612,56 +700,91 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B509B68415D2DD6600F3B08C /* WDRegistrationWindow.xib */ = {
+		B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B509B68615D2DD7B00F3B08C /* Base */,
-				B509B68815D2DD7F00F3B08C /* en */,
-				B509B68915D2DD8300F3B08C /* ru */,
+				B59516FF18C2676C00FE2026 /* Base */,
+				B595170118C2677E00FE2026 /* en */,
+				B595170218C267BE00FE2026 /* ru */,
 			);
 			name = WDRegistrationWindow.xib;
-			sourceTree = SOURCE_ROOT;
-		};
-		B509B68C15D2DDB600F3B08C /* WDSerialEntry.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B509B68D15D2DDB900F3B08C /* Base */,
-				B509B68F15D2DDBB00F3B08C /* ru */,
-				B509B69015D2DDBE00F3B08C /* en */,
-			);
-			name = WDSerialEntry.xib;
-			sourceTree = SOURCE_ROOT;
-		};
-		B509B69315D2DE2D00F3B08C /* WDRegistrationStatus.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B509B69415D2DE3200F3B08C /* Base */,
-				B509B69615D2DE3200F3B08C /* ru */,
-				B509B69715D2DE3500F3B08C /* en */,
-			);
-			name = WDRegistrationStatus.xib;
-			sourceTree = SOURCE_ROOT;
-		};
-		B58522C115A4DD28008822D4 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B58522C015A4DD28008822D4 /* en */,
-				B58522C215A4DD36008822D4 /* ru */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		B5DBD730175FABBA001F4709 /* InfoPlist.strings */ = {
+		B595170318C267FD00FE2026 /* WDSerialEntry.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B5DBD731175FABBA001F4709 /* en */,
+				B595170418C267FD00FE2026 /* Base */,
+				B595170918C2682800FE2026 /* en */,
+				B595170A18C2682B00FE2026 /* ru */,
 			);
-			name = InfoPlist.strings;
+			name = WDSerialEntry.xib;
+			sourceTree = "<group>";
+		};
+		B595170618C2681200FE2026 /* WDRegistrationStatus.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B595170718C2681200FE2026 /* Base */,
+				B595170B18C2683400FE2026 /* en */,
+				B595170C18C2683600FE2026 /* ru */,
+			);
+			name = WDRegistrationStatus.xib;
+			sourceTree = "<group>";
+		};
+		B595170D18C268E100FE2026 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B595170E18C268E100FE2026 /* en */,
+				B595171018C268E400FE2026 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B59516F118C2665100FE2026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				INFOPLIST_FILE = "WatchdogResources/WatchdogResources-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B59516F218C2665100FE2026 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				INFOPLIST_FILE = "WatchdogResources/WatchdogResources-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		B5DBD737175FABBA001F4709 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -727,7 +850,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Konstantin Pavlikhin";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -767,7 +890,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Konstantin Pavlikhin";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -824,6 +947,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B59516F018C2665100FE2026 /* Build configuration list for PBXNativeTarget "WatchdogResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B59516F118C2665100FE2026 /* Debug */,
+				B59516F218C2665100FE2026 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B5DBD739175FABBA001F4709 /* Build configuration list for PBXNativeTarget "WatchdogTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

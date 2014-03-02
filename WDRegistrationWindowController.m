@@ -27,6 +27,7 @@
 
 - (id) init
 {
+  #warning Как это вообще работает?
   self = [super initWithWindowNibName: @"WDRegistrationWindow"];
   
   if(!self) return nil;

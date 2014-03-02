@@ -16,18 +16,20 @@
 
 #import "ShakeAnimation.h"
 
+#import "WDResources.h"
+
 @implementation WDSerialEntryController
 
 - (id) init
 {
-  self = [self initWithNibName: @"WDSerialEntry" bundle: [NSBundle bundleForClass: [self class]]];
+  self = [self initWithNibName: @"WDSerialEntry" bundle: [WDResources resourcesBundle]];
   
   return self;
 }
 
 - (void) awakeFromNib
 {
-  NSString* str = NSLocalizedStringFromTableInBundle(@"Unlock %@", nil, [NSBundle bundleForClass: [self class]], @"Registration greeting. Parameter stays for the app name.");
+  NSString* str = NSLocalizedStringFromTableInBundle(@"Unlock %@", nil, [WDResources resourcesBundle], @"Registration greeting. Parameter stays for the app name.");
   
   self.greeting = [NSString stringWithFormat: str, [self localizedAppName]];
 }
