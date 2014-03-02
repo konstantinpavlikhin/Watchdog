@@ -6,13 +6,11 @@
 //  Copyright (c) 2013 Konstantin Pavlikhin. All rights reserved.
 //
 
-#import "WatchdogTests.h"
-
-#import "Specta.h"
+#import <Specta/Specta.h>
 
 #define EXP_SHORTHAND
 
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 #import "WDRegistrationController+Private.h"
 

@@ -1,6 +1,0 @@
-[submodule "specta"]
-	path = specta
-	url = https://github.com/github/specta.git
-[submodule "expecta"]
-	path = expecta
-	url = https://github.com/github/expecta.git
