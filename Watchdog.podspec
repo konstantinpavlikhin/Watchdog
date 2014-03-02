@@ -28,6 +28,6 @@ Pod::Spec.new do |spec|
 
   spec.public_header_files = 'Watchdog.h'
 
-  spec.resource_bundles = {'WatchdogResources' => 'Resources/*.lproj'}
+  spec.resource_bundles = {'WatchdogResources' => 'Resources/*.{xib,lproj}'}
 
 end
