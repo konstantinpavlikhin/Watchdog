@@ -16,6 +16,8 @@
 
 #import "WDRegistrationStatusController.h"
 
+#import "WDResources.h"
+
 #import <QuartzCore/CoreAnimation.h>
 
 @implementation WDRegistrationWindowController
@@ -27,8 +29,9 @@
 
 - (id) init
 {
-  #warning Как это вообще работает?
-  self = [super initWithWindowNibName: @"WDRegistrationWindow"];
+  NSString* path = [[WDResources resourcesBundle] pathForResource: @"WDRegistrationWindow" ofType: @"nib"];
+  
+  self = [super initWithWindowNibPath: path owner: self];
   
   if(!self) return nil;
   
