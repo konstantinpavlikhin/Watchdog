@@ -1,5 +1,5 @@
 //
-//  WDRegistrationController_Private.h
+//  WDRegistrationController+Private.h
 //  Watchdog
 //
 //  Created by Konstantin Pavlikhin on 6/5/13.
@@ -9,6 +9,8 @@
 #import "WDRegistrationController.h"
 
 @interface WDRegistrationController ()
+
+@property(readwrite, assign, atomic) enum WDApplicationState applicationState;
 
 // These method prototypes are here for unit testing purposes.
 

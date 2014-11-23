@@ -29,13 +29,6 @@ NSString* const WDDynamicBlacklistKey = @"WDDynamicBlacklist";
 // WDRegistrationController is a singleton instance, so we can allow ourselves this trick.
 static WDRegistrationWindowController* registrationWindowController = nil;
 
-@interface WDRegistrationController ()
-
-// Redeclare this property as private readwrite.
-@property(readwrite, assign, atomic) enum WDApplicationState applicationState;
-
-@end
-
 @implementation WDRegistrationController
 
 #pragma mark - Public Methods
