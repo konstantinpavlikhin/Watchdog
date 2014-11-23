@@ -98,7 +98,6 @@
 
 /* Begin PBXFileReference section */
 		7115994328CA4D7887F07092 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		B51E82F318C3689900261E3A /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B531F5B618C219A500E65397 /* ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimation.h; sourceTree = "<group>"; };
 		B531F5B718C219A500E65397 /* ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimation.m; sourceTree = "<group>"; };
 		B531F5BC18C21D7F00E65397 /* Watchdog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Watchdog.podspec; sourceTree = "<group>"; };
@@ -381,7 +380,6 @@
 			children = (
 				B5421805175F8973008D056B /* Readme.md */,
 				B5421806175F8973008D056B /* License.md */,
-				B51E82F318C3689900261E3A /* Podfile */,
 				B531F5BC18C21D7F00E65397 /* Watchdog.podspec */,
 				B5F6150914F54F0400C8565A /* Watchdog.h */,
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
