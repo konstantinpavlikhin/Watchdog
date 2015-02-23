@@ -491,6 +491,7 @@
 		B5F0B4DE14F54B8B0069FFAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WDG;
 				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Konstantin Pavlikhin";

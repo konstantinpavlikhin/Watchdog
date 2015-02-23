@@ -18,13 +18,13 @@
 
 NSString* const ApplicationStateKeyPath = @"applicationState";
 
-NSString* const WDGCustomerNameKey = @"WDCustomerName";
+NSString* const WDGCustomerNameKey = @"WDGCustomerName";
 
-NSString* const WDGSerialKey = @"WDSerial";
+NSString* const WDGSerialKey = @"WDGSerial";
 
-NSString* const WDGDynamicBlacklistKey = @"WDDynamicBlacklist";
+NSString* const WDGDynamicBlacklistKey = @"WDGDynamicBlacklist";
 
-// WDRegistrationController is a singleton instance, so we can allow ourselves this trick.
+// WDGRegistrationController is a singleton instance, so we can allow ourselves this trick.
 static WDGRegistrationWindowController* registrationWindowController = nil;
 
 @implementation WDGRegistrationController
