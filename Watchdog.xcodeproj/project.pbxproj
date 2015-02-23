@@ -19,6 +19,7 @@
 		B58448D91A9B0FDD009F4D83 /* WDGSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDGSerialEntry.xib */; };
 		B58448DA1A9B0FE0009F4D83 /* WDGRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDGRegistrationStatus.xib */; };
 		B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
+		B59DA9BA1A9B2DC300D4151E /* WDGPlistConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DBD77C17608851001F4709 /* WDGPlistConstants.h */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
 		B5CD05F718C34EF6005268CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5CD05FF18C34EF6005268CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CD05FE18C34EF6005268CB /* main.m */; };
@@ -44,7 +45,7 @@
 		B5DBD7D21760B98C001F4709 /* 2048-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7D11760B98C001F4709 /* 2048-data.plist */; };
 		B5E036BB159F8CBC00007230 /* WDGRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */; };
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
-		B5F614FC14F54EB500C8565A /* WDGRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F614FC14F54EB500C8565A /* WDGRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */; };
 		B5F614FD14F54EB500C8565A /* WDGRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* WDGRegistrationController.m */; };
 		B5F614FF14F54EB500C8565A /* WDGSerialEntryController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F214F54EB500C8565A /* WDGSerialEntryController.h */; };
 		B5F6150014F54EB500C8565A /* WDGSerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */; };
@@ -415,13 +416,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B531F5EA18C2316D00E65397 /* WDGResources.h in Headers */,
-				B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */,
 				B5F614FC14F54EB500C8565A /* WDGRegistrationController.h in Headers */,
-				B531F5B818C219A500E65397 /* WDGShakeAnimation.h in Headers */,
+				B5F6150714F54EB500C8565A /* WDGRegistrationWindowController.h in Headers */,
+				B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */,
 				B5F614FF14F54EB500C8565A /* WDGSerialEntryController.h in Headers */,
 				B5F6150214F54EB500C8565A /* WDGRegistrationStatusController.h in Headers */,
-				B5F6150714F54EB500C8565A /* WDGRegistrationWindowController.h in Headers */,
+				B59DA9BA1A9B2DC300D4151E /* WDGPlistConstants.h in Headers */,
+				B531F5B818C219A500E65397 /* WDGShakeAnimation.h in Headers */,
+				B531F5EA18C2316D00E65397 /* WDGResources.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,12 +616,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F614FD14F54EB500C8565A /* WDGRegistrationController.m in Sources */,
-				B531F5EB18C2316D00E65397 /* WDGResources.m in Sources */,
+				B5F6150814F54EB500C8565A /* WDGRegistrationWindowController.m in Sources */,
 				B5F6150014F54EB500C8565A /* WDGSerialEntryController.m in Sources */,
 				B5E036BB159F8CBC00007230 /* WDGRegistrationStatusController.m in Sources */,
-				B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */,
-				B5F6150814F54EB500C8565A /* WDGRegistrationWindowController.m in Sources */,
 				B5DBD77E17608864001F4709 /* WDGPlistConstants.m in Sources */,
+				B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */,
+				B531F5EB18C2316D00E65397 /* WDGResources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

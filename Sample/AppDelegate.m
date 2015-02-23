@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "../WDGRegistrationController.h"
+#import "../Watchdog.h"
 
 @implementation AppDelegate
 
