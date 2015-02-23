@@ -12,13 +12,13 @@
 
 #import <Expecta/Expecta.h>
 
-#import "WDRegistrationController+Private.h"
+#import "WDGRegistrationController+Private.h"
 
-SpecBegin(WDRegistrationController)
+SpecBegin(WDGRegistrationController)
 
-describe(@"WDRegistrationController", ^
+describe(@"WDGRegistrationController", ^
 {
-  WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
+  WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
   
   it(@"should accept only valid serials", ^
   {
@@ -84,7 +84,7 @@ describe(@"WDRegistrationController", ^
   it(@"should transition from the unknown state to the registered state", ^AsyncBlock
   {
     // Before any checks are made we can't make any assumptions about app' state.
-    expect(SRC.applicationState).to.equal(WDUnknownApplicationState);
+    expect(SRC.applicationState).to.equal(WDGUnknownApplicationState);
     
     NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
     
@@ -95,11 +95,11 @@ describe(@"WDRegistrationController", ^
     
     NSString* serial = @"GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M";
     
-    [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDSerialVerdict verdict)
+    [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
     {
-      expect(verdict).to.equal(WDValidSerialVerdict);
+      expect(verdict).to.equal(WDGValidSerialVerdict);
       
-      expect(SRC.applicationState).to.equal(WDRegisteredApplicationState);
+      expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
       
       expect([SRC registeredCustomerName]).to.equal(name);
       
@@ -109,11 +109,11 @@ describe(@"WDRegistrationController", ^
   
   it(@"should transition to the unregistered state", ^
   {
-    expect(SRC.applicationState).to.equal(WDRegisteredApplicationState);
+    expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
     
     [SRC deauthorizeAccount];
     
-    expect(SRC.applicationState).to.equal(WDUnregisteredApplicationState);
+    expect(SRC.applicationState).to.equal(WDGUnregisteredApplicationState);
   });
 });
 

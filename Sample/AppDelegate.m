@@ -8,13 +8,13 @@
 
 #import "AppDelegate.h"
 
-#import "../WDRegistrationController.h"
+#import "../WDGRegistrationController.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  WDRegistrationController* rc = [WDRegistrationController sharedRegistrationController];
+  WDGRegistrationController* rc = [WDGRegistrationController sharedRegistrationController];
   
   [rc showRegistrationWindow: self];
 }

@@ -1,42 +1,40 @@
-////////////////////////////////////////////////////////////////////////////////
-//  
-//  RegistrationWindowController.m
-//  
+//
+//  WDGRegistrationWindowController.m
 //  Watchdog
-//  
+//
 //  Created by Konstantin Pavlikhin on 27/01/10.
-//  
-////////////////////////////////////////////////////////////////////////////////
+//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
+//
 
-#import "WDRegistrationWindowController.h"
+#import "WDGRegistrationWindowController.h"
 
-#import "WDRegistrationController.h"
+#import "WDGRegistrationController.h"
 
-#import "WDSerialEntryController.h"
+#import "WDGSerialEntryController.h"
 
-#import "WDRegistrationStatusController.h"
+#import "WDGRegistrationStatusController.h"
 
-#import "WDResources.h"
+#import "WDGResources.h"
 
 #import <QuartzCore/CoreAnimation.h>
 
-@implementation WDRegistrationWindowController
+@implementation WDGRegistrationWindowController
 {
-  WDSerialEntryController* serialEntryController;
+  WDGSerialEntryController* serialEntryController;
   
-  WDRegistrationStatusController* registrationStatusController;
+  WDGRegistrationStatusController* registrationStatusController;
 }
 
 - (id) init
 {
-  NSString* path = [[WDResources resourcesBundle] pathForResource: @"WDRegistrationWindow" ofType: @"nib"];
+  NSString* path = [[WDGResources resourcesBundle] pathForResource: @"WDGRegistrationWindow" ofType: @"nib"];
   
   self = [super initWithWindowNibPath: path owner: self];
   
   if(!self) return nil;
   
   // Immediately starting to observe WDRegistrationController's applicationState property.
-  [[WDRegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
+  [[WDGRegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
   
   return self;
 }
@@ -44,16 +42,16 @@
 - (void) dealloc
 {
   // Terminating the observation.
-  [[WDRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
+  [[WDGRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
 }
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
 {
-  WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
+  WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
   
   if(object == SRC && [keyPath isEqualToString: ApplicationStateKeyPath])
   {
-    SRC.applicationState == WDRegisteredApplicationState? [self switchToRegistrationStatusSubview] : [self switchToSerialEntrySubview];
+    SRC.applicationState == WDGRegisteredApplicationState? [self switchToRegistrationStatusSubview] : [self switchToSerialEntrySubview];
   }
 }
 
@@ -82,22 +80,22 @@
 }
 
 // Lazy WDSerialEntryController constructor.
-- (WDSerialEntryController*) serialEntryController
+- (WDGSerialEntryController*) serialEntryController
 {
   if(!serialEntryController)
   {
-    serialEntryController = [WDSerialEntryController new];
+    serialEntryController = [WDGSerialEntryController new];
   }
   
   return serialEntryController;
 }
 
 // Lazy WDRegistrationStatusController constructor.
-- (WDRegistrationStatusController*) registrationStatusController
+- (WDGRegistrationStatusController*) registrationStatusController
 {
   if(!registrationStatusController)
   {
-    registrationStatusController = [WDRegistrationStatusController new];
+    registrationStatusController = [WDGRegistrationStatusController new];
   }
   
   return registrationStatusController;

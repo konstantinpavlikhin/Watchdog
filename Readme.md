@@ -35,15 +35,15 @@ Watchdog requires you to define the following keys in your `ApplicationName-Info
 
 ```xml
 <!-- The URL of the application purchasing page. -->
-<key>WDBuyOnlineURL</key>
+<key>WDGBuyOnlineURL</key>
 <string>http://applicationapp.com/order</string>
 
 <!-- The URL of the registration support page. -->
-<key>WDSupportURL</key>
+<key>WDGSupportURL</key>
 <string>http://applicationapp.com/support/register</string>
 
 <!-- The URL of the serial key validation script. -->
-<key>WDServerCheckURL</key>
+<key>WDGServerCheckURL</key>
 <string>http://applicationapp/verify</string>
 
 <!-- Custom URL scheme to inject customer name and a serial into the app. -->
@@ -64,12 +64,12 @@ Watchdog requires you to define the following keys in your `ApplicationName-Info
 </array>
 ```
 
-### `WDRegistrationController` Singleton
+### `WDGRegistrationController` Singleton
 
-At the launch time of your app (`-applicationDidFinishLaunching:`) request the `WDRegistrationController` singleton instance and set its properies.
+At the launch time of your app (`-applicationDidFinishLaunching:`) request the `WDGRegistrationController` singleton instance and set its properies.
 
 ```objective-c
-WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
+WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
 ```
 
 Set the `publicKeyPEM` property to your application' DSA/ECDSA public key:

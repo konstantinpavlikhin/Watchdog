@@ -1,5 +1,5 @@
 //
-//  WDResources.h
+//  WDGResources.h
 //  Watchdog
 //
 //  Created by Konstantin Pavlikhin on 01.03.14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WDResources : NSObject
+@interface WDGResources : NSObject
 
 + (NSBundle*) resourcesBundle;
 

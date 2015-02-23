@@ -1,14 +1,14 @@
 //
-//  WDSerialEntryController_Private.h
+//  WDGSerialEntryController+Private.h
 //  Watchdog
 //
-//  Created by Konstantin Pavlikhin on 6/7/13.
-//  Copyright (c) 2013 Konstantin Pavlikhin. All rights reserved.
+//  Created by Konstantin Pavlikhin on 27/01/10.
+//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
 //
 
-#import "WDSerialEntryController.h"
+#import "WDGSerialEntryController.h"
 
-@interface WDSerialEntryController ()
+@interface WDGSerialEntryController ()
 
 // NSTextField that is used for the registration greetings message is bound to this property.
 @property(readwrite, strong) NSString* greeting;

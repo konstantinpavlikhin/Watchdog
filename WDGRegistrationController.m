@@ -1,43 +1,41 @@
-////////////////////////////////////////////////////////////////////////////////
-//  
-//  WDRegistrationController.m
-//  
+//
+//  WDGRegistrationController.m
 //  Watchdog
-//  
+//
 //  Created by Konstantin Pavlikhin on 27/01/10.
-//  
-////////////////////////////////////////////////////////////////////////////////
+//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
+//
 
-#import "WDRegistrationController+Private.h"
+#import "WDGRegistrationController+Private.h"
 
-#import "WDRegistrationWindowController.h"
+#import "WDGRegistrationWindowController.h"
 
-#import "WDPlistConstants.h"
+#import "WDGPlistConstants.h"
 
-#import "WDResources.h"
+#import "WDGResources.h"
 
 #import <CommonCrypto/CommonDigest.h>
 
 NSString* const ApplicationStateKeyPath = @"applicationState";
 
-NSString* const WDCustomerNameKey = @"WDCustomerName";
+NSString* const WDGCustomerNameKey = @"WDCustomerName";
 
-NSString* const WDSerialKey = @"WDSerial";
+NSString* const WDGSerialKey = @"WDSerial";
 
-NSString* const WDDynamicBlacklistKey = @"WDDynamicBlacklist";
+NSString* const WDGDynamicBlacklistKey = @"WDDynamicBlacklist";
 
 // WDRegistrationController is a singleton instance, so we can allow ourselves this trick.
-static WDRegistrationWindowController* registrationWindowController = nil;
+static WDGRegistrationWindowController* registrationWindowController = nil;
 
-@implementation WDRegistrationController
+@implementation WDGRegistrationController
 
 #pragma mark - Public Methods
 
-+ (WDRegistrationController*) sharedRegistrationController
++ (WDGRegistrationController*) sharedRegistrationController
 {
   static dispatch_once_t predicate;
   
-  static WDRegistrationController *sharedRegistrationController = nil;
+  static WDGRegistrationController *sharedRegistrationController = nil;
   
   dispatch_once(&predicate, ^{ sharedRegistrationController = [self new]; });
   
@@ -126,11 +124,11 @@ static WDRegistrationWindowController* registrationWindowController = nil;
     return;
   }
   
-  [self registerWithCustomerName: dict[@"name"] serial: dict[@"serial"] handler: ^(enum WDSerialVerdict verdict)
+  [self registerWithCustomerName: dict[@"name"] serial: dict[@"serial"] handler: ^(enum WDGSerialVerdict verdict)
   {
     dispatch_async(dispatch_get_main_queue(), ^()
     {
-      if(verdict != WDValidSerialVerdict)
+      if(verdict != WDGValidSerialVerdict)
       {
         [[[self class] alertWithSerialVerdict: verdict] runModal];
         
@@ -152,23 +150,23 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
   {
     // Launching full-featured customer data check.
-    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDSerialVerdict verdict)
+    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDGSerialVerdict verdict)
     {
       // If all of the tests pass...
-      if(verdict == WDValidSerialVerdict)
+      if(verdict == WDGValidSerialVerdict)
       {
         NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
         
-        [userDefaults setObject: name forKey: WDCustomerNameKey];
+        [userDefaults setObject: name forKey: WDGCustomerNameKey];
         
-        [userDefaults setObject: serial forKey: WDSerialKey];
+        [userDefaults setObject: serial forKey: WDGSerialKey];
         
         [userDefaults synchronize];
         
         // KVO-notifications always arrive on the same thread that set the value.
         dispatch_async(dispatch_get_main_queue(), ^()
         {
-          self.applicationState = WDRegisteredApplicationState;
+          self.applicationState = WDGRegisteredApplicationState;
         });
       }
       
@@ -185,24 +183,24 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 
 - (NSString*) registeredCustomerName
 {
-  if([self applicationState] != WDRegisteredApplicationState) return nil;
+  if([self applicationState] != WDGRegisteredApplicationState) return nil;
   
-  return [[NSUserDefaults standardUserDefaults] stringForKey: WDCustomerNameKey];
+  return [[NSUserDefaults standardUserDefaults] stringForKey: WDGCustomerNameKey];
 }
 
 - (void) deauthorizeAccount
 {
   NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
   
-  [userDefaults removeObjectForKey: WDCustomerNameKey];
+  [userDefaults removeObjectForKey: WDGCustomerNameKey];
   
-  [userDefaults removeObjectForKey: WDSerialKey];
+  [userDefaults removeObjectForKey: WDGSerialKey];
   
   [userDefaults synchronize];
   
   dispatch_async(dispatch_get_main_queue(), ^()
   {
-    self.applicationState = WDUnregisteredApplicationState;
+    self.applicationState = WDGUnregisteredApplicationState;
   });
 }
 
@@ -213,28 +211,28 @@ static WDRegistrationWindowController* registrationWindowController = nil;
     // Looking for serial data in user preferences.
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSString* name = [userDefaults stringForKey: WDCustomerNameKey];
+    NSString* name = [userDefaults stringForKey: WDGCustomerNameKey];
     
-    NSString* serial = [userDefaults stringForKey: WDSerialKey];
+    NSString* serial = [userDefaults stringForKey: WDGSerialKey];
     
     // If one of parameters is missing — treat it (silently) like unregistered state.
     if(!name || !serial)
     {
       dispatch_async(dispatch_get_main_queue(), ^()
       {
-        self.applicationState = WDUnregisteredApplicationState;
+        self.applicationState = WDGUnregisteredApplicationState;
       });
       
       return;
     };
     
-    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDSerialVerdict serialVerdict)
+    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDGSerialVerdict serialVerdict)
     {
       dispatch_async(dispatch_get_main_queue(), ^()
       {
-        if(serialVerdict == WDValidSerialVerdict)
+        if(serialVerdict == WDGValidSerialVerdict)
         {
-          self.applicationState = WDRegisteredApplicationState;
+          self.applicationState = WDGRegisteredApplicationState;
           
           return;
         }
@@ -253,9 +251,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Corrupted Quick-Apply Link", nil, [WDResources resourcesBundle], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Corrupted Quick-Apply Link", nil, [WDGResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Please enter your registration data manualy.", nil, [WDResources resourcesBundle], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Please enter your registration data manualy.", nil, [WDGResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
@@ -264,9 +262,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDResources resourcesBundle], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDGResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, try again.", nil, [WDResources resourcesBundle], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is corrupted. Please, try again.", nil, [WDGResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
@@ -275,9 +273,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDResources resourcesBundle], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDGResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is blacklisted. Please, contact support to get a new key.", nil, [WDResources resourcesBundle], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"Your serial is blacklisted. Please, contact support to get a new key.", nil, [WDGResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
@@ -286,42 +284,42 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSAlert* alert = [[NSAlert alloc] init];
   
-  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDResources resourcesBundle], @"Alert title.")];
+  [alert setMessageText: NSLocalizedStringFromTableInBundle(@"Serial validation fail", nil, [WDGResources resourcesBundle], @"Alert title.")];
   
-  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"It seems like you are using pirated serial.", nil, [WDResources resourcesBundle], @"Alert body.")];
+  [alert setInformativeText: NSLocalizedStringFromTableInBundle(@"It seems like you are using pirated serial.", nil, [WDGResources resourcesBundle], @"Alert body.")];
   
   return alert;
 }
 
-+ (NSAlert*) alertWithSerialVerdict: (enum WDSerialVerdict) verdict
++ (NSAlert*) alertWithSerialVerdict: (enum WDGSerialVerdict) verdict
 {
   NSAlert* alert = nil;
   
   switch(verdict)
   {
     // Compiler generates warning if this constant not handled in switch.
-    case WDValidSerialVerdict:
+    case WDGValidSerialVerdict:
     {
       alert = nil;
       
       break;
     }
     
-    case WDCorruptedSerialVerdict:
+    case WDGCorruptedSerialVerdict:
     {
       alert = [self corruptedRegistrationDataAlert];
       
       break;
     }
     
-    case WDBlacklistedSerialVerdict:
+    case WDGBlacklistedSerialVerdict:
     {
       alert = [self blacklistedRegistrationDataAlert];
       
       break;
     }
     
-    case WDPiratedSerialVerdict:
+    case WDGPiratedSerialVerdict:
     {
       alert = [self piratedRegistrationDataAlert];
       
@@ -333,9 +331,9 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 }
 
 // Lazy RegistrationWindowController constructor.
-- (WDRegistrationWindowController*) registrationWindowController
+- (WDGRegistrationWindowController*) registrationWindowController
 {
-  if(!registrationWindowController) registrationWindowController = [WDRegistrationWindowController new];
+  if(!registrationWindowController) registrationWindowController = [WDGRegistrationWindowController new];
   
   return registrationWindowController;
 }
@@ -349,13 +347,13 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   // Если лицензия не расшифровалась...
   if(![self isSerial: serial conformsToCustomerName: name error: NULL])
   {
-    handler(WDCorruptedSerialVerdict); return;
+    handler(WDGCorruptedSerialVerdict); return;
   }
   
   // Если лицензия найдена в одном из черных списков...
   if([self isSerialInStaticBlacklist: serial] || [self isSerialInDynamicBlacklist: serial])
   {
-    handler(WDBlacklistedSerialVerdict); return;
+    handler(WDGBlacklistedSerialVerdict); return;
   }
   
   handler([self synchronousServerCheckWithSerial: serial]);
@@ -521,11 +519,11 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 }
 
 // Performs server check of the supplied serial.
-- (enum WDSerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
+- (enum WDGSerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
 {
   NSParameterAssert(serial);
   
-  NSString* serialCheckBase = [[NSBundle mainBundle] objectForInfoDictionaryKey: WDServerCheckURLKey];
+  NSString* serialCheckBase = [[NSBundle mainBundle] objectForInfoDictionaryKey: WDGServerCheckURLKey];
   
   NSData* userNameData = [NSUserName() dataUsingEncoding: NSUTF8StringEncoding];
   
@@ -553,23 +551,23 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   if([string isEqualToString: @"Valid"])
   {
-    return WDValidSerialVerdict;
+    return WDGValidSerialVerdict;
   }
   else if([string isEqualToString: @"Blacklisted"])
   {
     [self addSerialToDynamicBlacklist: serial];
     
-    return WDBlacklistedSerialVerdict;
+    return WDGBlacklistedSerialVerdict;
   }
   else if([string isEqualToString: @"Pirated"])
   {
     [self addSerialToDynamicBlacklist: serial];
     
-    return WDPiratedSerialVerdict;
+    return WDGPiratedSerialVerdict;
   }
   
   // Not going to be too strict at this point.
-  return WDValidSerialVerdict;
+  return WDGValidSerialVerdict;
 }
 
 // Checks whether specified serial is present in the static blacklist.
@@ -585,7 +583,7 @@ static WDRegistrationWindowController* registrationWindowController = nil;
 {
   NSParameterAssert(serial);
   
-  NSArray* dynamicBlacklist = [[NSUserDefaults standardUserDefaults] arrayForKey: WDDynamicBlacklistKey];
+  NSArray* dynamicBlacklist = [[NSUserDefaults standardUserDefaults] arrayForKey: WDGDynamicBlacklistKey];
   
   return [dynamicBlacklist containsObject: serial];
 }
@@ -597,11 +595,11 @@ static WDRegistrationWindowController* registrationWindowController = nil;
   
   NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
   
-  NSArray* dynamicBlacklist = [userDefaults arrayForKey: WDDynamicBlacklistKey];
+  NSArray* dynamicBlacklist = [userDefaults arrayForKey: WDGDynamicBlacklistKey];
   
   if(!dynamicBlacklist) dynamicBlacklist = [NSArray array];
   
-  [userDefaults setObject: [dynamicBlacklist arrayByAddingObject: serial] forKey: WDDynamicBlacklistKey];
+  [userDefaults setObject: [dynamicBlacklist arrayByAddingObject: serial] forKey: WDGDynamicBlacklistKey];
 }
 
 @end

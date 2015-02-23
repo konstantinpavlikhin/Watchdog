@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B531F5B818C219A500E65397 /* ShakeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5B618C219A500E65397 /* ShakeAnimation.h */; };
-		B531F5B918C219A500E65397 /* ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5B718C219A500E65397 /* ShakeAnimation.m */; };
-		B531F5EA18C2316D00E65397 /* WDResources.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5E818C2316D00E65397 /* WDResources.h */; };
-		B531F5EB18C2316D00E65397 /* WDResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5E918C2316D00E65397 /* WDResources.m */; };
+		B531F5B818C219A500E65397 /* WDGShakeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5B618C219A500E65397 /* WDGShakeAnimation.h */; };
+		B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5B718C219A500E65397 /* WDGShakeAnimation.m */; };
+		B531F5EA18C2316D00E65397 /* WDGResources.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5E818C2316D00E65397 /* WDGResources.h */; };
+		B531F5EB18C2316D00E65397 /* WDGResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5E918C2316D00E65397 /* WDGResources.m */; };
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
 		B58448D51A9B0F34009F4D83 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
 		B58448D71A9B0F45009F4D83 /* Watchdog.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B58448D81A9B0FD6009F4D83 /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */; };
-		B58448D91A9B0FDD009F4D83 /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDSerialEntry.xib */; };
-		B58448DA1A9B0FE0009F4D83 /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDRegistrationStatus.xib */; };
+		B58448D81A9B0FD6009F4D83 /* WDGRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59516FE18C2676C00FE2026 /* WDGRegistrationWindow.xib */; };
+		B58448D91A9B0FDD009F4D83 /* WDGSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDGSerialEntry.xib */; };
+		B58448DA1A9B0FE0009F4D83 /* WDGRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDGRegistrationStatus.xib */; };
 		B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
 		B5CD05F718C34EF6005268CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
@@ -29,7 +29,7 @@
 		B5DBD728175FABBA001F4709 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5DBD735175FABBA001F4709 /* WatchdogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD734175FABBA001F4709 /* WatchdogTests.m */; };
 		B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
-		B5DBD77E17608864001F4709 /* WDPlistConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD77D17608864001F4709 /* WDPlistConstants.m */; };
+		B5DBD77E17608864001F4709 /* WDGPlistConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD77D17608864001F4709 /* WDGPlistConstants.m */; };
 		B5DBD7BC1760B831001F4709 /* 1024-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7BB1760B831001F4709 /* 1024-private.pem */; };
 		B5DBD7BE1760B841001F4709 /* 2048-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7BD1760B841001F4709 /* 2048-private.pem */; };
 		B5DBD7C01760B84C001F4709 /* secp384r1-private.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */; };
@@ -42,15 +42,15 @@
 		B5DBD7CE1760B96D001F4709 /* secp521r1-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */; };
 		B5DBD7D01760B97D001F4709 /* 1024-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7CF1760B97D001F4709 /* 1024-data.plist */; };
 		B5DBD7D21760B98C001F4709 /* 2048-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DBD7D11760B98C001F4709 /* 2048-data.plist */; };
-		B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */; };
+		B5E036BB159F8CBC00007230 /* WDGRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */; };
 		B5F0B4EC14F54B8B0069FFAF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
-		B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5F614FD14F54EB500C8565A /* WDRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* WDRegistrationController.m */; };
-		B5F614FF14F54EB500C8565A /* WDSerialEntryController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F214F54EB500C8565A /* WDSerialEntryController.h */; };
-		B5F6150014F54EB500C8565A /* WDSerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* WDSerialEntryController.m */; };
-		B5F6150214F54EB500C8565A /* WDRegistrationStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */; };
-		B5F6150714F54EB500C8565A /* WDRegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */; };
-		B5F6150814F54EB500C8565A /* WDRegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */; };
+		B5F614FC14F54EB500C8565A /* WDGRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F614FD14F54EB500C8565A /* WDGRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* WDGRegistrationController.m */; };
+		B5F614FF14F54EB500C8565A /* WDGSerialEntryController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F214F54EB500C8565A /* WDGSerialEntryController.h */; };
+		B5F6150014F54EB500C8565A /* WDGSerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */; };
+		B5F6150214F54EB500C8565A /* WDGRegistrationStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614F514F54EB500C8565A /* WDGRegistrationStatusController.h */; };
+		B5F6150714F54EB500C8565A /* WDGRegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F614FA14F54EB500C8565A /* WDGRegistrationWindowController.h */; };
+		B5F6150814F54EB500C8565A /* WDGRegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* WDGRegistrationWindowController.m */; };
 		B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F6150914F54F0400C8565A /* Watchdog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46E029A327B40FBB7955F20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C598D5503140F096DEA880 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -87,25 +87,24 @@
 
 /* Begin PBXFileReference section */
 		7115994328CA4D7887F07092 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		B531F5B618C219A500E65397 /* ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimation.h; sourceTree = "<group>"; };
-		B531F5B718C219A500E65397 /* ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimation.m; sourceTree = "<group>"; };
-		B531F5E818C2316D00E65397 /* WDResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDResources.h; sourceTree = "<group>"; };
-		B531F5E918C2316D00E65397 /* WDResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDResources.m; sourceTree = "<group>"; };
+		B531F5B618C219A500E65397 /* WDGShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGShakeAnimation.h; sourceTree = "<group>"; };
+		B531F5B718C219A500E65397 /* WDGShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGShakeAnimation.m; sourceTree = "<group>"; };
+		B531F5E818C2316D00E65397 /* WDGResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGResources.h; sourceTree = "<group>"; };
+		B531F5E918C2316D00E65397 /* WDGResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGResources.m; sourceTree = "<group>"; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B5421805175F8973008D056B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		B5421806175F8973008D056B /* License.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		B59516E618C2665100FE2026 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B59516E818C2665100FE2026 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		B59516EB18C2665100FE2026 /* WatchdogResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogResources-Info.plist"; sourceTree = "<group>"; };
-		B59516FF18C2676C00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDRegistrationWindow.xib; sourceTree = SOURCE_ROOT; };
-		B595170118C2677E00FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDRegistrationWindow.strings; sourceTree = SOURCE_ROOT; };
-		B595170218C267BE00FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDRegistrationWindow.strings; sourceTree = SOURCE_ROOT; };
-		B595170418C267FD00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDSerialEntry.xib; sourceTree = SOURCE_ROOT; };
-		B595170718C2681200FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDRegistrationStatus.xib; sourceTree = SOURCE_ROOT; };
-		B595170918C2682800FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDSerialEntry.strings; sourceTree = SOURCE_ROOT; };
-		B595170A18C2682B00FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDSerialEntry.strings; sourceTree = SOURCE_ROOT; };
-		B595170B18C2683400FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDRegistrationStatus.strings; sourceTree = SOURCE_ROOT; };
-		B595170C18C2683600FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDRegistrationStatus.strings; sourceTree = SOURCE_ROOT; };
+		B59516FF18C2676C00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDGRegistrationWindow.xib; sourceTree = SOURCE_ROOT; };
+		B595170118C2677E00FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDGRegistrationWindow.strings; sourceTree = SOURCE_ROOT; };
+		B595170218C267BE00FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDGRegistrationWindow.strings; sourceTree = SOURCE_ROOT; };
+		B595170418C267FD00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDGSerialEntry.xib; sourceTree = SOURCE_ROOT; };
+		B595170718C2681200FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDGRegistrationStatus.xib; sourceTree = SOURCE_ROOT; };
+		B595170918C2682800FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDGSerialEntry.strings; sourceTree = SOURCE_ROOT; };
+		B595170A18C2682B00FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDGSerialEntry.strings; sourceTree = SOURCE_ROOT; };
+		B595170B18C2683400FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/WDGRegistrationStatus.strings; sourceTree = SOURCE_ROOT; };
+		B595170C18C2683600FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/WDGRegistrationStatus.strings; sourceTree = SOURCE_ROOT; };
 		B595170E18C268E100FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B595171018C268E400FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -118,16 +117,16 @@
 		B5CD060518C34EF6005268CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B5CD060818C34EF6005268CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B5CD062918C34F56005268CB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		B5DAA40E1761D86100A82BF8 /* WDRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationStatusController+Private.h"; sourceTree = SOURCE_ROOT; };
-		B5DAA40F1761D8C000A82BF8 /* WDSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDSerialEntryController+Private.h"; sourceTree = SOURCE_ROOT; };
+		B5DAA40E1761D86100A82BF8 /* WDGRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGRegistrationStatusController+Private.h"; sourceTree = SOURCE_ROOT; };
+		B5DAA40F1761D8C000A82BF8 /* WDGSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGSerialEntryController+Private.h"; sourceTree = SOURCE_ROOT; };
 		B5DBD725175FABBA001F4709 /* WatchdogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DBD726175FABBA001F4709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogTests-Info.plist"; sourceTree = "<group>"; };
 		B5DBD734175FABBA001F4709 /* WatchdogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchdogTests.m; sourceTree = "<group>"; };
 		B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WatchdogTests-Prefix.pch"; sourceTree = "<group>"; };
-		B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDRegistrationController+Private.h"; sourceTree = SOURCE_ROOT; };
-		B5DBD77C17608851001F4709 /* WDPlistConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDPlistConstants.h; sourceTree = SOURCE_ROOT; };
-		B5DBD77D17608864001F4709 /* WDPlistConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDPlistConstants.m; sourceTree = SOURCE_ROOT; };
+		B5DBD76A175FB252001F4709 /* WDGRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGRegistrationController+Private.h"; sourceTree = SOURCE_ROOT; };
+		B5DBD77C17608851001F4709 /* WDGPlistConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGPlistConstants.h; sourceTree = SOURCE_ROOT; };
+		B5DBD77D17608864001F4709 /* WDGPlistConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGPlistConstants.m; sourceTree = SOURCE_ROOT; };
 		B5DBD7BB1760B831001F4709 /* 1024-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1024-private.pem"; sourceTree = "<group>"; };
 		B5DBD7BD1760B841001F4709 /* 2048-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2048-private.pem"; sourceTree = "<group>"; };
 		B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp384r1-private.pem"; sourceTree = "<group>"; };
@@ -140,18 +139,18 @@
 		B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "secp521r1-data.plist"; sourceTree = "<group>"; };
 		B5DBD7CF1760B97D001F4709 /* 1024-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "1024-data.plist"; sourceTree = "<group>"; };
 		B5DBD7D11760B98C001F4709 /* 2048-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "2048-data.plist"; sourceTree = "<group>"; };
-		B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
+		B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
 		B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Watchdog-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Watchdog-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		B5F614EF14F54EB500C8565A /* WDRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRegistrationController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F014F54EB500C8565A /* WDRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F214F54EB500C8565A /* WDSerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSerialEntryController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F314F54EB500C8565A /* WDSerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSerialEntryController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRegistrationStatusController.h; sourceTree = SOURCE_ROOT; };
-		B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
-		B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDRegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
+		B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRegistrationController.h; sourceTree = SOURCE_ROOT; };
+		B5F614F014F54EB500C8565A /* WDGRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRegistrationController.m; sourceTree = SOURCE_ROOT; };
+		B5F614F214F54EB500C8565A /* WDGSerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGSerialEntryController.h; sourceTree = SOURCE_ROOT; };
+		B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGSerialEntryController.m; sourceTree = SOURCE_ROOT; };
+		B5F614F514F54EB500C8565A /* WDGRegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRegistrationStatusController.h; sourceTree = SOURCE_ROOT; };
+		B5F614FA14F54EB500C8565A /* WDGRegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
+		B5F614FB14F54EB500C8565A /* WDGRegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
 		B5F6150914F54F0400C8565A /* Watchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watchdog.h; sourceTree = "<group>"; };
 		E0C598D5503140F096DEA880 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,30 +191,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B531F5BA18C219A800E65397 /* Shake animation */ = {
+		B531F5BA18C219A800E65397 /* ShakeAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				B531F5B618C219A500E65397 /* ShakeAnimation.h */,
-				B531F5B718C219A500E65397 /* ShakeAnimation.m */,
+				B531F5B618C219A500E65397 /* WDGShakeAnimation.h */,
+				B531F5B718C219A500E65397 /* WDGShakeAnimation.m */,
 			);
-			name = "Shake animation";
+			name = ShakeAnimation;
 			sourceTree = "<group>";
 		};
-		B531F5EC18C2317600E65397 /* WDResources */ = {
+		B531F5EC18C2317600E65397 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B531F5E818C2316D00E65397 /* WDResources.h */,
-				B531F5E918C2316D00E65397 /* WDResources.m */,
+				B531F5E818C2316D00E65397 /* WDGResources.h */,
+				B531F5E918C2316D00E65397 /* WDGResources.m */,
 			);
-			name = WDResources;
-			sourceTree = "<group>";
-		};
-		B59516E918C2665100FE2026 /* WatchdogResources */ = {
-			isa = PBXGroup;
-			children = (
-				B59516EB18C2665100FE2026 /* WatchdogResources-Info.plist */,
-			);
-			path = WatchdogResources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		B5CD05F818C34EF6005268CB /* Sample */ = {
@@ -243,13 +234,13 @@
 			path = WatchdogTests;
 			sourceTree = "<group>";
 		};
-		B5DBD77F1760886A001F4709 /* Plist constants */ = {
+		B5DBD77F1760886A001F4709 /* PlistConstants */ = {
 			isa = PBXGroup;
 			children = (
-				B5DBD77C17608851001F4709 /* WDPlistConstants.h */,
-				B5DBD77D17608864001F4709 /* WDPlistConstants.m */,
+				B5DBD77C17608851001F4709 /* WDGPlistConstants.h */,
+				B5DBD77D17608864001F4709 /* WDGPlistConstants.m */,
 			);
-			name = "Plist constants";
+			name = PlistConstants;
 			path = Watchdog;
 			sourceTree = "<group>";
 		};
@@ -311,38 +302,38 @@
 			name = 2048;
 			sourceTree = "<group>";
 		};
-		B5E0368E159DB4D100007230 /* Registration window controller */ = {
+		B5E0368E159DB4D100007230 /* RegistrationWindowController */ = {
 			isa = PBXGroup;
 			children = (
-				B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */,
-				B5F614FA14F54EB500C8565A /* WDRegistrationWindowController.h */,
-				B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */,
+				B59516FE18C2676C00FE2026 /* WDGRegistrationWindow.xib */,
+				B5F614FA14F54EB500C8565A /* WDGRegistrationWindowController.h */,
+				B5F614FB14F54EB500C8565A /* WDGRegistrationWindowController.m */,
 			);
-			name = "Registration window controller";
+			name = RegistrationWindowController;
 			path = Watchdog;
 			sourceTree = "<group>";
 		};
-		B5E036B0159F6FFA00007230 /* Serial entry controller */ = {
+		B5E036B0159F6FFA00007230 /* SerialEntryController */ = {
 			isa = PBXGroup;
 			children = (
-				B595170318C267FD00FE2026 /* WDSerialEntry.xib */,
-				B5F614F214F54EB500C8565A /* WDSerialEntryController.h */,
-				B5DAA40F1761D8C000A82BF8 /* WDSerialEntryController+Private.h */,
-				B5F614F314F54EB500C8565A /* WDSerialEntryController.m */,
+				B595170318C267FD00FE2026 /* WDGSerialEntry.xib */,
+				B5F614F214F54EB500C8565A /* WDGSerialEntryController.h */,
+				B5DAA40F1761D8C000A82BF8 /* WDGSerialEntryController+Private.h */,
+				B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */,
 			);
-			name = "Serial entry controller";
+			name = SerialEntryController;
 			path = Watchdog;
 			sourceTree = "<group>";
 		};
-		B5E036B1159F700000007230 /* Registration status controller */ = {
+		B5E036B1159F700000007230 /* RegistrationStatusController */ = {
 			isa = PBXGroup;
 			children = (
-				B595170618C2681200FE2026 /* WDRegistrationStatus.xib */,
-				B5F614F514F54EB500C8565A /* WDRegistrationStatusController.h */,
-				B5DAA40E1761D86100A82BF8 /* WDRegistrationStatusController+Private.h */,
-				B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */,
+				B595170618C2681200FE2026 /* WDGRegistrationStatus.xib */,
+				B5F614F514F54EB500C8565A /* WDGRegistrationStatusController.h */,
+				B5DAA40E1761D86100A82BF8 /* WDGRegistrationStatusController+Private.h */,
+				B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */,
 			);
-			name = "Registration status controller";
+			name = RegistrationStatusController;
 			path = Watchdog;
 			sourceTree = "<group>";
 		};
@@ -355,14 +346,13 @@
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
 				B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */,
 				B595170D18C268E100FE2026 /* Localizable.strings */,
-				B5F0B4F114F54B8B0069FFAF /* Registration controller */,
-				B5E0368E159DB4D100007230 /* Registration window controller */,
-				B5E036B0159F6FFA00007230 /* Serial entry controller */,
-				B5E036B1159F700000007230 /* Registration status controller */,
-				B5DBD77F1760886A001F4709 /* Plist constants */,
-				B531F5BA18C219A800E65397 /* Shake animation */,
-				B531F5EC18C2317600E65397 /* WDResources */,
-				B59516E918C2665100FE2026 /* WatchdogResources */,
+				B5F0B4F114F54B8B0069FFAF /* RegistrationController */,
+				B5E0368E159DB4D100007230 /* RegistrationWindowController */,
+				B5E036B0159F6FFA00007230 /* SerialEntryController */,
+				B5E036B1159F700000007230 /* RegistrationStatusController */,
+				B5DBD77F1760886A001F4709 /* PlistConstants */,
+				B531F5BA18C219A800E65397 /* ShakeAnimation */,
+				B531F5EC18C2317600E65397 /* Resources */,
 				B5DBD72D175FABBA001F4709 /* WatchdogTests */,
 				B5CD05F818C34EF6005268CB /* Sample */,
 				B5F0B4EA14F54B8B0069FFAF /* Frameworks */,
@@ -397,14 +387,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B5F0B4F114F54B8B0069FFAF /* Registration controller */ = {
+		B5F0B4F114F54B8B0069FFAF /* RegistrationController */ = {
 			isa = PBXGroup;
 			children = (
-				B5F614EF14F54EB500C8565A /* WDRegistrationController.h */,
-				B5DBD76A175FB252001F4709 /* WDRegistrationController+Private.h */,
-				B5F614F014F54EB500C8565A /* WDRegistrationController.m */,
+				B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */,
+				B5DBD76A175FB252001F4709 /* WDGRegistrationController+Private.h */,
+				B5F614F014F54EB500C8565A /* WDGRegistrationController.m */,
 			);
-			name = "Registration controller";
+			name = RegistrationController;
 			path = Watchdog;
 			sourceTree = "<group>";
 		};
@@ -415,13 +405,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B531F5EA18C2316D00E65397 /* WDResources.h in Headers */,
+				B531F5EA18C2316D00E65397 /* WDGResources.h in Headers */,
 				B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */,
-				B5F614FC14F54EB500C8565A /* WDRegistrationController.h in Headers */,
-				B531F5B818C219A500E65397 /* ShakeAnimation.h in Headers */,
-				B5F614FF14F54EB500C8565A /* WDSerialEntryController.h in Headers */,
-				B5F6150214F54EB500C8565A /* WDRegistrationStatusController.h in Headers */,
-				B5F6150714F54EB500C8565A /* WDRegistrationWindowController.h in Headers */,
+				B5F614FC14F54EB500C8565A /* WDGRegistrationController.h in Headers */,
+				B531F5B818C219A500E65397 /* WDGShakeAnimation.h in Headers */,
+				B5F614FF14F54EB500C8565A /* WDGSerialEntryController.h in Headers */,
+				B5F6150214F54EB500C8565A /* WDGRegistrationStatusController.h in Headers */,
+				B5F6150714F54EB500C8565A /* WDGRegistrationWindowController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,9 +539,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */,
-				B58448D91A9B0FDD009F4D83 /* WDSerialEntry.xib in Resources */,
-				B58448D81A9B0FD6009F4D83 /* WDRegistrationWindow.xib in Resources */,
-				B58448DA1A9B0FE0009F4D83 /* WDRegistrationStatus.xib in Resources */,
+				B58448D91A9B0FDD009F4D83 /* WDGSerialEntry.xib in Resources */,
+				B58448D81A9B0FD6009F4D83 /* WDGRegistrationWindow.xib in Resources */,
+				B58448DA1A9B0FE0009F4D83 /* WDGRegistrationStatus.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,13 +615,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F614FD14F54EB500C8565A /* WDRegistrationController.m in Sources */,
-				B531F5EB18C2316D00E65397 /* WDResources.m in Sources */,
-				B5F6150014F54EB500C8565A /* WDSerialEntryController.m in Sources */,
-				B5E036BB159F8CBC00007230 /* WDRegistrationStatusController.m in Sources */,
-				B531F5B918C219A500E65397 /* ShakeAnimation.m in Sources */,
-				B5F6150814F54EB500C8565A /* WDRegistrationWindowController.m in Sources */,
-				B5DBD77E17608864001F4709 /* WDPlistConstants.m in Sources */,
+				B5F614FD14F54EB500C8565A /* WDGRegistrationController.m in Sources */,
+				B531F5EB18C2316D00E65397 /* WDGResources.m in Sources */,
+				B5F6150014F54EB500C8565A /* WDGSerialEntryController.m in Sources */,
+				B5E036BB159F8CBC00007230 /* WDGRegistrationStatusController.m in Sources */,
+				B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */,
+				B5F6150814F54EB500C8565A /* WDGRegistrationWindowController.m in Sources */,
+				B5DBD77E17608864001F4709 /* WDGPlistConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,34 +641,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */ = {
+		B59516FE18C2676C00FE2026 /* WDGRegistrationWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B59516FF18C2676C00FE2026 /* Base */,
 				B595170118C2677E00FE2026 /* en */,
 				B595170218C267BE00FE2026 /* ru */,
 			);
-			name = WDRegistrationWindow.xib;
+			name = WDGRegistrationWindow.xib;
 			sourceTree = "<group>";
 		};
-		B595170318C267FD00FE2026 /* WDSerialEntry.xib */ = {
+		B595170318C267FD00FE2026 /* WDGSerialEntry.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B595170418C267FD00FE2026 /* Base */,
 				B595170918C2682800FE2026 /* en */,
 				B595170A18C2682B00FE2026 /* ru */,
 			);
-			name = WDSerialEntry.xib;
+			name = WDGSerialEntry.xib;
 			sourceTree = "<group>";
 		};
-		B595170618C2681200FE2026 /* WDRegistrationStatus.xib */ = {
+		B595170618C2681200FE2026 /* WDGRegistrationStatus.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B595170718C2681200FE2026 /* Base */,
 				B595170B18C2683400FE2026 /* en */,
 				B595170C18C2683600FE2026 /* ru */,
 			);
-			name = WDRegistrationStatus.xib;
+			name = WDGRegistrationStatus.xib;
 			sourceTree = "<group>";
 		};
 		B595170D18C268E100FE2026 /* Localizable.strings */ = {

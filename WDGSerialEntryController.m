@@ -1,35 +1,33 @@
-////////////////////////////////////////////////////////////////////////////////
-//  
-//  WDSerialEntryController.m
-//  
+//
+//  WDGSerialEntryController.m
 //  Watchdog
-//  
+//
 //  Created by Konstantin Pavlikhin on 27/01/10.
-//  
-////////////////////////////////////////////////////////////////////////////////
+//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
+//
 
-#import "WDSerialEntryController+Private.h"
+#import "WDGSerialEntryController+Private.h"
 
-#import "WDRegistrationController.h"
+#import "WDGRegistrationController.h"
 
-#import "WDPlistConstants.h"
+#import "WDGPlistConstants.h"
 
-#import "ShakeAnimation.h"
+#import "WDGShakeAnimation.h"
 
-#import "WDResources.h"
+#import "WDGResources.h"
 
-@implementation WDSerialEntryController
+@implementation WDGSerialEntryController
 
 - (id) init
 {
-  self = [self initWithNibName: @"WDSerialEntry" bundle: [WDResources resourcesBundle]];
+  self = [self initWithNibName: @"WDGSerialEntry" bundle: [WDGResources resourcesBundle]];
   
   return self;
 }
 
 - (void) awakeFromNib
 {
-  NSString* str = NSLocalizedStringFromTableInBundle(@"Unlock %@", nil, [WDResources resourcesBundle], @"Registration greeting. Parameter stays for the app name.");
+  NSString* str = NSLocalizedStringFromTableInBundle(@"Unlock %@", nil, [WDGResources resourcesBundle], @"Registration greeting. Parameter stays for the app name.");
   
   self.greeting = [NSString stringWithFormat: str, [self localizedAppName]];
 }
@@ -41,12 +39,12 @@
 
 - (NSURL*) supportURL
 {
-  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: WDSupportURLKey]];
+  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: WDGSupportURLKey]];
 }
 
 - (NSURL*) buyOnlineURL
 {
-  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: WDBuyOnlineURLKey]];
+  return [NSURL URLWithString: [[NSBundle mainBundle] objectForInfoDictionaryKey: WDGBuyOnlineURLKey]];
 }
 
 - (IBAction) lostKey: (id) sender
@@ -89,9 +87,9 @@
   [self.proceed setEnabled: NO];
   
   // Pushing data to the WDRegistrationController.
-  WDRegistrationController* SRC = [WDRegistrationController sharedRegistrationController];
+  WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
   
-  [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDSerialVerdict verdict)
+  [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
   {
     dispatch_async(dispatch_get_main_queue(), ^()
     {
@@ -99,7 +97,7 @@
       
       [self.proceed setEnabled: YES];
       
-      if(verdict != WDValidSerialVerdict)
+      if(verdict != WDGValidSerialVerdict)
       {
         [self shakeWindow];
         
