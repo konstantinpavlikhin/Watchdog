@@ -4,9 +4,9 @@ link_with 'WatchdogTests'
 
 inhibit_all_warnings!
 
-pod 'Specta', '~> 0.2'
+pod 'Specta', '~> 0.3'
 
-pod 'Expecta', '~> 0.2'
+pod 'Expecta', '~> 0.3'
 
 xcodeproj 'Watchdog'
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51127F21A9B26940029A7AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD057018C3385F005268CB /* XCTest.framework */; };
 		B531F5B818C219A500E65397 /* WDGShakeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5B618C219A500E65397 /* WDGShakeAnimation.h */; };
 		B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5B718C219A500E65397 /* WDGShakeAnimation.m */; };
 		B531F5EA18C2316D00E65397 /* WDGResources.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5E818C2316D00E65397 /* WDGResources.h */; };
@@ -25,7 +26,6 @@
 		B5CD060918C34EF6005268CB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CD060718C34EF6005268CB /* MainMenu.xib */; };
 		B5CD062A18C34F56005268CB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD062918C34F56005268CB /* Security.framework */; };
 		B5CD062B18C34F5D005268CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
-		B5DBD727175FABBA001F4709 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD726175FABBA001F4709 /* SenTestingKit.framework */; };
 		B5DBD728175FABBA001F4709 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5DBD735175FABBA001F4709 /* WatchdogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD734175FABBA001F4709 /* WatchdogTests.m */; };
 		B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
@@ -86,7 +86,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7115994328CA4D7887F07092 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		2821A761E6B213558C5A6377 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8C29AD68E6FF67836C4F5496 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B531F5B618C219A500E65397 /* WDGShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGShakeAnimation.h; sourceTree = "<group>"; };
 		B531F5B718C219A500E65397 /* WDGShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGShakeAnimation.m; sourceTree = "<group>"; };
 		B531F5E818C2316D00E65397 /* WDGResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGResources.h; sourceTree = "<group>"; };
@@ -119,7 +120,7 @@
 		B5CD062918C34F56005268CB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B5DAA40E1761D86100A82BF8 /* WDGRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGRegistrationStatusController+Private.h"; sourceTree = SOURCE_ROOT; };
 		B5DAA40F1761D8C000A82BF8 /* WDGSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGSerialEntryController+Private.h"; sourceTree = SOURCE_ROOT; };
-		B5DBD725175FABBA001F4709 /* WatchdogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5DBD725175FABBA001F4709 /* WatchdogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DBD726175FABBA001F4709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogTests-Info.plist"; sourceTree = "<group>"; };
 		B5DBD734175FABBA001F4709 /* WatchdogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchdogTests.m; sourceTree = "<group>"; };
@@ -172,8 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5DBD76D175FB2A2001F4709 /* Watchdog.framework in Frameworks */,
-				B5DBD727175FABBA001F4709 /* SenTestingKit.framework in Frameworks */,
 				B5DBD728175FABBA001F4709 /* Cocoa.framework in Frameworks */,
+				B51127F21A9B26940029A7AC /* XCTest.framework in Frameworks */,
 				E46E029A327B40FBB7955F20 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A769D3A559E4098A6FA96666 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C29AD68E6FF67836C4F5496 /* Pods.debug.xcconfig */,
+				2821A761E6B213558C5A6377 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B531F5BA18C219A800E65397 /* ShakeAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +367,7 @@
 				B5CD05F818C34EF6005268CB /* Sample */,
 				B5F0B4EA14F54B8B0069FFAF /* Frameworks */,
 				B5F0B4E914F54B8B0069FFAF /* Products */,
-				7115994328CA4D7887F07092 /* Pods.xcconfig */,
+				A769D3A559E4098A6FA96666 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -365,7 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */,
-				B5DBD725175FABBA001F4709 /* WatchdogTests.octest */,
+				B5DBD725175FABBA001F4709 /* WatchdogTests.xctest */,
 				B5CD05F618C34EF6005268CB /* Sample.app */,
 			);
 			name = Products;
@@ -445,7 +455,6 @@
 				B5DBD720175FABBA001F4709 /* Sources */,
 				B5DBD721175FABBA001F4709 /* Frameworks */,
 				B5DBD722175FABBA001F4709 /* Resources */,
-				B5DBD723175FABBA001F4709 /* ShellScript */,
 				AE3DAFCB974E4C50B17B1903 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -455,8 +464,8 @@
 			);
 			name = WatchdogTests;
 			productName = WatchdogTests;
-			productReference = B5DBD725175FABBA001F4709 /* WatchdogTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = B5DBD725175FABBA001F4709 /* WatchdogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B5F0B4E714F54B8B0069FFAF /* Watchdog */ = {
 			isa = PBXNativeTarget;
@@ -482,6 +491,7 @@
 		B5F0B4DE14F54B8B0069FFAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Konstantin Pavlikhin";
 			};
@@ -575,21 +585,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		B5DBD723175FABBA001F4709 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -736,7 +733,7 @@
 		};
 		B5DBD737175FABBA001F4709 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7115994328CA4D7887F07092 /* Pods.xcconfig */;
+			baseConfigurationReference = 8C29AD68E6FF67836C4F5496 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -749,6 +746,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WatchdogTests/WatchdogTests-Prefix.pch";
@@ -764,13 +762,13 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = expecta/build/Release;
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		B5DBD738175FABBA001F4709 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7115994328CA4D7887F07092 /* Pods.xcconfig */;
+			baseConfigurationReference = 2821A761E6B213558C5A6377 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -783,6 +781,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WatchdogTests/WatchdogTests-Prefix.pch";
@@ -798,7 +797,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = expecta/build/Release;
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};

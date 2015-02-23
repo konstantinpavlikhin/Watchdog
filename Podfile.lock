@@ -1,13 +1,13 @@
 PODS:
-  - Expecta (0.2.3)
-  - Specta (0.2.1)
+  - Expecta (0.3.2)
+  - Specta (0.3.2)
 
 DEPENDENCIES:
-  - Expecta (~> 0.2)
-  - Specta (~> 0.2)
+  - Expecta (~> 0.3)
+  - Specta (~> 0.3)
 
 SPEC CHECKSUMS:
-  Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
-  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
+  Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
+  Specta: 698a58ffa5ec948327d3b92eab50ca58d7f4fbe8
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.35.0
