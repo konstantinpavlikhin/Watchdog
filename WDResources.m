@@ -12,9 +12,7 @@
 
 + (NSBundle*) resourcesBundle
 {
-  NSURL* bundleURL = [[NSBundle mainBundle] URLForResource: @"WatchdogResources" withExtension: @"bundle"];
-  
-  return [NSBundle bundleWithURL: bundleURL];
+  return [NSBundle bundleForClass: [self class]];
 }
 
 @end

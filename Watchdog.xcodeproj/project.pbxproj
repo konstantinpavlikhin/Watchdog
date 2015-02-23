@@ -12,27 +12,22 @@
 		B531F5EA18C2316D00E65397 /* WDResources.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5E818C2316D00E65397 /* WDResources.h */; };
 		B531F5EB18C2316D00E65397 /* WDResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5E918C2316D00E65397 /* WDResources.m */; };
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
+		B58448D51A9B0F34009F4D83 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
+		B58448D71A9B0F45009F4D83 /* Watchdog.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B58448D81A9B0FD6009F4D83 /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */; };
+		B58448D91A9B0FDD009F4D83 /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDSerialEntry.xib */; };
+		B58448DA1A9B0FE0009F4D83 /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDRegistrationStatus.xib */; };
+		B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
 		B595170018C2676C00FE2026 /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */; };
 		B595170518C267FD00FE2026 /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDSerialEntry.xib */; };
 		B595170818C2681200FE2026 /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDRegistrationStatus.xib */; };
 		B595170F18C268E100FE2026 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
 		B595171318C2696E00FE2026 /* WatchdogResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B59516E318C2665100FE2026 /* WatchdogResources.bundle */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
-		B5CD056418C3385F005268CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
-		B5CD05E818C34D3F005268CB /* WDRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F014F54EB500C8565A /* WDRegistrationController.m */; };
-		B5CD05E918C34D42005268CB /* WDRegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614FB14F54EB500C8565A /* WDRegistrationWindowController.m */; };
-		B5CD05EA18C34D45005268CB /* WDSerialEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F614F314F54EB500C8565A /* WDSerialEntryController.m */; };
-		B5CD05EB18C34D47005268CB /* WDRegistrationStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E036BC159F8CBC00007230 /* WDRegistrationStatusController.m */; };
-		B5CD05EC18C34D4A005268CB /* WDPlistConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DBD77D17608864001F4709 /* WDPlistConstants.m */; };
-		B5CD05ED18C34D4F005268CB /* ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5B718C219A500E65397 /* ShakeAnimation.m */; };
-		B5CD05EE18C34D52005268CB /* WDResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5E918C2316D00E65397 /* WDResources.m */; };
-		B5CD05F118C34D7E005268CB /* Watchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F6150914F54F0400C8565A /* Watchdog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5CD05F718C34EF6005268CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5CD05FF18C34EF6005268CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CD05FE18C34EF6005268CB /* main.m */; };
 		B5CD060618C34EF6005268CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CD060518C34EF6005268CB /* AppDelegate.m */; };
 		B5CD060918C34EF6005268CB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CD060718C34EF6005268CB /* MainMenu.xib */; };
-		B5CD062718C34F0C005268CB /* libWatchdogStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD056318C3385F005268CB /* libWatchdogStaticLib.a */; };
-		B5CD062818C34F17005268CB /* WatchdogResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B59516E318C2665100FE2026 /* WatchdogResources.bundle */; };
 		B5CD062A18C34F56005268CB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD062918C34F56005268CB /* Security.framework */; };
 		B5CD062B18C34F5D005268CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
 		B5DBD727175FABBA001F4709 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DBD726175FABBA001F4709 /* SenTestingKit.framework */; };
@@ -66,26 +61,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B58448D31A9B0EEC009F4D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5F0B4E714F54B8B0069FFAF;
+			remoteInfo = Watchdog;
+		};
 		B595171118C2696500FE2026 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B59516E218C2665100FE2026;
 			remoteInfo = WatchdogResources;
-		};
-		B5CD062318C34F04005268CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B59516E218C2665100FE2026;
-			remoteInfo = WatchdogResources;
-		};
-		B5CD062518C34F04005268CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B5CD056218C3385F005268CB;
-			remoteInfo = WatchdogStaticLib;
 		};
 		B5DBD76B175FB29B001F4709 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -95,6 +83,19 @@
 			remoteInfo = Watchdog;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B58448D61A9B0F39009F4D83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B58448D71A9B0F45009F4D83 /* Watchdog.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7115994328CA4D7887F07092 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 		B595170E18C268E100FE2026 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B595171018C268E400FE2026 /* ru */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B5CD056318C3385F005268CB /* libWatchdogStaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWatchdogStaticLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CD057018C3385F005268CB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B5CD05F618C34EF6005268CB /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CD05FA18C34EF6005268CB /* Sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sample-Info.plist"; sourceTree = "<group>"; };
@@ -178,22 +178,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5CD056018C3385F005268CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5CD056418C3385F005268CB /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5CD05F318C34EF6005268CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58448D51A9B0F34009F4D83 /* Watchdog.framework in Frameworks */,
 				B5CD062B18C34F5D005268CB /* QuartzCore.framework in Frameworks */,
 				B5CD062A18C34F56005268CB /* Security.framework in Frameworks */,
 				B5CD05F718C34EF6005268CB /* Cocoa.framework in Frameworks */,
-				B5CD062718C34F0C005268CB /* libWatchdogStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +399,6 @@
 				B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */,
 				B5DBD725175FABBA001F4709 /* WatchdogTests.octest */,
 				B59516E318C2665100FE2026 /* WatchdogResources.bundle */,
-				B5CD056318C3385F005268CB /* libWatchdogStaticLib.a */,
 				B5CD05F618C34EF6005268CB /* Sample.app */,
 			);
 			name = Products;
@@ -443,14 +434,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B5CD056118C3385F005268CB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5CD05F118C34D7E005268CB /* Watchdog.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5F0B4E514F54B8B0069FFAF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,23 +468,6 @@
 			productReference = B59516E318C2665100FE2026 /* WatchdogResources.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		B5CD056218C3385F005268CB /* WatchdogStaticLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5CD058218C3385F005268CB /* Build configuration list for PBXNativeTarget "WatchdogStaticLib" */;
-			buildPhases = (
-				B5CD055F18C3385F005268CB /* Sources */,
-				B5CD056018C3385F005268CB /* Frameworks */,
-				B5CD056118C3385F005268CB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WatchdogStaticLib;
-			productName = WatchdogStaticLib;
-			productReference = B5CD056318C3385F005268CB /* libWatchdogStaticLib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		B5CD05F518C34EF6005268CB /* Sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5CD062118C34EF6005268CB /* Build configuration list for PBXNativeTarget "Sample" */;
@@ -509,12 +475,12 @@
 				B5CD05F218C34EF6005268CB /* Sources */,
 				B5CD05F318C34EF6005268CB /* Frameworks */,
 				B5CD05F418C34EF6005268CB /* Resources */,
+				B58448D61A9B0F39009F4D83 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B5CD062418C34F04005268CB /* PBXTargetDependency */,
-				B5CD062618C34F04005268CB /* PBXTargetDependency */,
+				B58448D41A9B0EEC009F4D83 /* PBXTargetDependency */,
 			);
 			name = Sample;
 			productName = Sample;
@@ -587,7 +553,6 @@
 				B5F0B4E714F54B8B0069FFAF /* Watchdog */,
 				B5DBD724175FABBA001F4709 /* WatchdogTests */,
 				B59516E218C2665100FE2026 /* WatchdogResources */,
-				B5CD056218C3385F005268CB /* WatchdogStaticLib */,
 				B5CD05F518C34EF6005268CB /* Sample */,
 			);
 		};
@@ -609,7 +574,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5CD062818C34F17005268CB /* WatchdogResources.bundle in Resources */,
 				B5CD060918C34EF6005268CB /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,7 +601,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */,
+				B58448D91A9B0FDD009F4D83 /* WDSerialEntry.xib in Resources */,
 				B595171318C2696E00FE2026 /* WatchdogResources.bundle in Resources */,
+				B58448D81A9B0FD6009F4D83 /* WDRegistrationWindow.xib in Resources */,
+				B58448DA1A9B0FE0009F4D83 /* WDRegistrationStatus.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,20 +665,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5CD055F18C3385F005268CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5CD05E818C34D3F005268CB /* WDRegistrationController.m in Sources */,
-				B5CD05E918C34D42005268CB /* WDRegistrationWindowController.m in Sources */,
-				B5CD05EA18C34D45005268CB /* WDSerialEntryController.m in Sources */,
-				B5CD05EB18C34D47005268CB /* WDRegistrationStatusController.m in Sources */,
-				B5CD05EC18C34D4A005268CB /* WDPlistConstants.m in Sources */,
-				B5CD05ED18C34D4F005268CB /* ShakeAnimation.m in Sources */,
-				B5CD05EE18C34D52005268CB /* WDResources.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5CD05F218C34EF6005268CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -745,20 +699,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B58448D41A9B0EEC009F4D83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5F0B4E714F54B8B0069FFAF /* Watchdog */;
+			targetProxy = B58448D31A9B0EEC009F4D83 /* PBXContainerItemProxy */;
+		};
 		B595171218C2696500FE2026 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B59516E218C2665100FE2026 /* WatchdogResources */;
 			targetProxy = B595171118C2696500FE2026 /* PBXContainerItemProxy */;
-		};
-		B5CD062418C34F04005268CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B59516E218C2665100FE2026 /* WatchdogResources */;
-			targetProxy = B5CD062318C34F04005268CB /* PBXContainerItemProxy */;
-		};
-		B5CD062618C34F04005268CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B5CD056218C3385F005268CB /* WatchdogStaticLib */;
-			targetProxy = B5CD062518C34F04005268CB /* PBXContainerItemProxy */;
 		};
 		B5DBD76C175FB29B001F4709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -858,43 +807,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		B5CD057E18C3385F005268CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Watchdog-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		B5CD057F18C3385F005268CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Watchdog-Prefix.pch";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1126,15 +1038,6 @@
 			buildConfigurations = (
 				B59516F118C2665100FE2026 /* Debug */,
 				B59516F218C2665100FE2026 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5CD058218C3385F005268CB /* Build configuration list for PBXNativeTarget "WatchdogStaticLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5CD057E18C3385F005268CB /* Debug */,
-				B5CD057F18C3385F005268CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
