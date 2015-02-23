@@ -18,11 +18,6 @@
 		B58448D91A9B0FDD009F4D83 /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDSerialEntry.xib */; };
 		B58448DA1A9B0FE0009F4D83 /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDRegistrationStatus.xib */; };
 		B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
-		B595170018C2676C00FE2026 /* WDRegistrationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59516FE18C2676C00FE2026 /* WDRegistrationWindow.xib */; };
-		B595170518C267FD00FE2026 /* WDSerialEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170318C267FD00FE2026 /* WDSerialEntry.xib */; };
-		B595170818C2681200FE2026 /* WDRegistrationStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595170618C2681200FE2026 /* WDRegistrationStatus.xib */; };
-		B595170F18C268E100FE2026 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B595170D18C268E100FE2026 /* Localizable.strings */; };
-		B595171318C2696E00FE2026 /* WatchdogResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B59516E318C2665100FE2026 /* WatchdogResources.bundle */; };
 		B5C91ADE14F568DC009696B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C91ADD14F568DC009696B3 /* QuartzCore.framework */; };
 		B5CD05F718C34EF6005268CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */; };
 		B5CD05FF18C34EF6005268CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CD05FE18C34EF6005268CB /* main.m */; };
@@ -68,13 +63,6 @@
 			remoteGlobalIDString = B5F0B4E714F54B8B0069FFAF;
 			remoteInfo = Watchdog;
 		};
-		B595171118C2696500FE2026 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B59516E218C2665100FE2026;
-			remoteInfo = WatchdogResources;
-		};
 		B5DBD76B175FB29B001F4709 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5F0B4DE14F54B8B0069FFAF /* Project object */;
@@ -107,7 +95,6 @@
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B5421805175F8973008D056B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		B5421806175F8973008D056B /* License.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
-		B59516E318C2665100FE2026 /* WatchdogResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59516E618C2665100FE2026 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B59516E818C2665100FE2026 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B59516EB18C2665100FE2026 /* WatchdogResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogResources-Info.plist"; sourceTree = "<group>"; };
@@ -171,13 +158,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B59516E018C2665100FE2026 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5CD05F318C34EF6005268CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,7 +378,6 @@
 			children = (
 				B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */,
 				B5DBD725175FABBA001F4709 /* WatchdogTests.octest */,
-				B59516E318C2665100FE2026 /* WatchdogResources.bundle */,
 				B5CD05F618C34EF6005268CB /* Sample.app */,
 			);
 			name = Products;
@@ -451,23 +430,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B59516E218C2665100FE2026 /* WatchdogResources */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B59516F018C2665100FE2026 /* Build configuration list for PBXNativeTarget "WatchdogResources" */;
-			buildPhases = (
-				B59516DF18C2665100FE2026 /* Sources */,
-				B59516E018C2665100FE2026 /* Frameworks */,
-				B59516E118C2665100FE2026 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WatchdogResources;
-			productName = WatchdogResources;
-			productReference = B59516E318C2665100FE2026 /* WatchdogResources.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 		B5CD05F518C34EF6005268CB /* Sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5CD062118C34EF6005268CB /* Build configuration list for PBXNativeTarget "Sample" */;
@@ -520,7 +482,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B595171218C2696500FE2026 /* PBXTargetDependency */,
 			);
 			name = Watchdog;
 			productName = Watchdog;
@@ -552,24 +513,12 @@
 			targets = (
 				B5F0B4E714F54B8B0069FFAF /* Watchdog */,
 				B5DBD724175FABBA001F4709 /* WatchdogTests */,
-				B59516E218C2665100FE2026 /* WatchdogResources */,
 				B5CD05F518C34EF6005268CB /* Sample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B59516E118C2665100FE2026 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B595170F18C268E100FE2026 /* Localizable.strings in Resources */,
-				B595170018C2676C00FE2026 /* WDRegistrationWindow.xib in Resources */,
-				B595170518C267FD00FE2026 /* WDSerialEntry.xib in Resources */,
-				B595170818C2681200FE2026 /* WDRegistrationStatus.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5CD05F418C34EF6005268CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,7 +552,6 @@
 			files = (
 				B58448DB1A9B0FEC009F4D83 /* Localizable.strings in Resources */,
 				B58448D91A9B0FDD009F4D83 /* WDSerialEntry.xib in Resources */,
-				B595171318C2696E00FE2026 /* WatchdogResources.bundle in Resources */,
 				B58448D81A9B0FD6009F4D83 /* WDRegistrationWindow.xib in Resources */,
 				B58448DA1A9B0FE0009F4D83 /* WDRegistrationStatus.xib in Resources */,
 			);
@@ -658,13 +606,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B59516DF18C2665100FE2026 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5CD05F218C34EF6005268CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -703,11 +644,6 @@
 			isa = PBXTargetDependency;
 			target = B5F0B4E714F54B8B0069FFAF /* Watchdog */;
 			targetProxy = B58448D31A9B0EEC009F4D83 /* PBXContainerItemProxy */;
-		};
-		B595171218C2696500FE2026 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B59516E218C2665100FE2026 /* WatchdogResources */;
-			targetProxy = B595171118C2696500FE2026 /* PBXContainerItemProxy */;
 		};
 		B5DBD76C175FB29B001F4709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -767,49 +703,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B59516F118C2665100FE2026 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				INFOPLIST_FILE = "WatchdogResources/WatchdogResources-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		B59516F218C2665100FE2026 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				INFOPLIST_FILE = "WatchdogResources/WatchdogResources-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		B5CD061D18C34EF6005268CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1033,15 +926,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B59516F018C2665100FE2026 /* Build configuration list for PBXNativeTarget "WatchdogResources" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B59516F118C2665100FE2026 /* Debug */,
-				B59516F218C2665100FE2026 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B5CD062118C34EF6005268CB /* Build configuration list for PBXNativeTarget "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
