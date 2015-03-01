@@ -56,7 +56,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <textField horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="296" userLabel="ExplanationLabel">
-                    <rect key="frame" x="20" y="62" width="440" height="14"/>
+                    <rect key="frame" x="20" y="57" width="440" height="19"/>
                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" drawsBackground="YES" id="313" userLabel="ExplanationLabelCell">
                         <font key="font" metaFont="smallSystem"/>
                         <string key="title">You can use your serial number to activate application on any personal Mac that you own. To use application from different accounts belonging to different persons, please consider buying additional licenses. &lt;— This is bullshit.</string>
@@ -68,7 +68,7 @@
                     </connections>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="300" userLabel="DeauthorizeAccountButton">
-                    <rect key="frame" x="20" y="8" width="143" height="25"/>
+                    <rect key="frame" x="20" y="3" width="143" height="25"/>
                     <buttonCell key="cell" type="roundTextured" title="Deauthorize Account" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="309" userLabel="DeauthorizeAccountButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -79,7 +79,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="297" userLabel="OkButton">
-                    <rect key="frame" x="426" y="8" width="34" height="25"/>
+                    <rect key="frame" x="426" y="3" width="34" height="25"/>
                     <buttonCell key="cell" type="roundTextured" title="OK" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="311" userLabel="OkButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -104,7 +104,7 @@ DQ
                 <constraint firstItem="289" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="KcF-jJ-UnN"/>
                 <constraint firstItem="297" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="300" secondAttribute="trailing" constant="8" symbolic="YES" id="Tss-6K-lVY"/>
                 <constraint firstItem="297" firstAttribute="baseline" secondItem="300" secondAttribute="baseline" id="WBe-xo-lsc"/>
-                <constraint firstAttribute="bottom" secondItem="300" secondAttribute="bottom" constant="10" id="sRT-A5-T4Y"/>
+                <constraint firstAttribute="bottom" secondItem="300" secondAttribute="bottom" constant="5" id="sRT-A5-T4Y"/>
                 <constraint firstAttribute="trailing" secondItem="296" secondAttribute="trailing" constant="20" symbolic="YES" id="x2C-9L-qlL"/>
             </constraints>
             <connections>

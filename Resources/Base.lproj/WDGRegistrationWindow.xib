@@ -25,6 +25,7 @@
                 <outlet property="delegate" destination="-2" id="4"/>
                 <outlet property="initialFirstResponder" destination="2" id="5"/>
             </connections>
+            <point key="canvasLocation" x="398" y="297"/>
         </window>
     </objects>
 </document>
