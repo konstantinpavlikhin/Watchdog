@@ -18,6 +18,8 @@
 
 #import <QuartzCore/CoreAnimation.h>
 
+static void* ApplicationStateKVOContext;
+
 @implementation WDGRegistrationWindowController
 {
   WDGSerialEntryController* _serialEntryController;
@@ -33,27 +35,40 @@
   
   if(!self) return nil;
   
-  // Immediately starting to observe WDRegistrationController's applicationState property.
-  [[WDGRegistrationController sharedRegistrationController] addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
+  {{
+    WDGRegistrationController* controller = [WDGRegistrationController sharedRegistrationController];
+    
+    [controller addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: &ApplicationStateKVOContext];
+  }}
   
   return self;
 }
 
 - (void) dealloc
 {
-  // Terminating the observation.
-  [[WDGRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath];
+  [[WDGRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath context: &ApplicationStateKVOContext];
 }
+
+#pragma mark - Key-Value Observing
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
 {
-  WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
-  
-  if(object == SRC && [keyPath isEqualToString: ApplicationStateKeyPath])
+  if(context == &ApplicationStateKVOContext)
   {
-    SRC.applicationState == WDGRegisteredApplicationState? [self switchToRegistrationStatusSubview] : [self switchToSerialEntrySubview];
+    WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
+    
+    if(SRC.applicationState == WDGRegisteredApplicationState)
+    {
+      [self switchToRegistrationStatusSubview];
+    }
+    else
+    {
+      [self switchToSerialEntrySubview];
+    }
   }
 }
+
+#pragma mark -
 
 - (void) windowDidLoad
 {
