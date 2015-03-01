@@ -20,9 +20,9 @@
 
 @implementation WDGRegistrationWindowController
 {
-  WDGSerialEntryController* serialEntryController;
+  WDGSerialEntryController* _serialEntryController;
   
-  WDGRegistrationStatusController* registrationStatusController;
+  WDGRegistrationStatusController* _registrationStatusController;
 }
 
 - (id) init
@@ -80,32 +80,32 @@
 // Lazy WDSerialEntryController constructor.
 - (WDGSerialEntryController*) serialEntryController
 {
-  if(!serialEntryController)
+  if(!_serialEntryController)
   {
-    serialEntryController = [WDGSerialEntryController new];
+    _serialEntryController = [WDGSerialEntryController new];
   }
   
-  return serialEntryController;
+  return _serialEntryController;
 }
 
 // Lazy WDRegistrationStatusController constructor.
 - (WDGRegistrationStatusController*) registrationStatusController
 {
-  if(!registrationStatusController)
+  if(!_registrationStatusController)
   {
-    registrationStatusController = [WDGRegistrationStatusController new];
+    _registrationStatusController = [WDGRegistrationStatusController new];
   }
   
-  return registrationStatusController;
+  return _registrationStatusController;
 }
 
 - (void) switchToRegistrationStatusSubview
 {
   NSView* contentView = self.window.contentView;
   
-  if([contentView.subviews containsObject: serialEntryController.view])
+  if([contentView.subviews containsObject: _serialEntryController.view])
   {
-    [serialEntryController.view removeFromSuperview];
+    [_serialEntryController.view removeFromSuperview];
   }
   
   [self registrationStatusController].view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -120,16 +120,16 @@
     [contentView addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[registrationStatus]|" options: 0 metrics: nil views: views]];
   }}
   
-  [self.window makeFirstResponder: registrationStatusController.dismissButton];
+  [self.window makeFirstResponder: _registrationStatusController.dismissButton];
 }
 
 - (void) switchToSerialEntrySubview
 {
   NSView* contentView = self.window.contentView;
   
-  if([contentView.subviews containsObject: registrationStatusController.view])
+  if([contentView.subviews containsObject: _registrationStatusController.view])
   {
-    [registrationStatusController.view removeFromSuperview];
+    [_registrationStatusController.view removeFromSuperview];
   }
   
   [self serialEntryController].view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -144,7 +144,7 @@
     [contentView addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[serialEntry]|" options: 0 metrics: nil views: views]];
   }}
   
-  [self.window makeFirstResponder: serialEntryController.customerName];
+  [self.window makeFirstResponder: _serialEntryController.customerName];
 }
 
 @end
