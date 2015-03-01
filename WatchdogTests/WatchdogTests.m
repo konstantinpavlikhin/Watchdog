@@ -115,8 +115,16 @@ describe(@"WDGRegistrationController", ^
     expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
     
     [SRC deauthorizeAccount];
-    
-    expect(SRC.applicationState).to.equal(WDGUnregisteredApplicationState);
+
+    waitUntil(^(DoneCallback done)
+    {
+      dispatch_async(dispatch_get_main_queue(), ^
+      {
+        expect(SRC.applicationState).to.equal(WDGUnregisteredApplicationState);
+
+        done();
+      });
+    });
   });
 });
 
