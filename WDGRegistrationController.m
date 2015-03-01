@@ -155,17 +155,19 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
       // If all of the tests pass...
       if(verdict == WDGValidSerialVerdict)
       {
-        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-        
-        [userDefaults setObject: name forKey: WDGCustomerNameKey];
-        
-        [userDefaults setObject: serial forKey: WDGSerialKey];
-        
-        [userDefaults synchronize];
-        
         // KVO-notifications always arrive on the same thread that set the value.
         dispatch_async(dispatch_get_main_queue(), ^()
         {
+          NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+          
+          [userDefaults setObject: name forKey: WDGCustomerNameKey];
+          
+          [userDefaults setObject: serial forKey: WDGSerialKey];
+          
+          [userDefaults synchronize];
+          
+          // * * *.
+          
           self.applicationState = WDGRegisteredApplicationState;
         });
       }
