@@ -3,7 +3,7 @@
 //  Watchdog
 //
 //  Created by Konstantin Pavlikhin on 6/6/13.
-//  Copyright (c) 2013 Konstantin Pavlikhin. All rights reserved.
+//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
 //
 
 extern NSString* const WDGBuyOnlineURLKey;
