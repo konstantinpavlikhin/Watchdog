@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
@@ -12,52 +13,27 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="284">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="200"/>
+        <customView id="284" userLabel="RegistrationStatus">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="155"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="300">
-                    <rect key="frame" x="20" y="3" width="147" height="25"/>
-                    <buttonCell key="cell" type="roundTextured" title="Deauthorize Account" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="309">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="deauthorizeAccount:" target="-2" id="317"/>
-                        <outlet property="nextKeyView" destination="297" id="386"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="297">
-                    <rect key="frame" x="427" y="3" width="33" height="25"/>
-                    <buttonCell key="cell" type="roundTextured" title="OK" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="311">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                    </buttonCell>
-                    <connections>
-                        <action selector="dismiss:" target="-2" id="384"/>
-                        <outlet property="nextKeyView" destination="300" id="385"/>
-                    </connections>
-                </button>
                 <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="289">
-                    <rect key="frame" x="17" y="132" width="446" height="50"/>
+                    <rect key="frame" x="17" y="87" width="446" height="50"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="444" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="304">
-                                <rect key="frame" x="17" y="17" width="98" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Registered to:" drawsBackground="YES" id="306">
+                            <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="304" userLabel="RegisteredToLabel">
+                                <rect key="frame" x="17" y="16" width="97" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Registered to:" drawsBackground="YES" id="306" userLabel="RegisteredToLabelCell">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="303">
-                                <rect key="frame" x="123" y="14" width="304" height="22"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="Konstantin Pavlikhin" drawsBackground="YES" usesSingleLineMode="YES" id="307">
+                            <textField verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="303" userLabel="CustomerNameLabel">
+                                <rect key="frame" x="122" y="14" width="305" height="22"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="Konstantin Pavlikhin" drawsBackground="YES" usesSingleLineMode="YES" id="307" userLabel="CustomerNameLabelCell">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -69,22 +45,19 @@ DQ
                         </subviews>
                     </view>
                     <constraints>
-                        <constraint firstItem="303" firstAttribute="leading" secondItem="304" secondAttribute="trailing" constant="8" symbolic="YES" id="407"/>
-                        <constraint firstAttribute="trailing" secondItem="303" secondAttribute="trailing" constant="15" id="408"/>
-                        <constraint firstItem="303" firstAttribute="top" secondItem="289" secondAttribute="top" constant="11" id="409"/>
-                        <constraint firstAttribute="bottom" secondItem="303" secondAttribute="bottom" constant="11" id="410"/>
-                        <constraint firstItem="304" firstAttribute="centerY" secondItem="303" secondAttribute="centerY" id="411"/>
-                        <constraint firstItem="304" firstAttribute="leading" secondItem="289" secondAttribute="leading" constant="15" id="412"/>
+                        <constraint firstItem="304" firstAttribute="baseline" secondItem="303" secondAttribute="baseline" id="5M3-DB-3Gz"/>
+                        <constraint firstItem="303" firstAttribute="leading" secondItem="304" secondAttribute="trailing" constant="8" symbolic="YES" id="8lj-kb-BXk"/>
+                        <constraint firstItem="304" firstAttribute="leading" secondItem="289" secondAttribute="leading" constant="15" id="VhK-7I-FAQ"/>
+                        <constraint firstAttribute="trailing" secondItem="303" secondAttribute="trailing" constant="15" id="ZHT-iA-JKI"/>
+                        <constraint firstAttribute="bottom" secondItem="303" secondAttribute="bottom" constant="11" id="cg3-zT-k5D"/>
+                        <constraint firstItem="303" firstAttribute="top" secondItem="289" secondAttribute="top" constant="11" id="fbI-SA-byb"/>
                     </constraints>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="296">
-                    <rect key="frame" x="20" y="51" width="440" height="70"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="70" id="416"/>
-                    </constraints>
-                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" drawsBackground="YES" id="313">
+                <textField horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="296" userLabel="ExplanationLabel">
+                    <rect key="frame" x="20" y="62" width="440" height="14"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" drawsBackground="YES" id="313" userLabel="ExplanationLabelCell">
                         <font key="font" metaFont="smallSystem"/>
                         <string key="title">You can use your serial number to activate application on any personal Mac that you own. To use application from different accounts belonging to different persons, please consider buying additional licenses. &lt;— This is bullshit.</string>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -94,22 +67,50 @@ DQ
                         <binding destination="-2" name="value" keyPath="self.message" id="390"/>
                     </connections>
                 </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="300" userLabel="DeauthorizeAccountButton">
+                    <rect key="frame" x="20" y="8" width="143" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Deauthorize Account" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="309" userLabel="DeauthorizeAccountButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="deauthorizeAccount:" target="-2" id="317"/>
+                        <outlet property="nextKeyView" destination="297" id="386"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="297" userLabel="OkButton">
+                    <rect key="frame" x="426" y="8" width="34" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="OK" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="311" userLabel="OkButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismiss:" target="-2" id="384"/>
+                        <outlet property="nextKeyView" destination="300" id="385"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="297" firstAttribute="baseline" secondItem="300" secondAttribute="baseline" id="397"/>
-                <constraint firstItem="296" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="398"/>
-                <constraint firstAttribute="trailing" secondItem="289" secondAttribute="trailing" constant="20" symbolic="YES" id="399"/>
-                <constraint firstAttribute="trailing" secondItem="297" secondAttribute="trailing" constant="20" symbolic="YES" id="400"/>
-                <constraint firstItem="300" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="401"/>
-                <constraint firstAttribute="bottom" secondItem="300" secondAttribute="bottom" constant="5" id="402"/>
-                <constraint firstAttribute="trailing" secondItem="296" secondAttribute="trailing" constant="20" symbolic="YES" id="403"/>
-                <constraint firstItem="289" firstAttribute="top" secondItem="284" secondAttribute="top" constant="20" symbolic="YES" id="404"/>
-                <constraint firstItem="289" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="405"/>
-                <constraint firstItem="296" firstAttribute="top" secondItem="284" secondAttribute="top" constant="79" id="417"/>
+                <constraint firstItem="300" firstAttribute="top" secondItem="296" secondAttribute="bottom" constant="30" id="0Fb-iA-GMg"/>
+                <constraint firstAttribute="trailing" secondItem="297" secondAttribute="trailing" constant="20" symbolic="YES" id="0ek-Ev-0Ma"/>
+                <constraint firstItem="289" firstAttribute="top" secondItem="284" secondAttribute="top" constant="20" symbolic="YES" id="0mx-qw-WcC"/>
+                <constraint firstAttribute="trailing" secondItem="289" secondAttribute="trailing" constant="20" symbolic="YES" id="4S3-Wn-qDo"/>
+                <constraint firstItem="296" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="9L0-l8-S9C"/>
+                <constraint firstItem="296" firstAttribute="top" secondItem="289" secondAttribute="bottom" constant="15" id="FK8-6H-ZI1"/>
+                <constraint firstItem="300" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="IVJ-oy-W8f"/>
+                <constraint firstItem="289" firstAttribute="leading" secondItem="284" secondAttribute="leading" constant="20" symbolic="YES" id="KcF-jJ-UnN"/>
+                <constraint firstItem="297" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="300" secondAttribute="trailing" constant="8" symbolic="YES" id="Tss-6K-lVY"/>
+                <constraint firstItem="297" firstAttribute="baseline" secondItem="300" secondAttribute="baseline" id="WBe-xo-lsc"/>
+                <constraint firstAttribute="bottom" secondItem="300" secondAttribute="bottom" constant="10" id="sRT-A5-T4Y"/>
+                <constraint firstAttribute="trailing" secondItem="296" secondAttribute="trailing" constant="20" symbolic="YES" id="x2C-9L-qlL"/>
             </constraints>
             <connections>
                 <outlet property="nextKeyView" destination="297" id="387"/>
             </connections>
+            <point key="canvasLocation" x="349" y="303.5"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="392"/>
     </objects>
