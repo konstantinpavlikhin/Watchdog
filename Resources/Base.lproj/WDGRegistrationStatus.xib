@@ -56,7 +56,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <textField horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="296" userLabel="ExplanationLabel">
-                    <rect key="frame" x="20" y="57" width="440" height="19"/>
+                    <rect key="frame" x="20" y="47" width="440" height="29"/>
                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" drawsBackground="YES" id="313" userLabel="ExplanationLabelCell">
                         <font key="font" metaFont="smallSystem"/>
                         <string key="title">You can use your serial number to activate application on any personal Mac that you own. To use application from different accounts belonging to different persons, please consider buying additional licenses. &lt;— This is bullshit.</string>
@@ -94,7 +94,7 @@ DQ
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="300" firstAttribute="top" secondItem="296" secondAttribute="bottom" constant="30" id="0Fb-iA-GMg"/>
+                <constraint firstItem="300" firstAttribute="top" secondItem="296" secondAttribute="bottom" constant="20" id="0Fb-iA-GMg"/>
                 <constraint firstAttribute="trailing" secondItem="297" secondAttribute="trailing" constant="20" symbolic="YES" id="0ek-Ev-0Ma"/>
                 <constraint firstItem="289" firstAttribute="top" secondItem="284" secondAttribute="top" constant="20" symbolic="YES" id="0mx-qw-WcC"/>
                 <constraint firstAttribute="trailing" secondItem="289" secondAttribute="trailing" constant="20" symbolic="YES" id="4S3-Wn-qDo"/>
