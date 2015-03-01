@@ -101,36 +101,50 @@
   return registrationStatusController;
 }
 
-// Fade-in/fade-out subview switcher.
 - (void) switchToRegistrationStatusSubview
 {
   NSView* contentView = self.window.contentView;
   
-  if([[contentView subviews] containsObject: [serialEntryController view]])
+  if([contentView.subviews containsObject: serialEntryController.view])
   {
-    [[contentView animator] replaceSubview: [serialEntryController view] with: [[self registrationStatusController] view]];
+    [serialEntryController.view removeFromSuperview];
   }
-  else
-  {
-    [contentView addSubview: [[self registrationStatusController] view]];
-  }
+  
+  [self registrationStatusController].view.translatesAutoresizingMaskIntoConstraints = NO;
+  
+  [self.window.contentView addSubview: [self registrationStatusController].view];
+  
+  {{
+    NSDictionary* views = @{@"registrationStatus": [self registrationStatusController].view};
+    
+    [contentView addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"H:|[registrationStatus]|" options: 0 metrics: nil views: views]];
+    
+    [contentView addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[registrationStatus]|" options: 0 metrics: nil views: views]];
+  }}
   
   [self.window makeFirstResponder: registrationStatusController.dismissButton];
 }
 
-// Fade-in/fade-out subview switcher.
 - (void) switchToSerialEntrySubview
 {
   NSView* contentView = self.window.contentView;
   
-  if([[contentView subviews] containsObject: [registrationStatusController view]])
+  if([contentView.subviews containsObject: registrationStatusController.view])
   {
-    [[contentView animator] replaceSubview: [registrationStatusController view] with: [[self serialEntryController] view]];
+    [registrationStatusController.view removeFromSuperview];
   }
-  else
-  {
-    [[[self window] contentView] addSubview: [[self serialEntryController] view]];
-  }
+  
+  [self serialEntryController].view.translatesAutoresizingMaskIntoConstraints = NO;
+  
+  [self.window.contentView addSubview: [self serialEntryController].view];
+  
+  {{
+    NSDictionary* views = @{@"serialEntry": [self serialEntryController].view};
+    
+    [contentView addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"H:|[serialEntry]|" options: 0 metrics: nil views: views]];
+    
+    [contentView addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[serialEntry]|" options: 0 metrics: nil views: views]];
+  }}
   
   [self.window makeFirstResponder: serialEntryController.customerName];
 }
