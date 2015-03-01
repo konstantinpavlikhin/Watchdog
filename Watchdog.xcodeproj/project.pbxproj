@@ -12,6 +12,8 @@
 		B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5B718C219A500E65397 /* WDGShakeAnimation.m */; };
 		B531F5EA18C2316D00E65397 /* WDGResources.h in Headers */ = {isa = PBXBuildFile; fileRef = B531F5E818C2316D00E65397 /* WDGResources.h */; };
 		B531F5EB18C2316D00E65397 /* WDGResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B531F5E918C2316D00E65397 /* WDGResources.m */; };
+		B5397A931AA331A8005626D4 /* WDGExplanationLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5397A911AA331A8005626D4 /* WDGExplanationLabel.h */; };
+		B5397A941AA331A8005626D4 /* WDGExplanationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */; };
 		B53AA449155ED4B900745650 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53AA448155ED4B900745650 /* Security.framework */; };
 		B58448D51A9B0F34009F4D83 /* Watchdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; };
 		B58448D71A9B0F45009F4D83 /* Watchdog.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -93,6 +95,8 @@
 		B531F5B718C219A500E65397 /* WDGShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGShakeAnimation.m; sourceTree = "<group>"; };
 		B531F5E818C2316D00E65397 /* WDGResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGResources.h; sourceTree = "<group>"; };
 		B531F5E918C2316D00E65397 /* WDGResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGResources.m; sourceTree = "<group>"; };
+		B5397A911AA331A8005626D4 /* WDGExplanationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGExplanationLabel.h; sourceTree = SOURCE_ROOT; };
+		B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGExplanationLabel.m; sourceTree = SOURCE_ROOT; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B5421805175F8973008D056B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		B5421806175F8973008D056B /* License.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
@@ -220,6 +224,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		B5397A901AA33189005626D4 /* WDGExplanationLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B5397A911AA331A8005626D4 /* WDGExplanationLabel.h */,
+				B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */,
+			);
+			name = WDGExplanationLabel;
+			sourceTree = "<group>";
+		};
 		B5CD05F818C34EF6005268CB /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +356,7 @@
 				B5F614F514F54EB500C8565A /* WDGRegistrationStatusController.h */,
 				B5DAA40E1761D86100A82BF8 /* WDGRegistrationStatusController+Private.h */,
 				B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */,
+				B5397A901AA33189005626D4 /* WDGExplanationLabel */,
 			);
 			name = RegistrationStatusController;
 			path = Watchdog;
@@ -416,6 +430,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5397A931AA331A8005626D4 /* WDGExplanationLabel.h in Headers */,
 				B5F614FC14F54EB500C8565A /* WDGRegistrationController.h in Headers */,
 				B5F6150714F54EB500C8565A /* WDGRegistrationWindowController.h in Headers */,
 				B5F6150A14F54F0400C8565A /* Watchdog.h in Headers */,
@@ -620,6 +635,7 @@
 				B5F6150014F54EB500C8565A /* WDGSerialEntryController.m in Sources */,
 				B5E036BB159F8CBC00007230 /* WDGRegistrationStatusController.m in Sources */,
 				B5DBD77E17608864001F4709 /* WDGPlistConstants.m in Sources */,
+				B5397A941AA331A8005626D4 /* WDGExplanationLabel.m in Sources */,
 				B531F5B918C219A500E65397 /* WDGShakeAnimation.m in Sources */,
 				B531F5EB18C2316D00E65397 /* WDGResources.m in Sources */,
 			);
