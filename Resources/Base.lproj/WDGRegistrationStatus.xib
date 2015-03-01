@@ -39,7 +39,11 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="392" name="value" keyPath="values.WDCustomerName" id="394"/>
+                                    <binding destination="392" name="value" keyPath="values.WDGCustomerName" id="o3b-Cy-7iw">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                         </subviews>
