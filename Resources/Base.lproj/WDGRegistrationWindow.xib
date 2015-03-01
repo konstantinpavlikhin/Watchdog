@@ -16,7 +16,7 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <rect key="contentRect" x="196" y="677" width="480" height="200"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" id="2">
+            <view key="contentView" wantsLayer="YES" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>

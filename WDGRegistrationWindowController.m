@@ -67,8 +67,6 @@
   NSDictionary* animations = [NSDictionary dictionaryWithObject: fadeTransition forKey: @"subviews"];
   
   [[self.window contentView] setAnimations: animations];
-  
-  [[self.window contentView] setWantsLayer: YES];
 }
 
 - (IBAction) showWindow: (id) sender
