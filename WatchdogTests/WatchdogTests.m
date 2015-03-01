@@ -81,30 +81,33 @@ describe(@"WDGRegistrationController", ^
     expect(dict[@"serial"]).to.equal(serial);
   });
   
-  it(@"should transition from the unknown state to the registered state", ^AsyncBlock
+  it(@"should transition from the unknown state to the registered state", ^
   {
-    // Before any checks are made we can't make any assumptions about app' state.
-    expect(SRC.applicationState).to.equal(WDGUnknownApplicationState);
-    
-    NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
-    
-    SRC.publicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
-    
-    // Valid credentials from the "1024 DSA" sample.
-    NSString* name = @"John Appleseed";
-    
-    NSString* serial = @"GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M";
-    
-    [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
+    waitUntil(^(DoneCallback done)
     {
-      expect(verdict).to.equal(WDGValidSerialVerdict);
+      // Before any checks are made we can't make any assumptions about app' state.
+      expect(SRC.applicationState).to.equal(WDGUnknownApplicationState);
       
-      expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
+      NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
       
-      expect([SRC registeredCustomerName]).to.equal(name);
+      SRC.publicKeyPEM = [NSString stringWithContentsOfFile: publicPEMPath encoding: NSUTF8StringEncoding error: NULL];
       
-      done();
-    }];
+      // Valid credentials from the "1024 DSA" sample.
+      NSString* name = @"John Appleseed";
+      
+      NSString* serial = @"GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M";
+      
+      [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
+      {
+        expect(verdict).to.equal(WDGValidSerialVerdict);
+        
+        expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
+        
+        expect([SRC registeredCustomerName]).to.equal(name);
+        
+        done();
+      }];
+    });
   });
   
   it(@"should transition to the unregistered state", ^
