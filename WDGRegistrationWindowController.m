@@ -57,7 +57,7 @@ static void* ApplicationStateKVOContext;
   {
     WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
     
-    if(SRC.applicationState == WDGRegisteredApplicationState)
+    if(SRC.applicationState == WDGApplicationStateRegistered)
     {
       [self switchToRegistrationStatusSubview];
     }

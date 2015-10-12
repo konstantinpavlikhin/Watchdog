@@ -86,7 +86,7 @@ describe(@"WDGRegistrationController", ^
     waitUntil(^(DoneCallback done)
     {
       // Before any checks are made we can't make any assumptions about app' state.
-      expect(SRC.applicationState).to.equal(WDGUnknownApplicationState);
+      expect(SRC.applicationState).to.equal(WDGApplicationStateUnknown);
       
       NSString* publicPEMPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"1024-public" ofType: @"pem" inDirectory: nil];
       
@@ -99,9 +99,9 @@ describe(@"WDGRegistrationController", ^
       
       [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
       {
-        expect(verdict).to.equal(WDGValidSerialVerdict);
+        expect(verdict).to.equal(WDGSerialVerdictValid);
         
-        expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
+        expect(SRC.applicationState).to.equal(WDGApplicationStateRegistered);
         
         expect([SRC registeredCustomerName]).to.equal(name);
         
@@ -112,7 +112,7 @@ describe(@"WDGRegistrationController", ^
   
   it(@"should transition to the unregistered state", ^
   {
-    expect(SRC.applicationState).to.equal(WDGRegisteredApplicationState);
+    expect(SRC.applicationState).to.equal(WDGApplicationStateRegistered);
     
     [SRC deauthorizeAccount];
 
@@ -120,7 +120,7 @@ describe(@"WDGRegistrationController", ^
     {
       dispatch_async(dispatch_get_main_queue(), ^
       {
-        expect(SRC.applicationState).to.equal(WDGUnregisteredApplicationState);
+        expect(SRC.applicationState).to.equal(WDGApplicationStateUnregistered);
 
         done();
       });

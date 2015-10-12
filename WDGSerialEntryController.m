@@ -97,7 +97,7 @@
       
       [self.proceed setEnabled: YES];
       
-      if(verdict != WDGValidSerialVerdict)
+      if(verdict != WDGSerialVerdictValid)
       {
         [self shakeWindow];
         

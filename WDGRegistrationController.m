@@ -126,7 +126,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   {
     dispatch_async(dispatch_get_main_queue(), ^()
     {
-      if(verdict != WDGValidSerialVerdict)
+      if(verdict != WDGSerialVerdictValid)
       {
         [[[self class] alertWithSerialVerdict: verdict] runModal];
         
@@ -151,7 +151,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
     [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDGSerialVerdict verdict)
     {
       // If all of the tests pass...
-      if(verdict == WDGValidSerialVerdict)
+      if(verdict == WDGSerialVerdictValid)
       {
         // KVO-notifications always arrive on the same thread that set the value.
         dispatch_async(dispatch_get_main_queue(), ^()
@@ -166,7 +166,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
           
           // * * *.
           
-          self.applicationState = WDGRegisteredApplicationState;
+          self.applicationState = WDGApplicationStateRegistered;
         });
       }
       
@@ -183,7 +183,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
 
 - (NSString*) registeredCustomerName
 {
-  if([self applicationState] != WDGRegisteredApplicationState) return nil;
+  if([self applicationState] != WDGApplicationStateRegistered) return nil;
   
   return [[NSUserDefaults standardUserDefaults] stringForKey: WDGCustomerNameKey];
 }
@@ -200,7 +200,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   
   dispatch_async(dispatch_get_main_queue(), ^()
   {
-    self.applicationState = WDGUnregisteredApplicationState;
+    self.applicationState = WDGApplicationStateUnregistered;
   });
 }
 
@@ -220,7 +220,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
     {
       dispatch_async(dispatch_get_main_queue(), ^()
       {
-        self.applicationState = WDGUnregisteredApplicationState;
+        self.applicationState = WDGApplicationStateUnregistered;
       });
       
       return;
@@ -230,9 +230,9 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
     {
       dispatch_async(dispatch_get_main_queue(), ^()
       {
-        if(serialVerdict == WDGValidSerialVerdict)
+        if(serialVerdict == WDGSerialVerdictValid)
         {
-          self.applicationState = WDGRegisteredApplicationState;
+          self.applicationState = WDGApplicationStateRegistered;
           
           return;
         }
@@ -298,28 +298,28 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   switch(verdict)
   {
     // Compiler generates warning if this constant not handled in switch.
-    case WDGValidSerialVerdict:
+    case WDGSerialVerdictValid:
     {
       alert = nil;
       
       break;
     }
     
-    case WDGCorruptedSerialVerdict:
+    case WDGSerialVerdictCorrupted:
     {
       alert = [self corruptedRegistrationDataAlert];
       
       break;
     }
     
-    case WDGBlacklistedSerialVerdict:
+    case WDGSerialVerdictBlacklisted:
     {
       alert = [self blacklistedRegistrationDataAlert];
       
       break;
     }
     
-    case WDGPiratedSerialVerdict:
+    case WDGSerialVerdictPirated:
     {
       alert = [self piratedRegistrationDataAlert];
       
@@ -347,13 +347,13 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   // Если лицензия не расшифровалась...
   if(![self isSerial: serial conformsToCustomerName: name error: NULL])
   {
-    handler(WDGCorruptedSerialVerdict); return;
+    handler(WDGSerialVerdictCorrupted); return;
   }
   
   // Если лицензия найдена в одном из черных списков...
   if([self isSerialInStaticBlacklist: serial] || [self isSerialInDynamicBlacklist: serial])
   {
-    handler(WDGBlacklistedSerialVerdict); return;
+    handler(WDGSerialVerdictBlacklisted); return;
   }
   
   handler([self synchronousServerCheckWithSerial: serial]);
@@ -551,23 +551,23 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   
   if([string isEqualToString: @"Valid"])
   {
-    return WDGValidSerialVerdict;
+    return WDGSerialVerdictValid;
   }
   else if([string isEqualToString: @"Blacklisted"])
   {
     [self addSerialToDynamicBlacklist: serial];
     
-    return WDGBlacklistedSerialVerdict;
+    return WDGSerialVerdictBlacklisted;
   }
   else if([string isEqualToString: @"Pirated"])
   {
     [self addSerialToDynamicBlacklist: serial];
     
-    return WDGPiratedSerialVerdict;
+    return WDGSerialVerdictPirated;
   }
   
   // Not going to be too strict at this point.
-  return WDGValidSerialVerdict;
+  return WDGSerialVerdictValid;
 }
 
 // Checks whether specified serial is present in the static blacklist.
