@@ -246,4 +246,4 @@ If you adding Watchdog to a sandboxed app you should put the following lines in 
 
 ## License
 
-Watchdog is released under the MIT license. See [License.md](https://github.com/konstantinpavlikhin/Watchdog/blob/master/License.md).
+Watchdog is released under the MIT license. See [LICENSE.md](https://github.com/konstantinpavlikhin/Watchdog/blob/master/LICENSE.md).

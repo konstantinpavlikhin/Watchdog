@@ -98,8 +98,8 @@
 		B5397A911AA331A8005626D4 /* WDGExplanationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGExplanationLabel.h; sourceTree = SOURCE_ROOT; };
 		B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGExplanationLabel.m; sourceTree = SOURCE_ROOT; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
-		B5421805175F8973008D056B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
-		B5421806175F8973008D056B /* License.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
+		B5421805175F8973008D056B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B5421806175F8973008D056B /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		B59516E618C2665100FE2026 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B59516E818C2665100FE2026 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B59516FF18C2676C00FE2026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/WDGRegistrationWindow.xib; sourceTree = SOURCE_ROOT; };
@@ -231,6 +231,15 @@
 				B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */,
 			);
 			name = WDGExplanationLabel;
+			sourceTree = "<group>";
+		};
+		B5CD03611BCBDC250072878A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				B5421805175F8973008D056B /* README.md */,
+				B5421806175F8973008D056B /* LICENSE.md */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		B5CD05F818C34EF6005268CB /* Sample */ = {
@@ -365,8 +374,6 @@
 		B5F0B4DC14F54B8B0069FFAF = {
 			isa = PBXGroup;
 			children = (
-				B5421805175F8973008D056B /* Readme.md */,
-				B5421806175F8973008D056B /* License.md */,
 				B5F6150914F54F0400C8565A /* Watchdog.h */,
 				B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */,
 				B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */,
@@ -378,6 +385,7 @@
 				B5DBD77F1760886A001F4709 /* PlistConstants */,
 				B531F5BA18C219A800E65397 /* ShakeAnimation */,
 				B531F5EC18C2317600E65397 /* Resources */,
+				B5CD03611BCBDC250072878A /* Other */,
 				B5DBD72D175FABBA001F4709 /* WatchdogTests */,
 				B5CD05F818C34EF6005268CB /* Sample */,
 				B5F0B4EA14F54B8B0069FFAF /* Frameworks */,
