@@ -10,7 +10,7 @@
 
 @interface WDGRegistrationController ()
 
-@property(readwrite, assign, atomic) enum WDGApplicationState applicationState;
+@property(readwrite, assign, atomic) WDGApplicationState applicationState;
 
 // These method prototypes are here for unit testing purposes.
 

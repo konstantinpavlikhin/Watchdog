@@ -97,7 +97,7 @@ describe(@"WDGRegistrationController", ^
       
       NSString* serial = @"GAWAEFA46ZQC6LB32U4S4OAPKMAY3DQP5FHSLEYCCQFTP4ZLD7EM5IJTQUX7NZVPLVXN7WYH3M";
       
-      [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
+      [SRC registerWithCustomerName: name serial: serial handler: ^(WDGSerialVerdict verdict)
       {
         expect(verdict).to.equal(WDGSerialVerdictValid);
         

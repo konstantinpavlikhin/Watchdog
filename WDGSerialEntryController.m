@@ -89,7 +89,7 @@
   // Pushing data to the WDRegistrationController.
   WDGRegistrationController* SRC = [WDGRegistrationController sharedRegistrationController];
   
-  [SRC registerWithCustomerName: name serial: serial handler: ^(enum WDGSerialVerdict verdict)
+  [SRC registerWithCustomerName: name serial: serial handler: ^(WDGSerialVerdict verdict)
   {
     dispatch_async(dispatch_get_main_queue(), ^()
     {

@@ -101,7 +101,7 @@ Call `-registerWithCustomerName:serial:handler:` to asynchronously register appl
 
 ```objective-c
 ...
-[SRC registerWithCustomerName: @"John" name serial: @"GAWRYTUILKJHVBNB..." handler: ^(enum SerialVerdict verdict){ ... }];
+[SRC registerWithCustomerName: @"John" name serial: @"GAWRYTUILKJHVBNB..." handler: ^(WDGSerialVerdict verdict){ ... }];
 ```
 
 ### Performing validation of a stored serial

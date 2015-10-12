@@ -122,7 +122,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
     return;
   }
   
-  [self registerWithCustomerName: dict[@"name"] serial: dict[@"serial"] handler: ^(enum WDGSerialVerdict verdict)
+  [self registerWithCustomerName: dict[@"name"] serial: dict[@"serial"] handler: ^(WDGSerialVerdict verdict)
   {
     dispatch_async(dispatch_get_main_queue(), ^()
     {
@@ -148,7 +148,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
   {
     // Launching full-featured customer data check.
-    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDGSerialVerdict verdict)
+    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(WDGSerialVerdict verdict)
     {
       // If all of the tests pass...
       if(verdict == WDGSerialVerdictValid)
@@ -226,7 +226,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
       return;
     };
     
-    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(enum WDGSerialVerdict serialVerdict)
+    [self complexCheckOfCustomerName: name serial: serial completionHandler: ^(WDGSerialVerdict serialVerdict)
     {
       dispatch_async(dispatch_get_main_queue(), ^()
       {
@@ -291,7 +291,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
   return alert;
 }
 
-+ (NSAlert*) alertWithSerialVerdict: (enum WDGSerialVerdict) verdict
++ (NSAlert*) alertWithSerialVerdict: (WDGSerialVerdict) verdict
 {
   NSAlert* alert = nil;
   
@@ -519,7 +519,7 @@ static WDGRegistrationWindowController* registrationWindowController = nil;
 }
 
 // Performs server check of the supplied serial.
-- (enum WDGSerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
+- (WDGSerialVerdict) synchronousServerCheckWithSerial: (NSString*) serial
 {
   NSParameterAssert(serial);
   

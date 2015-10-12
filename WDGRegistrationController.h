@@ -10,7 +10,7 @@
 
 @class WDGRegistrationWindowController;
 
-enum WDGApplicationState
+typedef NS_ENUM(NSUInteger, WDGApplicationState)
 {
   // Application state before any checks are made.
   WDGApplicationStateUnknown = 0,
@@ -22,7 +22,7 @@ enum WDGApplicationState
   WDGApplicationStateRegistered
 };
 
-enum WDGSerialVerdict
+typedef NS_ENUM(NSUInteger, WDGSerialVerdict)
 {
   // When a supplied serial is perfectly legal.
   WDGSerialVerdictValid,
@@ -43,7 +43,7 @@ enum WDGSerialVerdict
 + (WDGRegistrationController*) sharedRegistrationController;
 
 // Returns current registration state of the application.
-@property(readonly, atomic) enum WDGApplicationState applicationState;
+@property(readonly, atomic) WDGApplicationState applicationState;
 
 // Must be set to the application DSA/ECDSA public key in PEM format.
 @property(readwrite, strong, atomic) NSString* publicKeyPEM;
@@ -54,7 +54,7 @@ enum WDGSerialVerdict
 // Accepts a Quick-Apply link string in form of "appname-wd://GFUENLVNDLPOJHJB:GAWWERTYUIOPEDCNJIKLKJHGFDXCVBNM". Runs asynchronously. Shows either alerts or registration window.
 - (void) registerWithQuickApplyLink: (NSString*) link;
 
-typedef void (^SerialCheckHandler)(enum WDGSerialVerdict verdict);
+typedef void (^SerialCheckHandler)(WDGSerialVerdict verdict);
 
 // Tries to register app with the supplied customer name & serial pair then calls handler with the appropriate flag. Runs asynchronously.
 - (void) registerWithCustomerName: (NSString*) name serial: (NSString*) serial handler: (SerialCheckHandler) handler;
