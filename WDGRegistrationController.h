@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, WDGSerialVerdict)
 + (WDGRegistrationController*) sharedRegistrationController;
 
 // Returns current registration state of the application.
-@property(readonly, atomic) WDGApplicationState applicationState;
+@property(readonly, assign, atomic) WDGApplicationState applicationState;
 
 // Must be set to the application DSA/ECDSA public key in PEM format.
 @property(readwrite, strong, atomic) NSString* publicKeyPEM;

@@ -10,7 +10,7 @@
 
 @interface WDGRegistrationStatusController ()
 
-@property(readwrite, strong) NSString* message;
+@property(readwrite, strong, nonatomic) NSString* message;
 
 - (IBAction) deauthorizeAccount: (id) sender;
 

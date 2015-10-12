@@ -8,6 +8,6 @@
 
 @interface WDGSerialEntryController : NSViewController
 
-@property(readwrite, assign) IBOutlet NSTextField* customerName;
+@property(readwrite, assign, nonatomic) IBOutlet NSTextField* customerName;
 
 @end

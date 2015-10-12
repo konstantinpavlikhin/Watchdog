@@ -8,6 +8,6 @@
 
 @interface WDGRegistrationStatusController : NSViewController
 
-@property(readwrite, assign) IBOutlet NSButton* dismissButton;
+@property(readwrite, assign, nonatomic) IBOutlet NSButton* dismissButton;
 
 @end
