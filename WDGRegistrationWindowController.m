@@ -38,7 +38,7 @@ static void* ApplicationStateKVOContext;
   {{
     WDGRegistrationController* controller = [WDGRegistrationController sharedRegistrationController];
     
-    [controller addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: &ApplicationStateKVOContext];
+    [controller addObserver: self forKeyPath: @"applicationState" options: NSKeyValueObservingOptionInitial context: &ApplicationStateKVOContext];
   }}
   
   return self;
@@ -46,7 +46,7 @@ static void* ApplicationStateKVOContext;
 
 - (void) dealloc
 {
-  [[WDGRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: ApplicationStateKeyPath context: &ApplicationStateKVOContext];
+  [[WDGRegistrationController sharedRegistrationController] removeObserver: self forKeyPath: @"applicationState" context: &ApplicationStateKVOContext];
 }
 
 #pragma mark - Key-Value Observing

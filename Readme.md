@@ -92,7 +92,7 @@ Watchdog relies on a Key-Value Observing (KVO) mechanism to deliver information 
 
 ```objective-c
 ...
-[SRC addObserver: self forKeyPath: ApplicationStateKeyPath options: NSKeyValueObservingOptionInitial context: NULL];
+[SRC addObserver: self forKeyPath: @"applicationState" options: NSKeyValueObservingOptionInitial context: NULL];
 ```
 
 ### Registering an app with concrete customer name & serial

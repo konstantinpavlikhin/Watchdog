@@ -16,8 +16,6 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
-NSString* const ApplicationStateKeyPath = @"applicationState";
-
 NSString* const WDGCustomerNameKey = @"WDGCustomerName";
 
 NSString* const WDGSerialKey = @"WDGSerial";
