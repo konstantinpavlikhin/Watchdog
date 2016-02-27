@@ -3,7 +3,7 @@
 //  Watchdog
 //
 //  Created by Konstantin Pavlikhin on 01.03.14.
-//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
+//  Copyright (c) 2016 Konstantin Pavlikhin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

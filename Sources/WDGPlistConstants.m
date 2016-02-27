@@ -3,7 +3,7 @@
 //  Watchdog
 //
 //  Created by Konstantin Pavlikhin on 6/6/13.
-//  Copyright (c) 2015 Konstantin Pavlikhin. All rights reserved.
+//  Copyright (c) 2016 Konstantin Pavlikhin. All rights reserved.
 //
 
 #import "WDGPlistConstants.h"
