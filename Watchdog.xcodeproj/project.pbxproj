@@ -91,12 +91,12 @@
 /* Begin PBXFileReference section */
 		2821A761E6B213558C5A6377 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8C29AD68E6FF67836C4F5496 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B531F5B618C219A500E65397 /* WDGShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGShakeAnimation.h; sourceTree = "<group>"; };
-		B531F5B718C219A500E65397 /* WDGShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGShakeAnimation.m; sourceTree = "<group>"; };
-		B531F5E818C2316D00E65397 /* WDGResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGResources.h; sourceTree = "<group>"; };
-		B531F5E918C2316D00E65397 /* WDGResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGResources.m; sourceTree = "<group>"; };
-		B5397A911AA331A8005626D4 /* WDGExplanationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGExplanationLabel.h; sourceTree = SOURCE_ROOT; };
-		B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGExplanationLabel.m; sourceTree = SOURCE_ROOT; };
+		B531F5B618C219A500E65397 /* WDGShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGShakeAnimation.h; path = Sources/WDGShakeAnimation.h; sourceTree = "<group>"; };
+		B531F5B718C219A500E65397 /* WDGShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGShakeAnimation.m; path = Sources/WDGShakeAnimation.m; sourceTree = "<group>"; };
+		B531F5E818C2316D00E65397 /* WDGResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGResources.h; path = Sources/WDGResources.h; sourceTree = "<group>"; };
+		B531F5E918C2316D00E65397 /* WDGResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGResources.m; path = Sources/WDGResources.m; sourceTree = "<group>"; };
+		B5397A911AA331A8005626D4 /* WDGExplanationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGExplanationLabel.h; path = Sources/WDGExplanationLabel.h; sourceTree = "<group>"; };
+		B5397A921AA331A8005626D4 /* WDGExplanationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGExplanationLabel.m; path = Sources/WDGExplanationLabel.m; sourceTree = "<group>"; };
 		B53AA448155ED4B900745650 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		B5421805175F8973008D056B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5421806175F8973008D056B /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -116,48 +116,48 @@
 		B5C91ADD14F568DC009696B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B5CD057018C3385F005268CB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B5CD05F618C34EF6005268CB /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5CD05FA18C34EF6005268CB /* Sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sample-Info.plist"; sourceTree = "<group>"; };
-		B5CD05FE18C34EF6005268CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B5CD060018C34EF6005268CB /* Sample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sample-Prefix.pch"; sourceTree = "<group>"; };
-		B5CD060418C34EF6005268CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B5CD060518C34EF6005268CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B5CD060818C34EF6005268CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B5CD05FA18C34EF6005268CB /* Sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sample-Info.plist"; path = "Resources/Sample-Info.plist"; sourceTree = "<group>"; };
+		B5CD05FE18C34EF6005268CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Sources/main.m; sourceTree = "<group>"; };
+		B5CD060018C34EF6005268CB /* Sample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Sample-Prefix.pch"; path = "Sources/Sample-Prefix.pch"; sourceTree = "<group>"; };
+		B5CD060418C34EF6005268CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Sources/AppDelegate.h; sourceTree = "<group>"; };
+		B5CD060518C34EF6005268CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Sources/AppDelegate.m; sourceTree = "<group>"; };
+		B5CD060818C34EF6005268CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/MainMenu.xib; sourceTree = "<group>"; };
 		B5CD062918C34F56005268CB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		B5DAA40E1761D86100A82BF8 /* WDGRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGRegistrationStatusController+Private.h"; sourceTree = SOURCE_ROOT; };
-		B5DAA40F1761D8C000A82BF8 /* WDGSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGSerialEntryController+Private.h"; sourceTree = SOURCE_ROOT; };
+		B5DAA40E1761D86100A82BF8 /* WDGRegistrationStatusController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WDGRegistrationStatusController+Private.h"; path = "Sources/WDGRegistrationStatusController+Private.h"; sourceTree = "<group>"; };
+		B5DAA40F1761D8C000A82BF8 /* WDGSerialEntryController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WDGSerialEntryController+Private.h"; path = "Sources/WDGSerialEntryController+Private.h"; sourceTree = "<group>"; };
 		B5DBD725175FABBA001F4709 /* WatchdogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DBD726175FABBA001F4709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WatchdogTests-Info.plist"; sourceTree = "<group>"; };
-		B5DBD734175FABBA001F4709 /* WatchdogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchdogTests.m; sourceTree = "<group>"; };
-		B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WatchdogTests-Prefix.pch"; sourceTree = "<group>"; };
-		B5DBD76A175FB252001F4709 /* WDGRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WDGRegistrationController+Private.h"; sourceTree = SOURCE_ROOT; };
-		B5DBD77C17608851001F4709 /* WDGPlistConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGPlistConstants.h; sourceTree = SOURCE_ROOT; };
-		B5DBD77D17608864001F4709 /* WDGPlistConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGPlistConstants.m; sourceTree = SOURCE_ROOT; };
-		B5DBD7BB1760B831001F4709 /* 1024-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1024-private.pem"; sourceTree = "<group>"; };
-		B5DBD7BD1760B841001F4709 /* 2048-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2048-private.pem"; sourceTree = "<group>"; };
-		B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp384r1-private.pem"; sourceTree = "<group>"; };
-		B5DBD7C11760B855001F4709 /* secp521r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp521r1-private.pem"; sourceTree = "<group>"; };
-		B5DBD7C31760B891001F4709 /* 1024-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1024-public.pem"; sourceTree = "<group>"; };
-		B5DBD7C51760B897001F4709 /* 2048-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2048-public.pem"; sourceTree = "<group>"; };
-		B5DBD7C71760B8E8001F4709 /* secp384r1-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp384r1-public.pem"; sourceTree = "<group>"; };
-		B5DBD7C91760B8EF001F4709 /* secp521r1-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "secp521r1-public.pem"; sourceTree = "<group>"; };
-		B5DBD7CB1760B953001F4709 /* secp384r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "secp384r1-data.plist"; sourceTree = "<group>"; };
-		B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "secp521r1-data.plist"; sourceTree = "<group>"; };
-		B5DBD7CF1760B97D001F4709 /* 1024-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "1024-data.plist"; sourceTree = "<group>"; };
-		B5DBD7D11760B98C001F4709 /* 2048-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "2048-data.plist"; sourceTree = "<group>"; };
-		B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGRegistrationStatusController.m; sourceTree = SOURCE_ROOT; };
+		B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WatchdogTests-Info.plist"; path = "Resources/WatchdogTests-Info.plist"; sourceTree = "<group>"; };
+		B5DBD734175FABBA001F4709 /* WatchdogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WatchdogTests.m; path = Sources/WatchdogTests.m; sourceTree = "<group>"; };
+		B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WatchdogTests-Prefix.pch"; path = "Sources/WatchdogTests-Prefix.pch"; sourceTree = "<group>"; };
+		B5DBD76A175FB252001F4709 /* WDGRegistrationController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WDGRegistrationController+Private.h"; path = "Sources/WDGRegistrationController+Private.h"; sourceTree = "<group>"; };
+		B5DBD77C17608851001F4709 /* WDGPlistConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WDGPlistConstants.h; path = Sources/WDGPlistConstants.h; sourceTree = "<group>"; };
+		B5DBD77D17608864001F4709 /* WDGPlistConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGPlistConstants.m; path = Sources/WDGPlistConstants.m; sourceTree = "<group>"; };
+		B5DBD7BB1760B831001F4709 /* 1024-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1024-private.pem"; path = "Resources/1024-private.pem"; sourceTree = "<group>"; };
+		B5DBD7BD1760B841001F4709 /* 2048-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "2048-private.pem"; path = "Resources/2048-private.pem"; sourceTree = "<group>"; };
+		B5DBD7BF1760B84C001F4709 /* secp384r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "secp384r1-private.pem"; path = "Resources/secp384r1-private.pem"; sourceTree = "<group>"; };
+		B5DBD7C11760B855001F4709 /* secp521r1-private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "secp521r1-private.pem"; path = "Resources/secp521r1-private.pem"; sourceTree = "<group>"; };
+		B5DBD7C31760B891001F4709 /* 1024-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1024-public.pem"; path = "Resources/1024-public.pem"; sourceTree = "<group>"; };
+		B5DBD7C51760B897001F4709 /* 2048-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "2048-public.pem"; path = "Resources/2048-public.pem"; sourceTree = "<group>"; };
+		B5DBD7C71760B8E8001F4709 /* secp384r1-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "secp384r1-public.pem"; path = "Resources/secp384r1-public.pem"; sourceTree = "<group>"; };
+		B5DBD7C91760B8EF001F4709 /* secp521r1-public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "secp521r1-public.pem"; path = "Resources/secp521r1-public.pem"; sourceTree = "<group>"; };
+		B5DBD7CB1760B953001F4709 /* secp384r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "secp384r1-data.plist"; path = "Resources/secp384r1-data.plist"; sourceTree = "<group>"; };
+		B5DBD7CD1760B96D001F4709 /* secp521r1-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "secp521r1-data.plist"; path = "Resources/secp521r1-data.plist"; sourceTree = "<group>"; };
+		B5DBD7CF1760B97D001F4709 /* 1024-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "1024-data.plist"; path = "Resources/1024-data.plist"; sourceTree = "<group>"; };
+		B5DBD7D11760B98C001F4709 /* 2048-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "2048-data.plist"; path = "Resources/2048-data.plist"; sourceTree = "<group>"; };
+		B5E036BC159F8CBC00007230 /* WDGRegistrationStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WDGRegistrationStatusController.m; path = Sources/WDGRegistrationStatusController.m; sourceTree = "<group>"; };
 		B5F0B4E814F54B8B0069FFAF /* Watchdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F0B4EB14F54B8B0069FFAF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Watchdog-Info.plist"; sourceTree = SOURCE_ROOT; };
-		B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Watchdog-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRegistrationController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F014F54EB500C8565A /* WDGRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRegistrationController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F214F54EB500C8565A /* WDGSerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGSerialEntryController.h; sourceTree = SOURCE_ROOT; };
-		B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGSerialEntryController.m; sourceTree = SOURCE_ROOT; };
-		B5F614F514F54EB500C8565A /* WDGRegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRegistrationStatusController.h; sourceTree = SOURCE_ROOT; };
-		B5F614FA14F54EB500C8565A /* WDGRegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRegistrationWindowController.h; sourceTree = SOURCE_ROOT; };
-		B5F614FB14F54EB500C8565A /* WDGRegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRegistrationWindowController.m; sourceTree = SOURCE_ROOT; };
-		B5F6150914F54F0400C8565A /* Watchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watchdog.h; sourceTree = "<group>"; };
+		B5F0B50414F54C210069FFAF /* Watchdog-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Watchdog-Info.plist"; path = "Resources/Watchdog-Info.plist"; sourceTree = "<group>"; };
+		B5F0B50514F54C210069FFAF /* Watchdog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Watchdog-Prefix.pch"; path = "Sources/Watchdog-Prefix.pch"; sourceTree = "<group>"; };
+		B5F614EF14F54EB500C8565A /* WDGRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGRegistrationController.h; path = Sources/WDGRegistrationController.h; sourceTree = "<group>"; };
+		B5F614F014F54EB500C8565A /* WDGRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGRegistrationController.m; path = Sources/WDGRegistrationController.m; sourceTree = "<group>"; };
+		B5F614F214F54EB500C8565A /* WDGSerialEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGSerialEntryController.h; path = Sources/WDGSerialEntryController.h; sourceTree = "<group>"; };
+		B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGSerialEntryController.m; path = Sources/WDGSerialEntryController.m; sourceTree = "<group>"; };
+		B5F614F514F54EB500C8565A /* WDGRegistrationStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGRegistrationStatusController.h; path = Sources/WDGRegistrationStatusController.h; sourceTree = "<group>"; };
+		B5F614FA14F54EB500C8565A /* WDGRegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDGRegistrationWindowController.h; path = Sources/WDGRegistrationWindowController.h; sourceTree = "<group>"; };
+		B5F614FB14F54EB500C8565A /* WDGRegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDGRegistrationWindowController.m; path = Sources/WDGRegistrationWindowController.m; sourceTree = "<group>"; };
+		B5F6150914F54F0400C8565A /* Watchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Watchdog.h; path = Sources/Watchdog.h; sourceTree = "<group>"; };
 		E0C598D5503140F096DEA880 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -264,7 +264,8 @@
 				B5DBD72F175FABBA001F4709 /* WatchdogTests-Info.plist */,
 				B5DBD736175FABBA001F4709 /* WatchdogTests-Prefix.pch */,
 			);
-			path = WatchdogTests;
+			name = WatchdogTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		B5DBD77F1760886A001F4709 /* PlistConstants */ = {
@@ -274,7 +275,6 @@
 				B5DBD77D17608864001F4709 /* WDGPlistConstants.m */,
 			);
 			name = PlistConstants;
-			path = Watchdog;
 			sourceTree = "<group>";
 		};
 		B5DBD78017608EB5001F4709 /* DSA */ = {
@@ -343,7 +343,6 @@
 				B5F614FB14F54EB500C8565A /* WDGRegistrationWindowController.m */,
 			);
 			name = RegistrationWindowController;
-			path = Watchdog;
 			sourceTree = "<group>";
 		};
 		B5E036B0159F6FFA00007230 /* SerialEntryController */ = {
@@ -355,7 +354,6 @@
 				B5F614F314F54EB500C8565A /* WDGSerialEntryController.m */,
 			);
 			name = SerialEntryController;
-			path = Watchdog;
 			sourceTree = "<group>";
 		};
 		B5E036B1159F700000007230 /* RegistrationStatusController */ = {
@@ -368,7 +366,6 @@
 				B5397A901AA33189005626D4 /* WDGExplanationLabel */,
 			);
 			name = RegistrationStatusController;
-			path = Watchdog;
 			sourceTree = "<group>";
 		};
 		B5F0B4DC14F54B8B0069FFAF = {
@@ -428,7 +425,6 @@
 				B5F614F014F54EB500C8565A /* WDGRegistrationController.m */,
 			);
 			name = RegistrationController;
-			path = Watchdog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -725,13 +721,13 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
+				GCC_PREFIX_HEADER = "Sample/Sources/Sample-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				INFOPLIST_FILE = "Sample/Sample-Info.plist";
+				INFOPLIST_FILE = "Sample/Resources/Sample-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.konstantinpavlikhin.WatchdogSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -750,9 +746,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
+				GCC_PREFIX_HEADER = "Sample/Sources/Sample-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				INFOPLIST_FILE = "Sample/Sample-Info.plist";
+				INFOPLIST_FILE = "Sample/Resources/Sample-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.konstantinpavlikhin.WatchdogSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -773,8 +769,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WatchdogTests/WatchdogTests-Prefix.pch";
-				INFOPLIST_FILE = "WatchdogTests/WatchdogTests-Info.plist";
+				GCC_PREFIX_HEADER = "Tests/Sources/WatchdogTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Resources/WatchdogTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -799,8 +795,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WatchdogTests/WatchdogTests-Prefix.pch";
-				INFOPLIST_FILE = "WatchdogTests/WatchdogTests-Info.plist";
+				GCC_PREFIX_HEADER = "Tests/Sources/WatchdogTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Resources/WatchdogTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -900,8 +896,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Watchdog-Prefix.pch";
-				INFOPLIST_FILE = "Watchdog-Info.plist";
+				GCC_PREFIX_HEADER = "Sources/Watchdog-Prefix.pch";
+				INFOPLIST_FILE = "Resources/Watchdog-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.konstantinpavlikhin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -917,8 +913,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Watchdog-Prefix.pch";
-				INFOPLIST_FILE = "Watchdog-Info.plist";
+				GCC_PREFIX_HEADER = "Sources/Watchdog-Prefix.pch";
+				INFOPLIST_FILE = "Resources/Watchdog-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.konstantinpavlikhin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

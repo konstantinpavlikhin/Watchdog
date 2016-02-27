@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "../Watchdog.h"
+#import "Watchdog.h"
 
 @implementation AppDelegate
 
