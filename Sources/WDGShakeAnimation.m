@@ -8,7 +8,7 @@
 
 #import "WDGShakeAnimation.h"
 
-CAKeyframeAnimation* shakeAnimation(NSRect frame, int numOfShakes, double duration, double vigour)
+CAKeyframeAnimation* WDGShakeAnimation(NSRect frame, int numOfShakes, double duration, double vigour)
 {
   CAKeyframeAnimation* shakeAnim = [CAKeyframeAnimation animation];
   

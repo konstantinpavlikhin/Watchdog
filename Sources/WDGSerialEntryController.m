@@ -113,7 +113,7 @@
 {
   NSWindow* window = [[self view] window];
   
-  [window setAnimations: [NSDictionary dictionaryWithObject: shakeAnimation([window frame], 4, 0.4, 0.05) forKey: @"frameOrigin"]];
+  [window setAnimations: [NSDictionary dictionaryWithObject: WDGShakeAnimation([window frame], 4, 0.4, 0.05) forKey: @"frameOrigin"]];
   
   [[window animator] setFrameOrigin: [window frame].origin];
 }

@@ -10,8 +10,8 @@
 
 // numOfShakes = 4; duration = 0.4; vigour = 0.05;
 
-// [window setAnimations: [NSDictionary dictionaryWithObject: shakeAnimation([window frame], 4, 0.4, 0.05) forKey: @"frameOrigin"]];
+// [window setAnimations: [NSDictionary dictionaryWithObject: WDGShakeAnimation([window frame], 4, 0.4, 0.05) forKey: @"frameOrigin"]];
 
 // [[window animator] setFrameOrigin: [window frame].origin];
 
-CAKeyframeAnimation* shakeAnimation(NSRect frame, int numOfShakes, double duration, double vigour);
+CAKeyframeAnimation* WDGShakeAnimation(NSRect frame, int numOfShakes, double duration, double vigour);
