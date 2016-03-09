@@ -2,9 +2,9 @@ Pod::Spec.new do |spec|
 
   spec.name = 'Watchdog'
 
-  spec.version = '0.0.0'
+  spec.version = '0.1.0'
 
-  spec.cocoapods_version = '>= 0.36'
+  spec.cocoapods_version = '>= 1.0.0.beta.5'
 
   spec.authors = {'Konstantin Pavlikhin' => 'k.pavlikhin@gmail.com'}
 
